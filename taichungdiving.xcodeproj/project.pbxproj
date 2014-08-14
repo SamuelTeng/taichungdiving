@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18D85C8A199CF9CA00D20CC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C89199CF9CA00D20CC8 /* Foundation.framework */; };
+		18D85C8C199CF9CA00D20CC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C8B199CF9CA00D20CC8 /* CoreGraphics.framework */; };
+		18D85C8E199CF9CA00D20CC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C8D199CF9CA00D20CC8 /* UIKit.framework */; };
+		18D85C90199CF9CA00D20CC8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C8F199CF9CA00D20CC8 /* CoreData.framework */; };
+		18D85C96199CF9CA00D20CC8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18D85C94199CF9CA00D20CC8 /* InfoPlist.strings */; };
+		18D85C98199CF9CA00D20CC8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D85C97199CF9CA00D20CC8 /* main.m */; };
+		18D85C9C199CF9CA00D20CC8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D85C9B199CF9CA00D20CC8 /* AppDelegate.m */; };
+		18D85C9F199CF9CA00D20CC8 /* taichungdiving.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18D85C9D199CF9CA00D20CC8 /* taichungdiving.xcdatamodeld */; };
+		18D85CA1199CF9CA00D20CC8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D85CA0199CF9CA00D20CC8 /* Images.xcassets */; };
+		18D85CA8199CF9CA00D20CC8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85CA7199CF9CA00D20CC8 /* XCTest.framework */; };
+		18D85CA9199CF9CA00D20CC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C89199CF9CA00D20CC8 /* Foundation.framework */; };
+		18D85CAA199CF9CA00D20CC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C8D199CF9CA00D20CC8 /* UIKit.framework */; };
+		18D85CAB199CF9CA00D20CC8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C8F199CF9CA00D20CC8 /* CoreData.framework */; };
+		18D85CB3199CF9CA00D20CC8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18D85CB1199CF9CA00D20CC8 /* InfoPlist.strings */; };
+		18D85CB5199CF9CA00D20CC8 /* taichungdivingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D85CB4199CF9CA00D20CC8 /* taichungdivingTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18D85CAC199CF9CA00D20CC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18D85C7E199CF9CA00D20CC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18D85C85199CF9CA00D20CC8;
+			remoteInfo = taichungdiving;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		18D85C86199CF9CA00D20CC8 /* taichungdiving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taichungdiving.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18D85C89199CF9CA00D20CC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		18D85C8B199CF9CA00D20CC8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		18D85C8D199CF9CA00D20CC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		18D85C8F199CF9CA00D20CC8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		18D85C93199CF9CA00D20CC8 /* taichungdiving-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "taichungdiving-Info.plist"; sourceTree = "<group>"; };
+		18D85C95199CF9CA00D20CC8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		18D85C97199CF9CA00D20CC8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18D85C99199CF9CA00D20CC8 /* taichungdiving-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "taichungdiving-Prefix.pch"; sourceTree = "<group>"; };
+		18D85C9A199CF9CA00D20CC8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		18D85C9B199CF9CA00D20CC8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		18D85C9E199CF9CA00D20CC8 /* taichungdiving.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = taichungdiving.xcdatamodel; sourceTree = "<group>"; };
+		18D85CA0199CF9CA00D20CC8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		18D85CA6199CF9CA00D20CC8 /* taichungdivingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = taichungdivingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18D85CA7199CF9CA00D20CC8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		18D85CB0199CF9CA00D20CC8 /* taichungdivingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "taichungdivingTests-Info.plist"; sourceTree = "<group>"; };
+		18D85CB2199CF9CA00D20CC8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		18D85CB4199CF9CA00D20CC8 /* taichungdivingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = taichungdivingTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18D85C83199CF9CA00D20CC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18D85C8C199CF9CA00D20CC8 /* CoreGraphics.framework in Frameworks */,
+				18D85C90199CF9CA00D20CC8 /* CoreData.framework in Frameworks */,
+				18D85C8E199CF9CA00D20CC8 /* UIKit.framework in Frameworks */,
+				18D85C8A199CF9CA00D20CC8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18D85CA3199CF9CA00D20CC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18D85CA8199CF9CA00D20CC8 /* XCTest.framework in Frameworks */,
+				18D85CAB199CF9CA00D20CC8 /* CoreData.framework in Frameworks */,
+				18D85CAA199CF9CA00D20CC8 /* UIKit.framework in Frameworks */,
+				18D85CA9199CF9CA00D20CC8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18D85C7D199CF9CA00D20CC8 = {
+			isa = PBXGroup;
+			children = (
+				18D85C91199CF9CA00D20CC8 /* taichungdiving */,
+				18D85CAE199CF9CA00D20CC8 /* taichungdivingTests */,
+				18D85C88199CF9CA00D20CC8 /* Frameworks */,
+				18D85C87199CF9CA00D20CC8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18D85C87199CF9CA00D20CC8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18D85C86199CF9CA00D20CC8 /* taichungdiving.app */,
+				18D85CA6199CF9CA00D20CC8 /* taichungdivingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18D85C88199CF9CA00D20CC8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18D85C89199CF9CA00D20CC8 /* Foundation.framework */,
+				18D85C8B199CF9CA00D20CC8 /* CoreGraphics.framework */,
+				18D85C8D199CF9CA00D20CC8 /* UIKit.framework */,
+				18D85C8F199CF9CA00D20CC8 /* CoreData.framework */,
+				18D85CA7199CF9CA00D20CC8 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18D85C91199CF9CA00D20CC8 /* taichungdiving */ = {
+			isa = PBXGroup;
+			children = (
+				18D85C9A199CF9CA00D20CC8 /* AppDelegate.h */,
+				18D85C9B199CF9CA00D20CC8 /* AppDelegate.m */,
+				18D85CA0199CF9CA00D20CC8 /* Images.xcassets */,
+				18D85C9D199CF9CA00D20CC8 /* taichungdiving.xcdatamodeld */,
+				18D85C92199CF9CA00D20CC8 /* Supporting Files */,
+			);
+			path = taichungdiving;
+			sourceTree = "<group>";
+		};
+		18D85C92199CF9CA00D20CC8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18D85C93199CF9CA00D20CC8 /* taichungdiving-Info.plist */,
+				18D85C94199CF9CA00D20CC8 /* InfoPlist.strings */,
+				18D85C97199CF9CA00D20CC8 /* main.m */,
+				18D85C99199CF9CA00D20CC8 /* taichungdiving-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18D85CAE199CF9CA00D20CC8 /* taichungdivingTests */ = {
+			isa = PBXGroup;
+			children = (
+				18D85CB4199CF9CA00D20CC8 /* taichungdivingTests.m */,
+				18D85CAF199CF9CA00D20CC8 /* Supporting Files */,
+			);
+			path = taichungdivingTests;
+			sourceTree = "<group>";
+		};
+		18D85CAF199CF9CA00D20CC8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18D85CB0199CF9CA00D20CC8 /* taichungdivingTests-Info.plist */,
+				18D85CB1199CF9CA00D20CC8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18D85C85199CF9CA00D20CC8 /* taichungdiving */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18D85CB8199CF9CA00D20CC8 /* Build configuration list for PBXNativeTarget "taichungdiving" */;
+			buildPhases = (
+				18D85C82199CF9CA00D20CC8 /* Sources */,
+				18D85C83199CF9CA00D20CC8 /* Frameworks */,
+				18D85C84199CF9CA00D20CC8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = taichungdiving;
+			productName = taichungdiving;
+			productReference = 18D85C86199CF9CA00D20CC8 /* taichungdiving.app */;
+			productType = "com.apple.product-type.application";
+		};
+		18D85CA5199CF9CA00D20CC8 /* taichungdivingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18D85CBB199CF9CA00D20CC8 /* Build configuration list for PBXNativeTarget "taichungdivingTests" */;
+			buildPhases = (
+				18D85CA2199CF9CA00D20CC8 /* Sources */,
+				18D85CA3199CF9CA00D20CC8 /* Frameworks */,
+				18D85CA4199CF9CA00D20CC8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18D85CAD199CF9CA00D20CC8 /* PBXTargetDependency */,
+			);
+			name = taichungdivingTests;
+			productName = taichungdivingTests;
+			productReference = 18D85CA6199CF9CA00D20CC8 /* taichungdivingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18D85C7E199CF9CA00D20CC8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = SamuelTeng;
+				TargetAttributes = {
+					18D85CA5199CF9CA00D20CC8 = {
+						TestTargetID = 18D85C85199CF9CA00D20CC8;
+					};
+				};
+			};
+			buildConfigurationList = 18D85C81199CF9CA00D20CC8 /* Build configuration list for PBXProject "taichungdiving" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 18D85C7D199CF9CA00D20CC8;
+			productRefGroup = 18D85C87199CF9CA00D20CC8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18D85C85199CF9CA00D20CC8 /* taichungdiving */,
+				18D85CA5199CF9CA00D20CC8 /* taichungdivingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18D85C84199CF9CA00D20CC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18D85C96199CF9CA00D20CC8 /* InfoPlist.strings in Resources */,
+				18D85CA1199CF9CA00D20CC8 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18D85CA4199CF9CA00D20CC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18D85CB3199CF9CA00D20CC8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18D85C82199CF9CA00D20CC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18D85C9C199CF9CA00D20CC8 /* AppDelegate.m in Sources */,
+				18D85C98199CF9CA00D20CC8 /* main.m in Sources */,
+				18D85C9F199CF9CA00D20CC8 /* taichungdiving.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18D85CA2199CF9CA00D20CC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18D85CB5199CF9CA00D20CC8 /* taichungdivingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18D85CAD199CF9CA00D20CC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18D85C85199CF9CA00D20CC8 /* taichungdiving */;
+			targetProxy = 18D85CAC199CF9CA00D20CC8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		18D85C94199CF9CA00D20CC8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18D85C95199CF9CA00D20CC8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		18D85CB1199CF9CA00D20CC8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18D85CB2199CF9CA00D20CC8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18D85CB6199CF9CA00D20CC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		18D85CB7199CF9CA00D20CC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18D85CB9199CF9CA00D20CC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "taichungdiving/taichungdiving-Prefix.pch";
+				INFOPLIST_FILE = "taichungdiving/taichungdiving-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		18D85CBA199CF9CA00D20CC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "taichungdiving/taichungdiving-Prefix.pch";
+				INFOPLIST_FILE = "taichungdiving/taichungdiving-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		18D85CBC199CF9CA00D20CC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/taichungdiving.app/taichungdiving";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "taichungdiving/taichungdiving-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "taichungdivingTests/taichungdivingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		18D85CBD199CF9CA00D20CC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/taichungdiving.app/taichungdiving";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "taichungdiving/taichungdiving-Prefix.pch";
+				INFOPLIST_FILE = "taichungdivingTests/taichungdivingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18D85C81199CF9CA00D20CC8 /* Build configuration list for PBXProject "taichungdiving" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18D85CB6199CF9CA00D20CC8 /* Debug */,
+				18D85CB7199CF9CA00D20CC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18D85CB8199CF9CA00D20CC8 /* Build configuration list for PBXNativeTarget "taichungdiving" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18D85CB9199CF9CA00D20CC8 /* Debug */,
+				18D85CBA199CF9CA00D20CC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		18D85CBB199CF9CA00D20CC8 /* Build configuration list for PBXNativeTarget "taichungdivingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18D85CBC199CF9CA00D20CC8 /* Debug */,
+				18D85CBD199CF9CA00D20CC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		18D85C9D199CF9CA00D20CC8 /* taichungdiving.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				18D85C9E199CF9CA00D20CC8 /* taichungdiving.xcdatamodel */,
+			);
+			currentVersion = 18D85C9E199CF9CA00D20CC8 /* taichungdiving.xcdatamodel */;
+			path = taichungdiving.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 18D85C7E199CF9CA00D20CC8 /* Project object */;
+}
