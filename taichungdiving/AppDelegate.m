@@ -8,16 +8,27 @@
 
 #import "AppDelegate.h"
 
+
 @implementation AppDelegate
+
+@synthesize navi;
+@synthesize mainViewController;
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     // Override point for customization after application launch.
+    
+    self.mainViewController = [[MainViewController alloc] init];
+    self.navi = [[UINavigationController alloc] initWithRootViewController:self.mainViewController];
+    self.window.rootViewController = self.navi;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

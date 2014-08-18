@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="DiveLog" representedClassName="DiveLog" syncable="YES">
+        <attribute name="current" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dive_time" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="end_pressure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gas_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="max_depth" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="site" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="start_pressure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="temperture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="visibility" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="waves" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DiveLog" positionX="-63" positionY="-18" width="128" height="210"/>
+    </elements>
 </model>

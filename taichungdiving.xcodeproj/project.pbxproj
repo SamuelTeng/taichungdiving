@@ -22,6 +22,8 @@
 		18D85CAB199CF9CA00D20CC8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C8F199CF9CA00D20CC8 /* CoreData.framework */; };
 		18D85CB3199CF9CA00D20CC8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18D85CB1199CF9CA00D20CC8 /* InfoPlist.strings */; };
 		18D85CB5199CF9CA00D20CC8 /* taichungdivingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D85CB4199CF9CA00D20CC8 /* taichungdivingTests.m */; };
+		57DCBB3B19A19C2200BFFCED /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DCBB3A19A19C2200BFFCED /* MainViewController.m */; };
+		57DCBB3E19A19C6B00BFFCED /* DiveLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DCBB3D19A19C6B00BFFCED /* DiveLog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,12 +49,16 @@
 		18D85C9A199CF9CA00D20CC8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18D85C9B199CF9CA00D20CC8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		18D85C9E199CF9CA00D20CC8 /* taichungdiving.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = taichungdiving.xcdatamodel; sourceTree = "<group>"; };
-		18D85CA0199CF9CA00D20CC8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		18D85CA0199CF9CA00D20CC8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = taichungdiving/Images.xcassets; sourceTree = "<group>"; };
 		18D85CA6199CF9CA00D20CC8 /* taichungdivingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = taichungdivingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D85CA7199CF9CA00D20CC8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		18D85CB0199CF9CA00D20CC8 /* taichungdivingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "taichungdivingTests-Info.plist"; sourceTree = "<group>"; };
 		18D85CB2199CF9CA00D20CC8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		18D85CB4199CF9CA00D20CC8 /* taichungdivingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = taichungdivingTests.m; sourceTree = "<group>"; };
+		57DCBB3919A19C2200BFFCED /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		57DCBB3A19A19C2200BFFCED /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		57DCBB3C19A19C6B00BFFCED /* DiveLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiveLog.h; sourceTree = "<group>"; };
+		57DCBB3D19A19C6B00BFFCED /* DiveLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiveLog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				18D85C91199CF9CA00D20CC8 /* taichungdiving */,
+				18D85CA0199CF9CA00D20CC8 /* Images.xcassets */,
 				18D85CAE199CF9CA00D20CC8 /* taichungdivingTests */,
 				18D85C88199CF9CA00D20CC8 /* Frameworks */,
 				18D85C87199CF9CA00D20CC8 /* Products */,
@@ -115,10 +122,8 @@
 		18D85C91199CF9CA00D20CC8 /* taichungdiving */ = {
 			isa = PBXGroup;
 			children = (
-				18D85C9A199CF9CA00D20CC8 /* AppDelegate.h */,
-				18D85C9B199CF9CA00D20CC8 /* AppDelegate.m */,
-				18D85CA0199CF9CA00D20CC8 /* Images.xcassets */,
-				18D85C9D199CF9CA00D20CC8 /* taichungdiving.xcdatamodeld */,
+				57DCBB4019A1DA7500BFFCED /* ViewController */,
+				57DCBB3F19A19C7300BFFCED /* Database */,
 				18D85C92199CF9CA00D20CC8 /* Supporting Files */,
 			);
 			path = taichungdiving;
@@ -127,6 +132,8 @@
 		18D85C92199CF9CA00D20CC8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				18D85C9A199CF9CA00D20CC8 /* AppDelegate.h */,
+				18D85C9B199CF9CA00D20CC8 /* AppDelegate.m */,
 				18D85C93199CF9CA00D20CC8 /* taichungdiving-Info.plist */,
 				18D85C94199CF9CA00D20CC8 /* InfoPlist.strings */,
 				18D85C97199CF9CA00D20CC8 /* main.m */,
@@ -151,6 +158,25 @@
 				18D85CB1199CF9CA00D20CC8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		57DCBB3F19A19C7300BFFCED /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				18D85C9D199CF9CA00D20CC8 /* taichungdiving.xcdatamodeld */,
+				57DCBB3C19A19C6B00BFFCED /* DiveLog.h */,
+				57DCBB3D19A19C6B00BFFCED /* DiveLog.m */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		57DCBB4019A1DA7500BFFCED /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				57DCBB3919A19C2200BFFCED /* MainViewController.h */,
+				57DCBB3A19A19C2200BFFCED /* MainViewController.m */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +277,8 @@
 				18D85C9C199CF9CA00D20CC8 /* AppDelegate.m in Sources */,
 				18D85C98199CF9CA00D20CC8 /* main.m in Sources */,
 				18D85C9F199CF9CA00D20CC8 /* taichungdiving.xcdatamodeld in Sources */,
+				57DCBB3E19A19C6B00BFFCED /* DiveLog.m in Sources */,
+				57DCBB3B19A19C2200BFFCED /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +336,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sheng Yuan Teng (57C9DK5UZJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sheng Yuan Teng (57C9DK5UZJ)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -346,7 +375,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sheng Yuan Teng (57C9DK5UZJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sheng Yuan Teng (57C9DK5UZJ)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -371,6 +401,8 @@
 				GCC_PREFIX_HEADER = "taichungdiving/taichungdiving-Prefix.pch";
 				INFOPLIST_FILE = "taichungdiving/taichungdiving-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "42355f46-d32d-4689-b41c-09ebf57ccf99";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "42355f46-d32d-4689-b41c-09ebf57ccf99";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -384,6 +416,7 @@
 				GCC_PREFIX_HEADER = "taichungdiving/taichungdiving-Prefix.pch";
 				INFOPLIST_FILE = "taichungdiving/taichungdiving-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "42355f46-d32d-4689-b41c-09ebf57ccf99";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -447,6 +480,7 @@
 				18D85CBA199CF9CA00D20CC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18D85CBB199CF9CA00D20CC8 /* Build configuration list for PBXNativeTarget "taichungdivingTests" */ = {
 			isa = XCConfigurationList;
@@ -455,6 +489,7 @@
 				18D85CBD199CF9CA00D20CC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
