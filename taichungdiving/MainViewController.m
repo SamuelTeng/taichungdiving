@@ -31,7 +31,7 @@
     [self.view addSubview:weatherButton];
     
     UIButton *announcementButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [announcementButton setTitle:@"公告" forState:UIControlStateNormal];
+    [announcementButton setTitle:@"最新公告" forState:UIControlStateNormal];
     [announcementButton setFrame:CGRectMake(self.view.center.x-84, self.view.center.y-40, 180, 60)];
     [self.view addSubview:announcementButton];
     
