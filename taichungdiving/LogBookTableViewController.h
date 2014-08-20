@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LogBookTableViewController : UITableViewController
+@interface LogBookTableViewController : UITableViewController<UIAlertViewDelegate,UITableViewDelegate,NSFetchedResultsControllerDelegate>
+
+@property (strong,nonatomic) NSFetchedResultsController *resultController;
+
+
 
 @end

@@ -7,31 +7,89 @@
 //
 
 #import "LogBookTableViewController.h"
+#import "MainViewController.h"
+#import "AppDelegate.h"
+#import "DiveLog.h"
 
-@interface LogBookTableViewController ()
+@interface LogBookTableViewController (){
+    
+    AppDelegate *delegate_logbook;
+    MainViewController *mainView;
+    DiveLog *diveLog;
+}
 
 @end
 
 @implementation LogBookTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+@synthesize resultController;
+
+-(void)fetchData
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:@"DiveLog" inManagedObjectContext:delegate_logbook.managedObjectContext]];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
+    NSArray *descriptors = [NSArray arrayWithObject:sortDescriptor];
+    [request setSortDescriptors:descriptors];
+    
+    NSError *error;
+    resultController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:delegate_logbook.managedObjectContext sectionNameKeyPath:@"date" cacheName:nil];
+    resultController.delegate = self;
+    if (![resultController performFetch:&error]) {
+        NSLog(@"error : %@", [error localizedFailureReason]);
     }
-    return self;
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            [delegate_logbook.navi pushViewController:mainView animated:NO];
+            break;
+            
+            
+        default:
+            break;
+    }
+}
+
+
+-(void)loadView
+{
+    [super loadView];
+    delegate_logbook = [[UIApplication sharedApplication] delegate];
+    mainView = [[MainViewController alloc] init];
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self fetchData];
     
+    if (! resultController.fetchedObjects.count) {
+        UIAlertView *noLog = [[UIAlertView alloc] initWithTitle:@"無日誌記錄" message:@"沒有日誌記錄，請按下\"新增\"新增一筆日誌或\"取消\"回到主頁面" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"新增", nil];
+        [noLog show];
+    }
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    int count = resultController.fetchedObjects.count;
+    NSString *countOfLogs = [NSString stringWithFormat:@"目前支數:%i",count];
+    self.navigationItem.title = countOfLogs;
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,16 +102,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
-    return 0;
+    return [[resultController sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
-    return 0;
+    return [[[resultController sections] objectAtIndex:section]numberOfObjects];
 }
 
 /*

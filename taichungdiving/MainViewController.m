@@ -8,8 +8,13 @@
 
 #import "MainViewController.h"
 #import "AppDelegate.h"
+#import "LogBookTableViewController.h"
 
-@interface MainViewController ()
+@interface MainViewController (){
+    
+    AppDelegate *delegate;
+    LogBookTableViewController *logBook;
+}
 
 @end
 
@@ -19,10 +24,13 @@
 {
     [super loadView];
     
+    delegate = [[UIApplication sharedApplication] delegate];
+    logBook = [[LogBookTableViewController alloc] init];
     
     UIButton *logBookButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [logBookButton setTitle:@"潛水日誌" forState:UIControlStateNormal];
     [logBookButton setFrame:CGRectMake(self.view.center.x-84, self.view.center.y-200,180, 60)];
+    [logBookButton addTarget:self action:@selector(fowardToLogBook:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:logBookButton];
     
     UIButton *weatherButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -42,6 +50,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+-(void)fowardToLogBook:(id)sender
+{
+    [delegate.navi pushViewController:logBook animated:NO];
 }
 
 - (void)didReceiveMemoryWarning
