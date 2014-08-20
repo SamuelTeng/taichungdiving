@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1818ADC919A4DBB500EE1327 /* Forecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1818ADC819A4DBB500EE1327 /* Forecast.m */; };
+		1818ADCC19A4DC2700EE1327 /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1818ADCB19A4DC2700EE1327 /* ForecastViewController.m */; };
 		18D85C8A199CF9CA00D20CC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C89199CF9CA00D20CC8 /* Foundation.framework */; };
 		18D85C8C199CF9CA00D20CC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C8B199CF9CA00D20CC8 /* CoreGraphics.framework */; };
 		18D85C8E199CF9CA00D20CC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C8D199CF9CA00D20CC8 /* UIKit.framework */; };
@@ -38,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1818ADC719A4DBB500EE1327 /* Forecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Forecast.h; sourceTree = "<group>"; };
+		1818ADC819A4DBB500EE1327 /* Forecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Forecast.m; sourceTree = "<group>"; };
+		1818ADCA19A4DC2700EE1327 /* ForecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastViewController.h; sourceTree = "<group>"; };
+		1818ADCB19A4DC2700EE1327 /* ForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastViewController.m; sourceTree = "<group>"; };
 		18D85C86199CF9CA00D20CC8 /* taichungdiving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taichungdiving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D85C89199CF9CA00D20CC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18D85C8B199CF9CA00D20CC8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -169,6 +175,8 @@
 				18D85C9D199CF9CA00D20CC8 /* taichungdiving.xcdatamodeld */,
 				57DCBB3C19A19C6B00BFFCED /* DiveLog.h */,
 				57DCBB3D19A19C6B00BFFCED /* DiveLog.m */,
+				1818ADC719A4DBB500EE1327 /* Forecast.h */,
+				1818ADC819A4DBB500EE1327 /* Forecast.m */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -180,6 +188,8 @@
 				57DCBB3A19A19C2200BFFCED /* MainViewController.m */,
 				577D179219A2F5FB00370BC3 /* LogBookTableViewController.h */,
 				577D179319A2F5FB00370BC3 /* LogBookTableViewController.m */,
+				1818ADCA19A4DC2700EE1327 /* ForecastViewController.h */,
+				1818ADCB19A4DC2700EE1327 /* ForecastViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -280,8 +290,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D85C9C199CF9CA00D20CC8 /* AppDelegate.m in Sources */,
+				1818ADCC19A4DC2700EE1327 /* ForecastViewController.m in Sources */,
 				18D85C98199CF9CA00D20CC8 /* main.m in Sources */,
 				18D85C9F199CF9CA00D20CC8 /* taichungdiving.xcdatamodeld in Sources */,
+				1818ADC919A4DBB500EE1327 /* Forecast.m in Sources */,
 				577D179419A2F5FB00370BC3 /* LogBookTableViewController.m in Sources */,
 				57DCBB3E19A19C6B00BFFCED /* DiveLog.m in Sources */,
 				57DCBB3B19A19C2200BFFCED /* MainViewController.m in Sources */,

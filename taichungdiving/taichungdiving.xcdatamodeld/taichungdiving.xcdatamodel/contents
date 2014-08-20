@@ -13,7 +13,17 @@
         <attribute name="visibility" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="waves" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Forecast" representedClassName="Forecast" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wave_height" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wave_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weather_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wind_dir" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wind_speed" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="DiveLog" positionX="-63" positionY="-18" width="128" height="210"/>
+        <element name="Forecast" positionX="-63" positionY="63" width="128" height="150"/>
     </elements>
 </model>
