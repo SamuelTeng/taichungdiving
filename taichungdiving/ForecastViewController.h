@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Forecast.h"
+#import "MainViewController.h"
+#import "AppDelegate.h"
 
-@interface ForecastViewController : UIViewController
+
+
+
+@interface ForecastViewController : UIViewController<NSXMLParserDelegate,NSURLConnectionDataDelegate>
+
+@property (nonatomic,strong) Forecast *forecast;
+
+@property (readonly , strong ,nonatomic) NSManagedObjectContext *managedObjectContext;
+
 
 @end

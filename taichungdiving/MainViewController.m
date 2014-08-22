@@ -9,11 +9,13 @@
 #import "MainViewController.h"
 #import "AppDelegate.h"
 #import "LogBookTableViewController.h"
+#import "ForecastViewController.h"
 
 @interface MainViewController (){
     
     AppDelegate *delegate;
     LogBookTableViewController *logBook;
+    ForecastViewController *forecastView;
 }
 
 @end
@@ -26,6 +28,7 @@
     
     delegate = [[UIApplication sharedApplication] delegate];
     logBook = [[LogBookTableViewController alloc] init];
+    forecastView = [[ForecastViewController alloc] init];
     
     UIButton *logBookButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [logBookButton setTitle:@"潛水日誌" forState:UIControlStateNormal];
@@ -36,6 +39,7 @@
     UIButton *weatherButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [weatherButton setTitle:@"海面天氣" forState:UIControlStateNormal];
     [weatherButton setFrame:CGRectMake(self.view.center.x-84, self.view.center.y-120, 180, 60)];
+    [weatherButton addTarget:self action:@selector(fowardToForecast:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:weatherButton];
     
     UIButton *announcementButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -55,6 +59,11 @@
 -(void)fowardToLogBook:(id)sender
 {
     [delegate.navi pushViewController:logBook animated:NO];
+}
+
+-(void)fowardToForecast:(id)sender
+{
+    [delegate.navi pushViewController:forecastView animated:NO];
 }
 
 - (void)didReceiveMemoryWarning
