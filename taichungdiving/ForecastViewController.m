@@ -8,6 +8,7 @@
 
 #import "ForecastViewController.h"
 #import "Record.h"
+#import "AppDelegate.h"
 
 static NSString *linkPosition=@"http://opendata.cwb.gov.tw/opendata/MFC/F-A0012-001.xml";
 static NSString *kAreaForecastData = @"AreaForecastData";
@@ -37,6 +38,7 @@ static NSString *kType = @"Type";
     NSString *tempString;
     NSMutableArray *records;
     Record *record;
+    AppDelegate *delegate;
 }
 
 @synthesize forecast;
@@ -46,6 +48,11 @@ static NSString *kType = @"Type";
 -(void)loadView
 {
     [super loadView];
+    delegate = [[UIApplication sharedApplication] delegate];
+    
+    /*never forget declare NSManagedObjectContext*/
+    managedObjectContext = [delegate managedObjectContext];
+    
 }
 
 - (void)viewDidLoad
@@ -149,11 +156,28 @@ static NSString *kType = @"Type";
          
          Record *theRecord = [records objectAtIndex:i];
          
+         forecast = (Forecast *)[NSEntityDescription insertNewObjectForEntityForName:@"Forecast" inManagedObjectContext:managedObjectContext];
+         
+         forecast.area = theRecord.area_ForecastData;
+         forecast.time = theRecord.ti_me;
+         forecast.weather_description = theRecord.descrip_tion;
+         forecast.wind_dir = theRecord.direc_tion;
+         forecast.wind_speed = theRecord.spe_ed;
+         forecast.wave_height = theRecord.hei_ght;
+         forecast.wave_type = theRecord.ty_pe;
+         
+         NSError *error;
+         if (![managedObjectContext save:&error]) {
+             NSLog(@"error:%@", [error localizedFailureReason]);
+         }
+         
          NSLog(@"地點：%@",theRecord.area_ForecastData);
          NSLog(@"時間：%@", theRecord.ti_me);
      }
      
 }
+
+
 
 -(NSString *)realTime:(NSString *)date
 {
