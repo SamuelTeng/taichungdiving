@@ -41,18 +41,25 @@ static NSString *kType = @"Type";
     AppDelegate *delegate;
 }
 
-@synthesize forecast;
-@synthesize managedObjectContext;
-
+//@synthesize forecast;
+//@synthesize managedObjectContext;
+@synthesize map,annotation,latitude,lontitude,annotations;
 
 -(void)loadView
 {
     [super loadView];
     delegate = [[UIApplication sharedApplication] delegate];
     
-    /*never forget declare NSManagedObjectContext*/
-    managedObjectContext = [delegate managedObjectContext];
+    map = [[MKMapView alloc] initWithFrame:delegate.window.frame];
+    [self.view addSubview: map];
     
+    latitude = [[NSArray alloc] initWithObjects:@"25.7088968", nil];
+    lontitude = [[NSArray alloc] initWithObjects:@"123.4515834", nil];
+    
+    /*cease the usage of core data in this class*/
+    /*never forget declare NSManagedObjectContext
+    managedObjectContext = [delegate managedObjectContext];
+    */
 }
 
 - (void)viewDidLoad
@@ -60,6 +67,20 @@ static NSString *kType = @"Type";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"更新" style:UIBarButtonItemStyleBordered target:self action:@selector(reload_data)];
+    
+    
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if ([records count] != 0){
+        
+        [self addAnnotations];
+        
+    }
 }
 
 -(void)loadData
@@ -71,6 +92,7 @@ static NSString *kType = @"Type";
 -(void)reload_data
 {
     [self loadData];
+    
 }
 //NSURLConnectionDataDelegate
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -156,6 +178,8 @@ static NSString *kType = @"Type";
          
          Record *theRecord = [records objectAtIndex:i];
          
+         /* too complicated for daily updating forecast
+          
          forecast = (Forecast *)[NSEntityDescription insertNewObjectForEntityForName:@"Forecast" inManagedObjectContext:managedObjectContext];
          
          forecast.area = theRecord.area_ForecastData;
@@ -170,11 +194,10 @@ static NSString *kType = @"Type";
          if (![managedObjectContext save:&error]) {
              NSLog(@"error:%@", [error localizedFailureReason]);
          }
+         */
          
-         NSLog(@"地點：%@",theRecord.area_ForecastData);
-         NSLog(@"時間：%@", theRecord.ti_me);
      }
-     
+    
 }
 
 
@@ -190,6 +213,85 @@ static NSString *kType = @"Type";
     NSString *forcastStartedDate = [dateFormatter stringFromDate:actualDate];
     return forcastStartedDate;
 }
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    
+}
+
+-(void)addAnnotations
+{
+    CLLocationCoordinate2D forecastCoordinate;
+    annotation = [[ForecastAnnotation alloc] init];
+    
+    CLLocationDegrees _latitude = [[latitude objectAtIndex:0]doubleValue];
+    CLLocationDegrees _lontitude = [[lontitude objectAtIndex:0]doubleValue];
+    
+    forecastCoordinate.latitude = _latitude;
+    forecastCoordinate.longitude = _lontitude;
+    
+    annotation._coordinate = forecastCoordinate;
+    
+    if ([records count] != 0) {
+        NSArray *recordArr = [records copy];
+        Record *rEcOrD = recordArr[0];
+        annotation.area = rEcOrD.area_ForecastData;
+        annotation.time = rEcOrD.ti_me;
+    }
+    
+    
+    [map addAnnotation:annotation];
+    [annotations addObject:annotation];
+    
+    /*make all annotations visible when view load*/
+    MKMapRect focus = MKMapRectNull;
+    for ( annotation in annotations) {
+        MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
+        MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0, 0);
+        
+        if (MKMapRectIsNull(focus)) {
+            focus = pointRect;
+        }else{
+            focus = MKMapRectUnion(focus, pointRect);
+        }
+    }
+    
+    map.visibleMapRect = focus;
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id < MKAnnotation >)aAnnotation
+{
+    if ([aAnnotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
+    
+    if ([aAnnotation isKindOfClass:[ForecastAnnotation class]]) {
+        static NSString *forecastIdentifier = @"forecastIdentifier";
+        MKPinAnnotationView *forecastPin = (MKPinAnnotationView *)[map dequeueReusableAnnotationViewWithIdentifier:forecastIdentifier];
+        
+        if (forecastPin == nil) {
+            MKPinAnnotationView *customView = [[MKPinAnnotationView alloc] initWithAnnotation:aAnnotation reuseIdentifier:forecastIdentifier];
+            customView.pinColor = MKPinAnnotationColorPurple;
+            customView.animatesDrop = NO;
+            customView.canShowCallout = YES;
+            
+            UIButton *showLog = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            
+            customView.rightCalloutAccessoryView = showLog;
+            return customView;
+            
+        }else{
+            
+            forecastPin.annotation = aAnnotation;
+        }
+        
+        return forecastPin;
+    }
+    
+    return nil;
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {

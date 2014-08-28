@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1818ADC919A4DBB500EE1327 /* Forecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1818ADC819A4DBB500EE1327 /* Forecast.m */; };
 		1818ADCC19A4DC2700EE1327 /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1818ADCB19A4DC2700EE1327 /* ForecastViewController.m */; };
 		18D85C8A199CF9CA00D20CC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C89199CF9CA00D20CC8 /* Foundation.framework */; };
 		18D85C8C199CF9CA00D20CC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C8B199CF9CA00D20CC8 /* CoreGraphics.framework */; };
@@ -26,6 +25,8 @@
 		18D85CB5199CF9CA00D20CC8 /* taichungdivingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D85CB4199CF9CA00D20CC8 /* taichungdivingTests.m */; };
 		577D179419A2F5FB00370BC3 /* LogBookTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 577D179319A2F5FB00370BC3 /* LogBookTableViewController.m */; };
 		579090ED19A71E1E00FABBF5 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 579090EC19A71E1E00FABBF5 /* Record.m */; };
+		57A3D5F219AED8AB0025FEEB /* ForecastAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3D5F119AED8AB0025FEEB /* ForecastAnnotation.m */; };
+		57A3D5F419AED8E20025FEEB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3D5F319AED8E20025FEEB /* MapKit.framework */; };
 		57DCBB3B19A19C2200BFFCED /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DCBB3A19A19C2200BFFCED /* MainViewController.m */; };
 		57DCBB3E19A19C6B00BFFCED /* DiveLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DCBB3D19A19C6B00BFFCED /* DiveLog.m */; };
 /* End PBXBuildFile section */
@@ -41,8 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1818ADC719A4DBB500EE1327 /* Forecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Forecast.h; sourceTree = "<group>"; };
-		1818ADC819A4DBB500EE1327 /* Forecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Forecast.m; sourceTree = "<group>"; };
 		1818ADCA19A4DC2700EE1327 /* ForecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastViewController.h; sourceTree = "<group>"; };
 		1818ADCB19A4DC2700EE1327 /* ForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastViewController.m; sourceTree = "<group>"; };
 		18D85C86199CF9CA00D20CC8 /* taichungdiving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taichungdiving.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +66,9 @@
 		577D179319A2F5FB00370BC3 /* LogBookTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogBookTableViewController.m; sourceTree = "<group>"; };
 		579090EB19A71E1E00FABBF5 /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
 		579090EC19A71E1E00FABBF5 /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
+		57A3D5F019AED8AB0025FEEB /* ForecastAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastAnnotation.h; sourceTree = "<group>"; };
+		57A3D5F119AED8AB0025FEEB /* ForecastAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastAnnotation.m; sourceTree = "<group>"; };
+		57A3D5F319AED8E20025FEEB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		57DCBB3919A19C2200BFFCED /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		57DCBB3A19A19C2200BFFCED /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		57DCBB3C19A19C6B00BFFCED /* DiveLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiveLog.h; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57A3D5F419AED8E20025FEEB /* MapKit.framework in Frameworks */,
 				18D85C8C199CF9CA00D20CC8 /* CoreGraphics.framework in Frameworks */,
 				18D85C90199CF9CA00D20CC8 /* CoreData.framework in Frameworks */,
 				18D85C8E199CF9CA00D20CC8 /* UIKit.framework in Frameworks */,
@@ -122,6 +125,7 @@
 		18D85C88199CF9CA00D20CC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57A3D5F319AED8E20025FEEB /* MapKit.framework */,
 				18D85C89199CF9CA00D20CC8 /* Foundation.framework */,
 				18D85C8B199CF9CA00D20CC8 /* CoreGraphics.framework */,
 				18D85C8D199CF9CA00D20CC8 /* UIKit.framework */,
@@ -152,6 +156,8 @@
 				18D85C99199CF9CA00D20CC8 /* taichungdiving-Prefix.pch */,
 				579090EB19A71E1E00FABBF5 /* Record.h */,
 				579090EC19A71E1E00FABBF5 /* Record.m */,
+				57A3D5F019AED8AB0025FEEB /* ForecastAnnotation.h */,
+				57A3D5F119AED8AB0025FEEB /* ForecastAnnotation.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -180,8 +186,6 @@
 				18D85C9D199CF9CA00D20CC8 /* taichungdiving.xcdatamodeld */,
 				57DCBB3C19A19C6B00BFFCED /* DiveLog.h */,
 				57DCBB3D19A19C6B00BFFCED /* DiveLog.m */,
-				1818ADC719A4DBB500EE1327 /* Forecast.h */,
-				1818ADC819A4DBB500EE1327 /* Forecast.m */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -297,9 +301,9 @@
 				18D85C9C199CF9CA00D20CC8 /* AppDelegate.m in Sources */,
 				579090ED19A71E1E00FABBF5 /* Record.m in Sources */,
 				1818ADCC19A4DC2700EE1327 /* ForecastViewController.m in Sources */,
+				57A3D5F219AED8AB0025FEEB /* ForecastAnnotation.m in Sources */,
 				18D85C98199CF9CA00D20CC8 /* main.m in Sources */,
 				18D85C9F199CF9CA00D20CC8 /* taichungdiving.xcdatamodeld in Sources */,
-				1818ADC919A4DBB500EE1327 /* Forecast.m in Sources */,
 				577D179419A2F5FB00370BC3 /* LogBookTableViewController.m in Sources */,
 				57DCBB3E19A19C6B00BFFCED /* DiveLog.m in Sources */,
 				57DCBB3B19A19C2200BFFCED /* MainViewController.m in Sources */,
