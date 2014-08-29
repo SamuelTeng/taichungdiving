@@ -43,7 +43,7 @@ static NSString *kType = @"Type";
 
 //@synthesize forecast;
 //@synthesize managedObjectContext;
-@synthesize map,annotation,latitude,lontitude,annotations;
+@synthesize map,annotation,latitude,lontitude,annotations,fishingPlatform1,fishingPlatform2,fishingPlatform3,keelung1,keelung2,keelung3,yilan1,yilan2,yilan3,hsinchu1,hsinchu2,hsinchu3,penhu1,penhu2,penhu3,lukang1,lukang2,lukang3,dongshih1,dongshih2,dongshih3,anping1,anping2,anping3,kaohsiung1,kaohsiung2,kaohsiung3,fangliao1,fangliao2,fangliao3,gooseNose1,gooseNose2,gooseNose3,success1,success2,success3,taitung1,taitung2,taitung3,greenIsland1,greenIsland2,greenIsland3,huallen1,huallen2,huallen3;
 
 -(void)loadView
 {
@@ -52,9 +52,9 @@ static NSString *kType = @"Type";
     
     map = [[MKMapView alloc] initWithFrame:delegate.window.frame];
     [self.view addSubview: map];
-    
-    latitude = [[NSArray alloc] initWithObjects:@"25.7088968", nil];
-    lontitude = [[NSArray alloc] initWithObjects:@"123.4515834", nil];
+    /*坐標依序：釣魚台海面,彭佳嶼基隆海面,宜蘭蘇澳沿海,新竹鹿港沿海,澎湖海面,鹿港東石沿海,東石安平沿海,安平高雄沿海,高雄枋寮沿海,枋寮恆春沿海,鵝鑾鼻沿海,成功臺東沿海,臺東大武沿海,綠島蘭嶼海面,花蓮沿海*/
+    latitude = [[NSArray alloc] initWithObjects:@"25.7088968",@"25.6294957",@"24.7528147",@"24.660962",@"23.486661",@"23.855258",@"23.105262",@"22.681195",@"22.472674",@"22.223772",@"21.909296",@"22.960738"@"22.570753",@"22.361157",@"23.563882", nil];
+    lontitude = [[NSArray alloc] initWithObjects:@"123.4515834",@"122.0713482",@"122.0063745",@"120.536266"@"119.592472",@"120.155985",@"120.018149",@"120.200045",@"120.354712",@"120.646707",@"120.837509",@"121.324131",@"121.025513",@"121.518353",@"121.556805", nil];
     
     /*cease the usage of core data in this class*/
     /*never forget declare NSManagedObjectContext
@@ -173,12 +173,13 @@ static NSString *kType = @"Type";
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser
 {
-    
+    [self dataSorting];
+    /*
      for (int i=0; i<[records count]; i++) {
          
          Record *theRecord = [records objectAtIndex:i];
          
-         /* too complicated for daily updating forecast
+          too complicated for daily updating forecast
           
          forecast = (Forecast *)[NSEntityDescription insertNewObjectForEntityForName:@"Forecast" inManagedObjectContext:managedObjectContext];
          
@@ -194,10 +195,10 @@ static NSString *kType = @"Type";
          if (![managedObjectContext save:&error]) {
              NSLog(@"error:%@", [error localizedFailureReason]);
          }
-         */
+     
          
      }
-    
+     */
 }
 
 
@@ -222,26 +223,43 @@ static NSString *kType = @"Type";
 -(void)addAnnotations
 {
     CLLocationCoordinate2D forecastCoordinate;
-    annotation = [[ForecastAnnotation alloc] init];
     
-    CLLocationDegrees _latitude = [[latitude objectAtIndex:0]doubleValue];
-    CLLocationDegrees _lontitude = [[lontitude objectAtIndex:0]doubleValue];
     
-    forecastCoordinate.latitude = _latitude;
-    forecastCoordinate.longitude = _lontitude;
+    for (int i = 0; i<latitude.count; i++) {
+        annotation = [[ForecastAnnotation alloc] init];
+        CLLocationDegrees _latitude = [[latitude objectAtIndex:i]doubleValue];
+        CLLocationDegrees _lontitude = [[lontitude objectAtIndex:i]doubleValue];
+        
+        forecastCoordinate.latitude = _latitude;
+        forecastCoordinate.longitude = _lontitude;
+        
+        annotation._coordinate = forecastCoordinate;
+        
+        switch (i) {
+            case 0:
+                annotation.area = fishingPlatform1.area_ForecastData;
+                annotation.time = [NSString stringWithFormat:@"%@~%@",fishingPlatform1.ti_me,fishingPlatform3.ti_me];
+                break;
+                
+            default:
+                break;
+        }
+        
+        [map addAnnotation:annotation];
+        [annotations addObject:annotation];
+    }
     
-    annotation._coordinate = forecastCoordinate;
     
+    /*
     if ([records count] != 0) {
         NSArray *recordArr = [records copy];
         Record *rEcOrD = recordArr[0];
         annotation.area = rEcOrD.area_ForecastData;
         annotation.time = rEcOrD.ti_me;
     }
+    */
     
     
-    [map addAnnotation:annotation];
-    [annotations addObject:annotation];
     
     /*make all annotations visible when view load*/
     MKMapRect focus = MKMapRectNull;
@@ -291,7 +309,69 @@ static NSString *kType = @"Type";
     return nil;
 }
 
-
+-(void)dataSorting
+{
+    fishingPlatform1 = [records objectAtIndex:0];
+    fishingPlatform2 = [records objectAtIndex:1];
+    fishingPlatform3 = [records objectAtIndex:2];
+    
+    keelung1 = [records objectAtIndex:3];
+    keelung2 = [records objectAtIndex:4];
+    keelung3 = [records objectAtIndex:5];
+    
+    yilan1 = [records objectAtIndex:6];
+    yilan2 = [records objectAtIndex:7];
+    yilan3 = [records objectAtIndex:8];
+    
+    hsinchu1 = [records objectAtIndex:9];
+    hsinchu2 = [records objectAtIndex:10];
+    hsinchu3 = [records objectAtIndex:11];
+    
+    penhu1 = [records objectAtIndex:12];
+    penhu2 = [records objectAtIndex:13];
+    penhu3 = [records objectAtIndex:14];
+    
+    lukang1 = [records objectAtIndex:15];
+    lukang2 = [records objectAtIndex:16];
+    lukang3 = [records objectAtIndex:17];
+    
+    dongshih1 = [records objectAtIndex:18];
+    dongshih2 = [records objectAtIndex:19];
+    dongshih3 = [records objectAtIndex:20];
+    
+    anping1 = [records objectAtIndex:21];
+    anping2 = [records objectAtIndex:22];
+    anping3 = [records objectAtIndex:23];
+    
+    kaohsiung1 = [records objectAtIndex:24];
+    kaohsiung2 = [records objectAtIndex:25];
+    kaohsiung3 = [records objectAtIndex:26];
+    
+    fangliao1 = [records objectAtIndex:27];
+    fangliao2 = [records objectAtIndex:28];
+    fangliao3 = [records objectAtIndex:29];
+    
+    gooseNose1 = [records objectAtIndex:30];
+    gooseNose2 = [records objectAtIndex:31];
+    gooseNose3 = [records objectAtIndex:32];
+    
+    success1 = [records objectAtIndex:33];
+    success2 = [records objectAtIndex:34];
+    success3 = [records objectAtIndex:35];
+    
+    taitung1 = [records objectAtIndex:36];
+    taitung2 = [records objectAtIndex:37];
+    taitung3 = [records objectAtIndex:38];
+    
+    greenIsland1 = [records objectAtIndex:39];
+    greenIsland2 = [records objectAtIndex:40];
+    greenIsland3 = [records objectAtIndex:41];
+    
+    huallen1 = [records objectAtIndex:42];
+    huallen2 = [records objectAtIndex:43];
+    huallen3 = [records objectAtIndex:44];
+    
+}
 
 - (void)didReceiveMemoryWarning
 {
