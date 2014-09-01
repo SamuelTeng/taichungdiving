@@ -53,9 +53,9 @@ static NSString *kType = @"Type";
     map = [[MKMapView alloc] initWithFrame:delegate.window.frame];
     [self.view addSubview: map];
     /*坐標依序：釣魚台海面,彭佳嶼基隆海面,宜蘭蘇澳沿海,新竹鹿港沿海,澎湖海面,鹿港東石沿海,東石安平沿海,安平高雄沿海,高雄枋寮沿海,枋寮恆春沿海,鵝鑾鼻沿海,成功臺東沿海,臺東大武沿海,綠島蘭嶼海面,花蓮沿海*/
-    latitude = [[NSArray alloc] initWithObjects:@"25.7088968",@"25.6294957",@"24.7528147",@"24.660962",@"23.486661",@"23.855258",@"23.105262",@"22.681195",@"22.472674",@"22.223772",@"21.909296",@"22.960738"@"22.570753",@"22.361157",@"23.563882", nil];
-    lontitude = [[NSArray alloc] initWithObjects:@"123.4515834",@"122.0713482",@"122.0063745",@"120.536266"@"119.592472",@"120.155985",@"120.018149",@"120.200045",@"120.354712",@"120.646707",@"120.837509",@"121.324131",@"121.025513",@"121.518353",@"121.556805", nil];
-    
+    latitude = [NSArray arrayWithObjects:@"25.7088968",@"25.6294957",@"24.7528147",@"24.660962",@"23.486661",@"23.855258",@"23.105262",@"22.681195",@"22.472674",@"22.2799039",@"21.932397",@"22.833059",@"22.696872",@"22.364651",@"23.972974", nil];
+    lontitude = [NSArray arrayWithObjects:@"123.4515834",@"122.0713482",@"122.0063745",@"120.536266",@"119.592472",@"120.155985",@"120.018149",@"120.200045",@"120.354712",@"120.593212",@"120.790623",@"121.227040",@"121.094564",@"121.521400",@"121.636070", nil];
+    NSLog(@"No.of annotations:%i+%i", latitude.count,lontitude.count);
     /*cease the usage of core data in this class*/
     /*never forget declare NSManagedObjectContext
     managedObjectContext = [delegate managedObjectContext];
@@ -240,7 +240,63 @@ static NSString *kType = @"Type";
                 annotation.area = fishingPlatform1.area_ForecastData;
                 annotation.time = [NSString stringWithFormat:@"%@~%@",fishingPlatform1.ti_me,fishingPlatform3.ti_me];
                 break;
-                
+            case 1:
+                annotation.area = keelung1.area_ForecastData;
+                annotation.time = [NSString stringWithFormat:@"%@~%@",keelung1.ti_me,keelung3.ti_me];
+                break;
+            case 2:
+                annotation.area = yilan1.area_ForecastData;
+                annotation.time = [NSString stringWithFormat:@"%@~%@",yilan1.ti_me,yilan3.ti_me];
+                break;
+            case 3:
+                annotation.area = hsinchu1.area_ForecastData;
+                annotation.time = [NSString stringWithFormat:@"%@~%@",hsinchu1.ti_me,hsinchu3.ti_me];
+                break;
+            case 4:
+                annotation.area = penhu1.area_ForecastData;
+                annotation.time = [NSString stringWithFormat:@"%@~%@",penhu1.ti_me,penhu3.ti_me];
+                break;
+            case 5:
+                annotation.area = lukang1.area_ForecastData;
+                annotation.time = [NSString stringWithFormat:@"%@~%@",lukang1.ti_me,lukang3.ti_me];
+                break;
+            case 6:
+                annotation.area = dongshih1.area_ForecastData;
+                annotation.time = [NSString stringWithFormat:@"%@~%@",dongshih1.ti_me,dongshih3.ti_me];
+                break;
+            case 7:
+                annotation.area = anping1.area_ForecastData;
+                annotation.time = [NSString stringWithFormat:@"%@~%@",anping1.ti_me,anping3.ti_me];
+                break;
+            case 8:
+                annotation.area = kaohsiung1.area_ForecastData;
+                annotation.time = [NSString stringWithFormat:@"%@~%@",kaohsiung1.ti_me,kaohsiung3.ti_me];
+                break;
+            case 9:
+                annotation.area = fangliao1.area_ForecastData;
+                annotation.time = [NSString stringWithFormat:@"%@~%@",fangliao1.ti_me,fangliao3.ti_me];
+                break;
+            case 10:
+                annotation.area = gooseNose1.area_ForecastData;
+                annotation.time = [NSString stringWithFormat:@"%@~%@",gooseNose1.ti_me,gooseNose3.ti_me];
+                break;
+            case 11:
+                annotation.area = success1.area_ForecastData;
+                annotation.time = [NSString stringWithFormat:@"%@~%@",success1.ti_me,success3.ti_me];
+                break;
+            case 12:
+                annotation.area = taitung1.area_ForecastData;
+                annotation.time = [NSString stringWithFormat:@"%@~%@",taitung1.ti_me,taitung3.ti_me];
+                break;
+            case 13:
+                annotation.area = greenIsland1.area_ForecastData;
+                annotation.time = [NSString stringWithFormat:@"%@~%@",greenIsland1.ti_me,greenIsland3.ti_me];
+                break;
+            case 14:
+                annotation.area = huallen1.area_ForecastData;
+                annotation.time = [NSString stringWithFormat:@"%@~%@",huallen1.ti_me,huallen3.ti_me];
+                break;
+        
             default:
                 break;
         }
