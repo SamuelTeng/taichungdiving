@@ -9,6 +9,7 @@
 #import "ForecastViewController.h"
 #import "Record.h"
 #import "AppDelegate.h"
+#import "ForecastDetailViewController.h"
 
 static NSString *linkPosition=@"http://opendata.cwb.gov.tw/opendata/MFC/F-A0012-001.xml";
 static NSString *kAreaForecastData = @"AreaForecastData";
@@ -52,6 +53,7 @@ static NSString *kType = @"Type";
     
     map = [[MKMapView alloc] initWithFrame:delegate.window.frame];
     [self.view addSubview: map];
+    map.delegate = self;
     /*坐標依序：釣魚台海面,彭佳嶼基隆海面,宜蘭蘇澳沿海,新竹鹿港沿海,澎湖海面,鹿港東石沿海,東石安平沿海,安平高雄沿海,高雄枋寮沿海,枋寮恆春沿海,鵝鑾鼻沿海,成功臺東沿海,臺東大武沿海,綠島蘭嶼海面,花蓮沿海*/
     latitude = [NSArray arrayWithObjects:@"25.7088968",@"25.6294957",@"24.7528147",@"24.660962",@"23.486661",@"23.855258",@"23.105262",@"22.681195",@"22.472674",@"22.2799039",@"21.932397",@"22.833059",@"22.696872",@"22.364651",@"23.972974", nil];
     lontitude = [NSArray arrayWithObjects:@"123.4515834",@"122.0713482",@"122.0063745",@"120.536266",@"119.592472",@"120.155985",@"120.018149",@"120.200045",@"120.354712",@"120.593212",@"120.790623",@"121.227040",@"121.094564",@"121.521400",@"121.636070", nil];
@@ -75,6 +77,8 @@ static NSString *kType = @"Type";
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [self reload_data];
     
     if ([records count] != 0){
         
@@ -217,7 +221,10 @@ static NSString *kType = @"Type";
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    
+    ForecastDetailViewController *detail = [[ForecastDetailViewController alloc] initWithAnnoation:view.annotation];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:detail];
+    nav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:nav animated:YES completion:^{}];
 }
 
 -(void)addAnnotations
@@ -239,6 +246,7 @@ static NSString *kType = @"Type";
             case 0:
                 annotation.area = fishingPlatform1.area_ForecastData;
                 annotation.time = [NSString stringWithFormat:@"%@~%@",fishingPlatform1.ti_me,fishingPlatform3.ti_me];
+                annotation.wave_type = fishingPlatform1.ty_pe;
                 break;
             case 1:
                 annotation.area = keelung1.area_ForecastData;
@@ -428,6 +436,7 @@ static NSString *kType = @"Type";
     huallen3 = [records objectAtIndex:44];
     
 }
+
 
 - (void)didReceiveMemoryWarning
 {

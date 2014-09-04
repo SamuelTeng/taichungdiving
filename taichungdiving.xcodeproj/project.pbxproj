@@ -27,6 +27,7 @@
 		579090ED19A71E1E00FABBF5 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 579090EC19A71E1E00FABBF5 /* Record.m */; };
 		57A3D5F219AED8AB0025FEEB /* ForecastAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3D5F119AED8AB0025FEEB /* ForecastAnnotation.m */; };
 		57A3D5F419AED8E20025FEEB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3D5F319AED8E20025FEEB /* MapKit.framework */; };
+		57AD566819B6BD29009252C0 /* ForecastDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AD566719B6BD29009252C0 /* ForecastDetailViewController.m */; };
 		57DCBB3B19A19C2200BFFCED /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DCBB3A19A19C2200BFFCED /* MainViewController.m */; };
 		57DCBB3E19A19C6B00BFFCED /* DiveLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DCBB3D19A19C6B00BFFCED /* DiveLog.m */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,8 @@
 		57A3D5F019AED8AB0025FEEB /* ForecastAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastAnnotation.h; sourceTree = "<group>"; };
 		57A3D5F119AED8AB0025FEEB /* ForecastAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastAnnotation.m; sourceTree = "<group>"; };
 		57A3D5F319AED8E20025FEEB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		57AD566619B6BD29009252C0 /* ForecastDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastDetailViewController.h; sourceTree = "<group>"; };
+		57AD566719B6BD29009252C0 /* ForecastDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastDetailViewController.m; sourceTree = "<group>"; };
 		57DCBB3919A19C2200BFFCED /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		57DCBB3A19A19C2200BFFCED /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		57DCBB3C19A19C6B00BFFCED /* DiveLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiveLog.h; sourceTree = "<group>"; };
@@ -199,6 +202,8 @@
 				577D179319A2F5FB00370BC3 /* LogBookTableViewController.m */,
 				1818ADCA19A4DC2700EE1327 /* ForecastViewController.h */,
 				1818ADCB19A4DC2700EE1327 /* ForecastViewController.m */,
+				57AD566619B6BD29009252C0 /* ForecastDetailViewController.h */,
+				57AD566719B6BD29009252C0 /* ForecastDetailViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 				18D85C9F199CF9CA00D20CC8 /* taichungdiving.xcdatamodeld in Sources */,
 				577D179419A2F5FB00370BC3 /* LogBookTableViewController.m in Sources */,
 				57DCBB3E19A19C6B00BFFCED /* DiveLog.m in Sources */,
+				57AD566819B6BD29009252C0 /* ForecastDetailViewController.m in Sources */,
 				57DCBB3B19A19C2200BFFCED /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

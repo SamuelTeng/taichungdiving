@@ -18,7 +18,7 @@
 
 
 
-@interface ForecastViewController : UIViewController<NSXMLParserDelegate,NSURLConnectionDataDelegate,MKMapViewDelegate>
+@interface ForecastViewController : UIViewController<NSXMLParserDelegate,NSURLConnectionDataDelegate,MKMapViewDelegate,UIAlertViewDelegate>
 
 @property (nonatomic,strong)MKMapView *map;
 @property (nonatomic,strong)ForecastAnnotation *annotation;
