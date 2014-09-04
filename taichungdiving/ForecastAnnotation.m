@@ -10,7 +10,7 @@
 
 @implementation ForecastAnnotation
 
-@synthesize area,time,weather_description,wave_height,wave_type,wind_dir,wind_speed,_coordinate;
+@synthesize area,time,weather_description,wave_height,wave_type,wind_dir,wind_speed,_coordinate,time2,time3,weather_description2,weather_description3,wave_height2,wave_height3,wave_type2,wave_type3,wind_dir2,wind_dir3,wind_speed2,wind_speed3,subtitleTime;
 
 -(CLLocationCoordinate2D)coordinate
 {
@@ -24,7 +24,7 @@
 
 -(NSString *)subtitle
 {
-    return time;
+    return subtitleTime;
 }
 
 @end

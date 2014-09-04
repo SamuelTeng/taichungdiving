@@ -245,64 +245,391 @@ static NSString *kType = @"Type";
         switch (i) {
             case 0:
                 annotation.area = fishingPlatform1.area_ForecastData;
-                annotation.time = [NSString stringWithFormat:@"%@~%@",fishingPlatform1.ti_me,fishingPlatform3.ti_me];
+                annotation.subtitleTime = [NSString stringWithFormat:@"%@~%@",fishingPlatform1.ti_me,fishingPlatform3.ti_me];
+                
+                annotation.time = fishingPlatform1.ti_me;
                 annotation.wave_type = fishingPlatform1.ty_pe;
+                annotation.wave_height = fishingPlatform1.hei_ght;
+                annotation.weather_description = fishingPlatform1.descrip_tion;
+                annotation.wind_dir = fishingPlatform1.direc_tion;
+                annotation.wind_speed = fishingPlatform1.spe_ed;
+                
+                annotation.time2 = fishingPlatform2.ti_me;
+                annotation.wave_type2 = fishingPlatform2.ty_pe;
+                annotation.wave_height2 = fishingPlatform2.hei_ght;
+                annotation.weather_description2 = fishingPlatform2.descrip_tion;
+                annotation.wind_dir2 = fishingPlatform2.direc_tion;
+                annotation.wind_speed2 = fishingPlatform2.spe_ed;
+                
+                annotation.time3 = fishingPlatform3.ti_me;
+                annotation.wave_type3 = fishingPlatform3.ty_pe;
+                annotation.wave_height3 = fishingPlatform3.hei_ght;
+                annotation.weather_description3 = fishingPlatform3.descrip_tion;
+                annotation.wind_dir3 = fishingPlatform3.direc_tion;
+                annotation.wind_speed3 = fishingPlatform3.spe_ed;
+                
                 break;
             case 1:
                 annotation.area = keelung1.area_ForecastData;
-                annotation.time = [NSString stringWithFormat:@"%@~%@",keelung1.ti_me,keelung3.ti_me];
+                annotation.subtitleTime = [NSString stringWithFormat:@"%@~%@",keelung1.ti_me,keelung3.ti_me];
+                
+                annotation.time = keelung1.ti_me;
+                annotation.wave_type = keelung1.ty_pe;
+                annotation.wave_height = keelung1.hei_ght;
+                annotation.weather_description = keelung1.descrip_tion;
+                annotation.wind_dir = keelung1.direc_tion;
+                annotation.wind_speed = keelung1.spe_ed;
+                
+                annotation.time2 = keelung2.ti_me;
+                annotation.wave_type2 = keelung2.ty_pe;
+                annotation.wave_height2 = keelung2.hei_ght;
+                annotation.weather_description2 = keelung2.descrip_tion;
+                annotation.wind_dir2 = keelung2.direc_tion;
+                annotation.wind_speed2 = keelung2.spe_ed;
+                
+                annotation.time3 = keelung3.ti_me;
+                annotation.wave_type3 = keelung3.ty_pe;
+                annotation.wave_height3 = keelung3.hei_ght;
+                annotation.weather_description3 = keelung3.descrip_tion;
+                annotation.wind_dir3 = keelung3.direc_tion;
+                annotation.wind_speed3 = keelung3.spe_ed;
+                
                 break;
             case 2:
                 annotation.area = yilan1.area_ForecastData;
-                annotation.time = [NSString stringWithFormat:@"%@~%@",yilan1.ti_me,yilan3.ti_me];
+                annotation.subtitleTime = [NSString stringWithFormat:@"%@~%@",yilan1.ti_me,yilan3.ti_me];
+                
+                annotation.time = yilan1.ti_me;
+                annotation.wave_type = yilan1.ty_pe;
+                annotation.wave_height = yilan1.hei_ght;
+                annotation.weather_description = yilan1.descrip_tion;
+                annotation.wind_dir = yilan1.direc_tion;
+                annotation.wind_speed = yilan1.spe_ed;
+                
+                annotation.time2 = yilan2.ti_me;
+                annotation.wave_type2 = yilan2.ty_pe;
+                annotation.wave_height2 = yilan2.hei_ght;
+                annotation.weather_description2 = yilan2.descrip_tion;
+                annotation.wind_dir2 = yilan2.direc_tion;
+                annotation.wind_speed2 = yilan2.spe_ed;
+                
+                annotation.time3 = yilan3.ti_me;
+                annotation.wave_type3 = yilan3.ty_pe;
+                annotation.wave_height3 = yilan3.hei_ght;
+                annotation.weather_description3 = yilan3.descrip_tion;
+                annotation.wind_dir3 = yilan3.direc_tion;
+                annotation.wind_speed3 = yilan3.spe_ed;
+                
                 break;
             case 3:
                 annotation.area = hsinchu1.area_ForecastData;
-                annotation.time = [NSString stringWithFormat:@"%@~%@",hsinchu1.ti_me,hsinchu3.ti_me];
+                annotation.subtitleTime = [NSString stringWithFormat:@"%@~%@",hsinchu1.ti_me,hsinchu3.ti_me];
+                
+                annotation.time = hsinchu1.ti_me;
+                annotation.wave_type = hsinchu1.ty_pe;
+                annotation.wave_height = hsinchu1.hei_ght;
+                annotation.weather_description = hsinchu1.descrip_tion;
+                annotation.wind_dir = hsinchu1.direc_tion;
+                annotation.wind_speed = hsinchu1.spe_ed;
+                
+                annotation.time2 = hsinchu2.ti_me;
+                annotation.wave_type2 = hsinchu2.ty_pe;
+                annotation.wave_height2 = hsinchu2.hei_ght;
+                annotation.weather_description2 = hsinchu2.descrip_tion;
+                annotation.wind_dir2 = hsinchu2.direc_tion;
+                annotation.wind_speed2 = hsinchu2.spe_ed;
+                
+                annotation.time3 = hsinchu3.ti_me;
+                annotation.wave_type3 = hsinchu3.ty_pe;
+                annotation.wave_height3 = hsinchu3.hei_ght;
+                annotation.weather_description3 = hsinchu3.descrip_tion;
+                annotation.wind_dir3 = hsinchu3.direc_tion;
+                annotation.wind_speed3 = hsinchu3.spe_ed;
+                
                 break;
             case 4:
                 annotation.area = penhu1.area_ForecastData;
-                annotation.time = [NSString stringWithFormat:@"%@~%@",penhu1.ti_me,penhu3.ti_me];
+                annotation.subtitleTime = [NSString stringWithFormat:@"%@~%@",penhu1.ti_me,penhu3.ti_me];
+                
+                annotation.time = penhu1.ti_me;
+                annotation.wave_type = penhu1.ty_pe;
+                annotation.wave_height = penhu1.hei_ght;
+                annotation.weather_description = penhu1.descrip_tion;
+                annotation.wind_dir = penhu1.direc_tion;
+                annotation.wind_speed = penhu1.spe_ed;
+                
+                annotation.time2 = penhu2.ti_me;
+                annotation.wave_type2 = penhu2.ty_pe;
+                annotation.wave_height2 = penhu2.hei_ght;
+                annotation.weather_description2 = penhu2.descrip_tion;
+                annotation.wind_dir2 = penhu2.direc_tion;
+                annotation.wind_speed2 = penhu2.spe_ed;
+                
+                annotation.time3 = penhu3.ti_me;
+                annotation.wave_type3 = penhu3.ty_pe;
+                annotation.wave_height3 = penhu3.hei_ght;
+                annotation.weather_description3 = penhu3.descrip_tion;
+                annotation.wind_dir3 = penhu3.direc_tion;
+                annotation.wind_speed3 = penhu3.spe_ed;
+                
                 break;
             case 5:
                 annotation.area = lukang1.area_ForecastData;
-                annotation.time = [NSString stringWithFormat:@"%@~%@",lukang1.ti_me,lukang3.ti_me];
+                annotation.subtitleTime = [NSString stringWithFormat:@"%@~%@",lukang1.ti_me,lukang3.ti_me];
+                
+                annotation.time = lukang1.ti_me;
+                annotation.wave_type = lukang1.ty_pe;
+                annotation.wave_height = lukang1.hei_ght;
+                annotation.weather_description = lukang1.descrip_tion;
+                annotation.wind_dir = lukang1.direc_tion;
+                annotation.wind_speed = lukang1.spe_ed;
+                
+                annotation.time2 = lukang2.ti_me;
+                annotation.wave_type2 = lukang2.ty_pe;
+                annotation.wave_height2 = lukang2.hei_ght;
+                annotation.weather_description2 = lukang2.descrip_tion;
+                annotation.wind_dir2 = lukang2.direc_tion;
+                annotation.wind_speed2 = lukang2.spe_ed;
+                
+                annotation.time3 = lukang3.ti_me;
+                annotation.wave_type3 = lukang3.ty_pe;
+                annotation.wave_height3 = lukang3.hei_ght;
+                annotation.weather_description3 = lukang3.descrip_tion;
+                annotation.wind_dir3 = lukang3.direc_tion;
+                annotation.wind_speed3 = lukang3.spe_ed;
+                
                 break;
             case 6:
                 annotation.area = dongshih1.area_ForecastData;
-                annotation.time = [NSString stringWithFormat:@"%@~%@",dongshih1.ti_me,dongshih3.ti_me];
+                annotation.subtitleTime = [NSString stringWithFormat:@"%@~%@",dongshih1.ti_me,dongshih3.ti_me];
+                
+                annotation.time = dongshih1.ti_me;
+                annotation.wave_type = dongshih1.ty_pe;
+                annotation.wave_height = dongshih1.hei_ght;
+                annotation.weather_description = dongshih1.descrip_tion;
+                annotation.wind_dir = dongshih1.direc_tion;
+                annotation.wind_speed = dongshih1.spe_ed;
+                
+                annotation.time2 = dongshih2.ti_me;
+                annotation.wave_type2 = dongshih2.ty_pe;
+                annotation.wave_height2 = dongshih2.hei_ght;
+                annotation.weather_description2 = dongshih2.descrip_tion;
+                annotation.wind_dir2 = dongshih2.direc_tion;
+                annotation.wind_speed2 = dongshih2.spe_ed;
+                
+                annotation.time3 = dongshih3.ti_me;
+                annotation.wave_type3 = dongshih3.ty_pe;
+                annotation.wave_height3 = dongshih3.hei_ght;
+                annotation.weather_description3 = dongshih3.descrip_tion;
+                annotation.wind_dir3 = dongshih3.direc_tion;
+                annotation.wind_speed3 = dongshih3.spe_ed;
+                
                 break;
             case 7:
                 annotation.area = anping1.area_ForecastData;
-                annotation.time = [NSString stringWithFormat:@"%@~%@",anping1.ti_me,anping3.ti_me];
+                annotation.subtitleTime = [NSString stringWithFormat:@"%@~%@",anping1.ti_me,anping3.ti_me];
+                
+                annotation.time = anping1.ti_me;
+                annotation.wave_type = anping1.ty_pe;
+                annotation.wave_height = anping1.hei_ght;
+                annotation.weather_description = anping1.descrip_tion;
+                annotation.wind_dir = anping1.direc_tion;
+                annotation.wind_speed = anping1.spe_ed;
+                
+                annotation.time2 = anping2.ti_me;
+                annotation.wave_type2 = anping2.ty_pe;
+                annotation.wave_height2 = anping2.hei_ght;
+                annotation.weather_description2 = anping2.descrip_tion;
+                annotation.wind_dir2 = anping2.direc_tion;
+                annotation.wind_speed2 = anping2.spe_ed;
+                
+                annotation.time3 = anping3.ti_me;
+                annotation.wave_type3 = anping3.ty_pe;
+                annotation.wave_height3 = anping3.hei_ght;
+                annotation.weather_description3 = anping3.descrip_tion;
+                annotation.wind_dir3 = anping3.direc_tion;
+                annotation.wind_speed3 = anping3.spe_ed;
+                
                 break;
             case 8:
                 annotation.area = kaohsiung1.area_ForecastData;
-                annotation.time = [NSString stringWithFormat:@"%@~%@",kaohsiung1.ti_me,kaohsiung3.ti_me];
+                annotation.subtitleTime = [NSString stringWithFormat:@"%@~%@",kaohsiung1.ti_me,kaohsiung3.ti_me];
+                
+                annotation.time = kaohsiung1.ti_me;
+                annotation.wave_type = kaohsiung1.ty_pe;
+                annotation.wave_height = kaohsiung1.hei_ght;
+                annotation.weather_description = kaohsiung1.descrip_tion;
+                annotation.wind_dir = kaohsiung1.direc_tion;
+                annotation.wind_speed = kaohsiung1.spe_ed;
+                
+                annotation.time2 = kaohsiung2.ti_me;
+                annotation.wave_type2 = kaohsiung2.ty_pe;
+                annotation.wave_height2 = kaohsiung2.hei_ght;
+                annotation.weather_description2 = kaohsiung2.descrip_tion;
+                annotation.wind_dir2 = kaohsiung2.direc_tion;
+                annotation.wind_speed2 = kaohsiung2.spe_ed;
+                
+                annotation.time3 = kaohsiung3.ti_me;
+                annotation.wave_type3 = kaohsiung3.ty_pe;
+                annotation.wave_height3 = kaohsiung3.hei_ght;
+                annotation.weather_description3 = kaohsiung3.descrip_tion;
+                annotation.wind_dir3 = kaohsiung3.direc_tion;
+                annotation.wind_speed3 = kaohsiung3.spe_ed;
+                
                 break;
             case 9:
                 annotation.area = fangliao1.area_ForecastData;
-                annotation.time = [NSString stringWithFormat:@"%@~%@",fangliao1.ti_me,fangliao3.ti_me];
+                annotation.subtitleTime = [NSString stringWithFormat:@"%@~%@",fangliao1.ti_me,fangliao3.ti_me];
+                
+                annotation.time = fangliao1.ti_me;
+                annotation.wave_type = fangliao1.ty_pe;
+                annotation.wave_height = fangliao1.hei_ght;
+                annotation.weather_description = fangliao1.descrip_tion;
+                annotation.wind_dir = fangliao1.direc_tion;
+                annotation.wind_speed = fangliao1.spe_ed;
+                
+                annotation.time2 = fangliao2.ti_me;
+                annotation.wave_type2 = fangliao2.ty_pe;
+                annotation.wave_height2 = fangliao2.hei_ght;
+                annotation.weather_description2 = fangliao2.descrip_tion;
+                annotation.wind_dir2 = fangliao2.direc_tion;
+                annotation.wind_speed2 = fangliao2.spe_ed;
+                
+                annotation.time3 = fangliao3.ti_me;
+                annotation.wave_type3 = fangliao3.ty_pe;
+                annotation.wave_height3 = fangliao3.hei_ght;
+                annotation.weather_description3 = fangliao3.descrip_tion;
+                annotation.wind_dir3 = fangliao3.direc_tion;
+                annotation.wind_speed3 = fangliao3.spe_ed;
+                
                 break;
             case 10:
                 annotation.area = gooseNose1.area_ForecastData;
-                annotation.time = [NSString stringWithFormat:@"%@~%@",gooseNose1.ti_me,gooseNose3.ti_me];
+                annotation.subtitleTime = [NSString stringWithFormat:@"%@~%@",gooseNose1.ti_me,gooseNose3.ti_me];
+                
+                annotation.time = gooseNose1.ti_me;
+                annotation.wave_type = gooseNose1.ty_pe;
+                annotation.wave_height = gooseNose1.hei_ght;
+                annotation.weather_description = gooseNose1.descrip_tion;
+                annotation.wind_dir = gooseNose1.direc_tion;
+                annotation.wind_speed = gooseNose1.spe_ed;
+                
+                annotation.time2 = gooseNose2.ti_me;
+                annotation.wave_type2 = gooseNose2.ty_pe;
+                annotation.wave_height2 = gooseNose2.hei_ght;
+                annotation.weather_description2 = gooseNose2.descrip_tion;
+                annotation.wind_dir2 = gooseNose2.direc_tion;
+                annotation.wind_speed2 = gooseNose2.spe_ed;
+                
+                annotation.time3 = gooseNose3.ti_me;
+                annotation.wave_type3 = gooseNose3.ty_pe;
+                annotation.wave_height3 = gooseNose3.hei_ght;
+                annotation.weather_description3 = gooseNose3.descrip_tion;
+                annotation.wind_dir3 = gooseNose3.direc_tion;
+                annotation.wind_speed3 = gooseNose3.spe_ed;
+                
                 break;
             case 11:
                 annotation.area = success1.area_ForecastData;
-                annotation.time = [NSString stringWithFormat:@"%@~%@",success1.ti_me,success3.ti_me];
+                annotation.subtitleTime = [NSString stringWithFormat:@"%@~%@",success1.ti_me,success3.ti_me];
+                
+                annotation.time = success1.ti_me;
+                annotation.wave_type = success1.ty_pe;
+                annotation.wave_height = success1.hei_ght;
+                annotation.weather_description = success1.descrip_tion;
+                annotation.wind_dir = success1.direc_tion;
+                annotation.wind_speed = success1.spe_ed;
+                
+                annotation.time2 = success2.ti_me;
+                annotation.wave_type2 = success2.ty_pe;
+                annotation.wave_height2 = success2.hei_ght;
+                annotation.weather_description2 = success2.descrip_tion;
+                annotation.wind_dir2 = success2.direc_tion;
+                annotation.wind_speed2 = success2.spe_ed;
+                
+                annotation.time3 = success3.ti_me;
+                annotation.wave_type3 = success3.ty_pe;
+                annotation.wave_height3 = success3.hei_ght;
+                annotation.weather_description3 = success3.descrip_tion;
+                annotation.wind_dir3 = success3.direc_tion;
+                annotation.wind_speed3 = success3.spe_ed;
+                
                 break;
             case 12:
                 annotation.area = taitung1.area_ForecastData;
-                annotation.time = [NSString stringWithFormat:@"%@~%@",taitung1.ti_me,taitung3.ti_me];
+                annotation.subtitleTime = [NSString stringWithFormat:@"%@~%@",taitung1.ti_me,taitung3.ti_me];
+                
+                annotation.time = taitung1.ti_me;
+                annotation.wave_type = taitung1.ty_pe;
+                annotation.wave_height = taitung1.hei_ght;
+                annotation.weather_description = taitung1.descrip_tion;
+                annotation.wind_dir = taitung1.direc_tion;
+                annotation.wind_speed = taitung1.spe_ed;
+                
+                annotation.time2 = taitung2.ti_me;
+                annotation.wave_type2 = taitung2.ty_pe;
+                annotation.wave_height2 = taitung2.hei_ght;
+                annotation.weather_description2 = taitung2.descrip_tion;
+                annotation.wind_dir2 = taitung2.direc_tion;
+                annotation.wind_speed2 = taitung2.spe_ed;
+                
+                annotation.time3 = taitung3.ti_me;
+                annotation.wave_type3 = taitung3.ty_pe;
+                annotation.wave_height3 = taitung3.hei_ght;
+                annotation.weather_description3 = taitung3.descrip_tion;
+                annotation.wind_dir3 = taitung3.direc_tion;
+                annotation.wind_speed3 = taitung3.spe_ed;
                 break;
             case 13:
                 annotation.area = greenIsland1.area_ForecastData;
-                annotation.time = [NSString stringWithFormat:@"%@~%@",greenIsland1.ti_me,greenIsland3.ti_me];
+                annotation.subtitleTime = [NSString stringWithFormat:@"%@~%@",greenIsland1.ti_me,greenIsland3.ti_me];
+                
+                annotation.time = greenIsland1.ti_me;
+                annotation.wave_type = greenIsland1.ty_pe;
+                annotation.wave_height = greenIsland1.hei_ght;
+                annotation.weather_description = greenIsland1.descrip_tion;
+                annotation.wind_dir = greenIsland1.direc_tion;
+                annotation.wind_speed = greenIsland1.spe_ed;
+                
+                annotation.time2 = greenIsland2.ti_me;
+                annotation.wave_type2 = greenIsland2.ty_pe;
+                annotation.wave_height2 = greenIsland2.hei_ght;
+                annotation.weather_description2 = greenIsland2.descrip_tion;
+                annotation.wind_dir2 = greenIsland2.direc_tion;
+                annotation.wind_speed2 = greenIsland2.spe_ed;
+                
+                annotation.time3 = greenIsland3.ti_me;
+                annotation.wave_type3 = greenIsland3.ty_pe;
+                annotation.wave_height3 = greenIsland3.hei_ght;
+                annotation.weather_description3 = greenIsland3.descrip_tion;
+                annotation.wind_dir3 = greenIsland3.direc_tion;
+                annotation.wind_speed3 = greenIsland3.spe_ed;
+                
                 break;
             case 14:
                 annotation.area = huallen1.area_ForecastData;
-                annotation.time = [NSString stringWithFormat:@"%@~%@",huallen1.ti_me,huallen3.ti_me];
+                annotation.subtitleTime = [NSString stringWithFormat:@"%@~%@",huallen1.ti_me,huallen3.ti_me];
+                
+                annotation.time = huallen1.ti_me;
+                annotation.wave_type = huallen1.ty_pe;
+                annotation.wave_height = huallen1.hei_ght;
+                annotation.weather_description = huallen1.descrip_tion;
+                annotation.wind_dir = huallen1.direc_tion;
+                annotation.wind_speed = huallen1.spe_ed;
+                
+                annotation.time2 = huallen2.ti_me;
+                annotation.wave_type2 = huallen2.ty_pe;
+                annotation.wave_height2 = huallen2.hei_ght;
+                annotation.weather_description2 = huallen2.descrip_tion;
+                annotation.wind_dir2 = huallen2.direc_tion;
+                annotation.wind_speed2 = huallen2.spe_ed;
+                
+                annotation.time3 = huallen3.ti_me;
+                annotation.wave_type3 = huallen3.ty_pe;
+                annotation.wave_height3 = huallen3.hei_ght;
+                annotation.weather_description3 = huallen3.descrip_tion;
+                annotation.wind_dir3 = huallen3.direc_tion;
+                annotation.wind_speed3 = huallen3.spe_ed;
                 break;
         
             default:
