@@ -769,6 +769,10 @@ static NSString *kType = @"Type";
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+annotations = nil;annotation = nil;record = nil;records = nil;latitude = nil;lontitude = nil;
+fishingPlatform1 = nil;fishingPlatform2 = nil;fishingPlatform3 = nil;keelung1 = nil;keelung2 = nil;
+    keelung3 = nil;yilan1 = nil;yilan2 = nil;yilan3 = nil;hsinchu1 = nil;hsinchu2 = nil;hsinchu3 = nil;penhu1 = nil;penhu2 = nil;penhu3 = nil;lukang1 = nil;lukang2 = nil;lukang3=nil;dongshih1=nil;dongshih2=nil;dongshih3=nil;anping1=nil;anping2=nil;anping3=nil;kaohsiung1=nil;kaohsiung2=nil;kaohsiung3=nil;fangliao1 = nil;fangliao2=nil;fangliao3=nil;gooseNose1=nil;gooseNose2=nil;gooseNose3=nil;success1=nil;success2=nil;success3=nil;greenIsland1=nil;greenIsland2=nil;greenIsland3=nil;huallen1=nil;huallen2=nil;huallen3=nil;tagNames=nil;
+
 }
 
 /*
