@@ -57,7 +57,7 @@ static NSString *kType = @"Type";
     /*坐標依序：釣魚台海面,彭佳嶼基隆海面,宜蘭蘇澳沿海,新竹鹿港沿海,澎湖海面,鹿港東石沿海,東石安平沿海,安平高雄沿海,高雄枋寮沿海,枋寮恆春沿海,鵝鑾鼻沿海,成功臺東沿海,臺東大武沿海,綠島蘭嶼海面,花蓮沿海*/
     latitude = [NSArray arrayWithObjects:@"25.7088968",@"25.6294957",@"24.7528147",@"24.660962",@"23.486661",@"23.855258",@"23.105262",@"22.681195",@"22.472674",@"22.2799039",@"21.932397",@"22.833059",@"22.696872",@"22.364651",@"23.972974", nil];
     lontitude = [NSArray arrayWithObjects:@"123.4515834",@"122.0713482",@"122.0063745",@"120.536266",@"119.592472",@"120.155985",@"120.018149",@"120.200045",@"120.354712",@"120.593212",@"120.790623",@"121.227040",@"121.094564",@"121.521400",@"121.636070", nil];
-    NSLog(@"No.of annotations:%i+%i", latitude.count,lontitude.count);
+    
     /*cease the usage of core data in this class*/
     /*never forget declare NSManagedObjectContext
     managedObjectContext = [delegate managedObjectContext];
@@ -69,6 +69,14 @@ static NSString *kType = @"Type";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"更新" style:UIBarButtonItemStyleBordered target:self action:@selector(reload_data)];
+    
+    [self reload_data];
+    
+    if ([records count] != 0){
+        
+        [self addAnnotations];
+        
+    }
     
     
     

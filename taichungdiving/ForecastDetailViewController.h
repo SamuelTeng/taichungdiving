@@ -36,6 +36,10 @@
 @property (nonatomic,strong) UILabel *waveHeight2;
 @property (nonatomic,strong) UILabel *waveHeight3;
 
+@property (nonatomic,strong) UITextView *forecast;
+@property (nonatomic,strong) UILabel *forecast2;
+@property (nonatomic,strong) UILabel *forecast3;
+
 -(id)initWithAnnoation:(ForecastAnnotation *)a_Annotation;
 
 @end
