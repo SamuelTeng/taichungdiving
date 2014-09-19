@@ -47,6 +47,7 @@
     [announcementButton setFrame:CGRectMake(self.view.center.x-84, self.view.center.y-40, 180, 60)];
     [self.view addSubview:announcementButton];
     
+    self.navigationItem.hidesBackButton = YES;
     
 }
 
@@ -54,6 +55,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIBarButtonItem *backToHome = [[UIBarButtonItem alloc] init];
+    backToHome.title = @"首頁";
+    self.navigationItem.backBarButtonItem = backToHome;
 }
 
 -(void)fowardToLogBook:(id)sender

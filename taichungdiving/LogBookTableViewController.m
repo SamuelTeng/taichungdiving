@@ -10,12 +10,16 @@
 #import "MainViewController.h"
 #import "AppDelegate.h"
 #import "DiveLog.h"
+#import "LogViewController.h"
+#import "PageViewController.h"
 
 @interface LogBookTableViewController (){
     
     AppDelegate *delegate_logbook;
     MainViewController *mainView;
     DiveLog *diveLog;
+    LogViewController *logViewController;
+    PageViewController *pageViewController;
 }
 
 @end
@@ -48,6 +52,9 @@
             [delegate_logbook.navi pushViewController:mainView animated:NO];
             break;
             
+        case 1:
+            [delegate_logbook.navi pushViewController:logViewController animated:NO];
+            break;
             
         default:
             break;
@@ -60,7 +67,14 @@
     [super loadView];
     delegate_logbook = [[UIApplication sharedApplication] delegate];
     mainView = [[MainViewController alloc] init];
+    logViewController = [[LogViewController alloc] init];
+    pageViewController = [[PageViewController alloc] init];
     
+    UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(toLogView:)];
+    self.navigationItem.rightBarButtonItem = add;
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"首頁" style:UIBarButtonItemStyleBordered target:self action:@selector(backToHome:)];
+    self.navigationItem.leftBarButtonItem = backButton;
 }
 
 - (void)viewDidLoad
@@ -72,6 +86,11 @@
         UIAlertView *noLog = [[UIAlertView alloc] initWithTitle:@"無日誌記錄" message:@"沒有日誌記錄，請按下\"新增\"新增一筆日誌或\"取消\"回到主頁面" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"新增", nil];
         [noLog show];
     }
+    
+    UIBarButtonItem *backToHome = [[UIBarButtonItem alloc] init];
+    backToHome.title = @"日誌";
+    self.navigationItem.backBarButtonItem = backToHome;
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -85,6 +104,18 @@
     int count = resultController.fetchedObjects.count;
     NSString *countOfLogs = [NSString stringWithFormat:@"目前支數:%i",count];
     self.navigationItem.title = countOfLogs;
+}
+
+-(void)toLogView:(id)sender
+{
+    [delegate_logbook.navi pushViewController:logViewController animated:YES];
+}
+
+-(void)backToHome:(id)sender
+{
+    
+    mainView = [[MainViewController alloc] init];
+    [delegate_logbook.navi pushViewController:mainView animated:NO];
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
@@ -114,16 +145,32 @@
     return [[[resultController sections] objectAtIndex:section]numberOfObjects];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"basic cell"];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"basic cell"];
+    }
+    
+    NSManagedObject *managedObject = [resultController objectAtIndexPath:indexPath];
+  
+    NSString *timeStr = [managedObject valueForKey:@"date"];
+    
+    
+        cell.textLabel.text = timeStr;
     
     // Configure the cell...
     
+    
+    
+    
+    
     return cell;
+
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -134,18 +181,34 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+        NSError *error = nil;
+        [delegate_logbook.managedObjectContext deleteObject:[resultController objectAtIndexPath:indexPath]];
+        if (![delegate_logbook.managedObjectContext save:&error]) {
+            NSLog(@"Error: %@", [error localizedFailureReason]);
+        }
+        
+        //[_logDatabase fetchData];
+        
+        [self fetchData];
+    }
+
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    pageViewController.startPage = indexPath.row;
+    pageViewController._section = indexPath.section;
+    [delegate_logbook.navi pushViewController:pageViewController animated:YES];
+    //NSLog(@"table: row= %i section = %i", indexPath.row, indexPath.section);
+}
+
 
 /*
 // Override to support rearranging the table view.
