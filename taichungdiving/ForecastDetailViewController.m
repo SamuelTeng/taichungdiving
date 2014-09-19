@@ -53,7 +53,7 @@
     self.navigationItem.title =location;
     
     forecast = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
-    NSString *contentOfForecast = [NSString stringWithFormat:@"日期:%@ \n 天氣概況:%@ \n 風速:%@ \n 風向:%@ \n 浪況:%@ \n 浪高:%@", annotation.time,annotation.weather_description,annotation.wind_speed,annotation.wind_dir,annotation.wave_type,annotation.wave_height];
+    NSString *contentOfForecast = [NSString stringWithFormat:@" 日期:%@ \n 天氣概況:%@ \n 風速:%@ \n 風向:%@ \n 浪況:%@ \n 浪高:%@\n\n 日期:%@ \n 天氣概況:%@ \n 風速:%@ \n 風向:%@ \n 浪況:%@ \n 浪高:%@\n\n 日期:%@ \n 天氣概況:%@ \n 風速:%@ \n 風向:%@ \n 浪況:%@ \n 浪高:%@" , annotation.time,annotation.weather_description,annotation.wind_speed,annotation.wind_dir,annotation.wave_type,annotation.wave_height,annotation.time2,annotation.weather_description2,annotation.wind_speed2,annotation.wind_dir2,annotation.wave_type2,annotation.wave_height2,annotation.time3,annotation.weather_description3,annotation.wind_speed3,annotation.wind_dir3,annotation.wave_type3,annotation.wave_height3];
     forecast.text = contentOfForecast;
     [self.view addSubview:forecast];
 }

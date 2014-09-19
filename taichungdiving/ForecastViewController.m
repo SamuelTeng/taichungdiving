@@ -186,6 +186,13 @@ static NSString *kType = @"Type";
 - (void)parserDidEndDocument:(NSXMLParser *)parser
 {
     [self dataSorting];
+    
+    if ([records count] != 0){
+        
+        [self addAnnotations];
+        
+    }
+
     /*
      for (int i=0; i<[records count]; i++) {
          
