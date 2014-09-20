@@ -25,6 +25,11 @@
 		18D85CB5199CF9CA00D20CC8 /* taichungdivingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D85CB4199CF9CA00D20CC8 /* taichungdivingTests.m */; };
 		577D179419A2F5FB00370BC3 /* LogBookTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 577D179319A2F5FB00370BC3 /* LogBookTableViewController.m */; };
 		579090ED19A71E1E00FABBF5 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 579090EC19A71E1E00FABBF5 /* Record.m */; };
+		5793014319CBCAA500DEF241 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793014219CBCAA500DEF241 /* LogViewController.m */; };
+		5793014619CBF94D00DEF241 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793014519CBF94D00DEF241 /* PageViewController.m */; };
+		5793014919CBF99900DEF241 /* ModelControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793014819CBF99900DEF241 /* ModelControler.m */; };
+		5793014C19CBFA4000DEF241 /* LogDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793014B19CBFA4000DEF241 /* LogDatabase.m */; };
+		5793014F19CBFBD100DEF241 /* LogShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793014E19CBFBD100DEF241 /* LogShowViewController.m */; };
 		57A3D5F219AED8AB0025FEEB /* ForecastAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3D5F119AED8AB0025FEEB /* ForecastAnnotation.m */; };
 		57A3D5F419AED8E20025FEEB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3D5F319AED8E20025FEEB /* MapKit.framework */; };
 		57AD566819B6BD29009252C0 /* ForecastDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AD566719B6BD29009252C0 /* ForecastDetailViewController.m */; };
@@ -67,6 +72,16 @@
 		577D179319A2F5FB00370BC3 /* LogBookTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogBookTableViewController.m; sourceTree = "<group>"; };
 		579090EB19A71E1E00FABBF5 /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
 		579090EC19A71E1E00FABBF5 /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
+		5793014119CBCAA500DEF241 /* LogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogViewController.h; path = ../LogViewController.h; sourceTree = "<group>"; };
+		5793014219CBCAA500DEF241 /* LogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogViewController.m; path = ../LogViewController.m; sourceTree = "<group>"; };
+		5793014419CBF94D00DEF241 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		5793014519CBF94D00DEF241 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		5793014719CBF99900DEF241 /* ModelControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelControler.h; sourceTree = "<group>"; };
+		5793014819CBF99900DEF241 /* ModelControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelControler.m; sourceTree = "<group>"; };
+		5793014A19CBFA4000DEF241 /* LogDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogDatabase.h; sourceTree = "<group>"; };
+		5793014B19CBFA4000DEF241 /* LogDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogDatabase.m; sourceTree = "<group>"; };
+		5793014D19CBFBD100DEF241 /* LogShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogShowViewController.h; sourceTree = "<group>"; };
+		5793014E19CBFBD100DEF241 /* LogShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogShowViewController.m; sourceTree = "<group>"; };
 		57A3D5F019AED8AB0025FEEB /* ForecastAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastAnnotation.h; sourceTree = "<group>"; };
 		57A3D5F119AED8AB0025FEEB /* ForecastAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastAnnotation.m; sourceTree = "<group>"; };
 		57A3D5F319AED8E20025FEEB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -151,6 +166,10 @@
 		18D85C92199CF9CA00D20CC8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5793014719CBF99900DEF241 /* ModelControler.h */,
+				5793014819CBF99900DEF241 /* ModelControler.m */,
+				5793014A19CBFA4000DEF241 /* LogDatabase.h */,
+				5793014B19CBFA4000DEF241 /* LogDatabase.m */,
 				18D85C9A199CF9CA00D20CC8 /* AppDelegate.h */,
 				18D85C9B199CF9CA00D20CC8 /* AppDelegate.m */,
 				18D85C93199CF9CA00D20CC8 /* taichungdiving-Info.plist */,
@@ -196,6 +215,8 @@
 		57DCBB4019A1DA7500BFFCED /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5793014119CBCAA500DEF241 /* LogViewController.h */,
+				5793014219CBCAA500DEF241 /* LogViewController.m */,
 				57DCBB3919A19C2200BFFCED /* MainViewController.h */,
 				57DCBB3A19A19C2200BFFCED /* MainViewController.m */,
 				577D179219A2F5FB00370BC3 /* LogBookTableViewController.h */,
@@ -204,6 +225,10 @@
 				1818ADCB19A4DC2700EE1327 /* ForecastViewController.m */,
 				57AD566619B6BD29009252C0 /* ForecastDetailViewController.h */,
 				57AD566719B6BD29009252C0 /* ForecastDetailViewController.m */,
+				5793014419CBF94D00DEF241 /* PageViewController.h */,
+				5793014519CBF94D00DEF241 /* PageViewController.m */,
+				5793014D19CBFBD100DEF241 /* LogShowViewController.h */,
+				5793014E19CBFBD100DEF241 /* LogShowViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -305,7 +330,9 @@
 			files = (
 				18D85C9C199CF9CA00D20CC8 /* AppDelegate.m in Sources */,
 				579090ED19A71E1E00FABBF5 /* Record.m in Sources */,
+				5793014F19CBFBD100DEF241 /* LogShowViewController.m in Sources */,
 				1818ADCC19A4DC2700EE1327 /* ForecastViewController.m in Sources */,
+				5793014919CBF99900DEF241 /* ModelControler.m in Sources */,
 				57A3D5F219AED8AB0025FEEB /* ForecastAnnotation.m in Sources */,
 				18D85C98199CF9CA00D20CC8 /* main.m in Sources */,
 				18D85C9F199CF9CA00D20CC8 /* taichungdiving.xcdatamodeld in Sources */,
@@ -313,6 +340,9 @@
 				57DCBB3E19A19C6B00BFFCED /* DiveLog.m in Sources */,
 				57AD566819B6BD29009252C0 /* ForecastDetailViewController.m in Sources */,
 				57DCBB3B19A19C2200BFFCED /* MainViewController.m in Sources */,
+				5793014C19CBFA4000DEF241 /* LogDatabase.m in Sources */,
+				5793014319CBCAA500DEF241 /* LogViewController.m in Sources */,
+				5793014619CBF94D00DEF241 /* PageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
