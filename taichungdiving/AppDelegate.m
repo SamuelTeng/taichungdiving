@@ -26,9 +26,7 @@
     
     // Override point for customization after application launch.
     
-    SitePick *pick = [SitePick new];
-    [pick monitorRegions];
-    
+        
     self.mainViewController = [[MainViewController alloc] init];
     self.navi = [[UINavigationController alloc] initWithRootViewController:self.mainViewController];
     self.window.rootViewController = self.navi;

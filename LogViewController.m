@@ -835,7 +835,7 @@
 
 -(void)locateSite
 {
-    //[sitePick monitorRegions];
+    [sitePick monitorRegions];
 }
 
 -(void)loadView

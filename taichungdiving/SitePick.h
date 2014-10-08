@@ -15,7 +15,7 @@
 
 @property (nonatomic,strong) CLCircularRegion *redWoods;
 
-
+-(void)begingLocationFunction;
 -(void)monitorRegions;
 
 //@property (nonatomic,strong) CLLocation *siteLocation;
