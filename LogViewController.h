@@ -54,5 +54,7 @@
 @property (nonatomic,strong) NSString *currentFromData;
 @property (nonatomic,strong) NSString *timeFromData;
 
+@property(nonatomic,strong) UIButton *siteButton;
+
 
 @end

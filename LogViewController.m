@@ -10,17 +10,19 @@
 #import "DiveLog.h"
 #import "AppDelegate.h"
 #import "LogBookTableViewController.h"
+#import "SitePick.h"
 
 @interface LogViewController (){
     
     AppDelegate *delegate;
     LogBookTableViewController *logBookTableView;
+    SitePick *sitePick;
 }
 
 @end
 
 @implementation LogViewController
-@synthesize managedObjectContext,scrollView,secondRow,selectedRow,siteField,siteLabel,staPreField,staPrelabel,dateField,dateLabel,divetimeField,divetimeLabel,wavesField,wavesLabel,currentField,currentLabel,mAndf,maxDepField,maxDepLabel,temperField,temperLabel,thirdRow,visiField,visiLabel,otherField,otherLabel,gasArr,gasField,gasLabel,dateFromData,wavesFromData,currentFromData,timeFromData,wavesArr,currentArr;
+@synthesize managedObjectContext,scrollView,secondRow,selectedRow,siteField,siteLabel,staPreField,staPrelabel,dateField,dateLabel,divetimeField,divetimeLabel,wavesField,wavesLabel,currentField,currentLabel,mAndf,maxDepField,maxDepLabel,temperField,temperLabel,thirdRow,visiField,visiLabel,otherField,otherLabel,gasArr,gasField,gasLabel,dateFromData,wavesFromData,currentFromData,timeFromData,wavesArr,currentArr,siteButton;
 
 -(void)saveToData:(id)sender
 {
@@ -693,6 +695,12 @@
     siteField.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:siteField];
     
+    siteButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [siteButton setTitle:@"Auto" forState:UIControlStateNormal];
+    [siteButton setFrame:CGRectMake(210, 124, 80, 80)];
+    [siteButton addTarget:self action:@selector(locateSite) forControlEvents:UIControlEventTouchUpInside];
+    [scrollView addSubview:siteButton];
+    
     wavesLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 220, 100, 21)];
     wavesLabel.backgroundColor = [UIColor clearColor];
     [wavesLabel setText:@"浪況"];
@@ -825,8 +833,10 @@
 }
 
 
-
-
+-(void)locateSite
+{
+    [sitePick distanceBetweenLocations];
+}
 
 -(void)loadView
 {
@@ -861,8 +871,9 @@
     delegate = [[UIApplication sharedApplication] delegate];
     managedObjectContext = delegate.managedObjectContext;
     
-       logBookTableView = [[LogBookTableViewController alloc] init];
+    logBookTableView = [[LogBookTableViewController alloc] init];
     
+    sitePick = [SitePick new];
     
     [self textAndLabel];
     
