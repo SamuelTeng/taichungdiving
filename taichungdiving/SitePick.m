@@ -10,20 +10,38 @@
 
 @implementation SitePick
 
-@synthesize locationManager,siteLocation;
+@synthesize locationManager,redWoods;
 
--(void)distanceBetweenLocations
+-(void)monitorRegions
 {
     locationManager = [[CLLocationManager alloc] init];
     [locationManager setDelegate:self];
     [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+    [locationManager startMonitoringSignificantLocationChanges];
     [locationManager startUpdatingLocation];
     
-    NSLog(@"現在位置:%@", [locationManager location]);
+    CLLocationCoordinate2D redwoodCenter;
+    redwoodCenter.latitude =25.0568154;
+    //21.9721199;
+    redwoodCenter.longitude =121.6384159;
+    //120.712141;
+    
+    redWoods = [[CLCircularRegion alloc] initWithCenter:redwoodCenter radius:100 identifier:@"red_woods"];
+    [locationManager startMonitoringForRegion:redWoods];
+    
+    
+    
+    /*    NSLog(@"現在位置:%@", [locationManager location]);
     
     CLLocation *redWoodsSouth = [[CLLocation alloc] initWithLatitude:21.9721199 longitude:120.712141];
     NSString *distance = [NSString stringWithFormat:@"距離紅柴坑:%0.2fkm",[[locationManager location]distanceFromLocation:redWoodsSouth]/1000];
     NSLog(@"%@",distance);
+    */
+}
+
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
+{
+    [[[UIAlertView alloc] initWithTitle:@"Test" message:@"測試進入區域監測功能" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil]show];
     
 }
 

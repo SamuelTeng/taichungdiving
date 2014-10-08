@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SitePick.h"
 
 
 @implementation AppDelegate
@@ -24,6 +25,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Override point for customization after application launch.
+    
+    SitePick *pick = [SitePick new];
+    [pick monitorRegions];
     
     self.mainViewController = [[MainViewController alloc] init];
     self.navi = [[UINavigationController alloc] initWithRootViewController:self.mainViewController];

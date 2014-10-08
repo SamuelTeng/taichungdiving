@@ -9,11 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-@interface SitePick : NSObject<CLLocationManagerDelegate>
+@interface SitePick : NSObject<CLLocationManagerDelegate,UIAlertViewDelegate>
 
 @property (nonatomic,strong) CLLocationManager *locationManager;
-@property (nonatomic,strong) CLLocation *siteLocation;
 
--(void)distanceBetweenLocations;
+@property (nonatomic,strong) CLCircularRegion *redWoods;
+
+
+-(void)monitorRegions;
+
+//@property (nonatomic,strong) CLLocation *siteLocation;
 
 @end

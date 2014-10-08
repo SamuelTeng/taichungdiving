@@ -835,7 +835,7 @@
 
 -(void)locateSite
 {
-    [sitePick distanceBetweenLocations];
+    //[sitePick monitorRegions];
 }
 
 -(void)loadView
