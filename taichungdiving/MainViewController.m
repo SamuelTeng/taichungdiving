@@ -11,11 +11,13 @@
 #import "LogBookTableViewController.h"
 #import "ForecastViewController.h"
 
+
 @interface MainViewController (){
     
     AppDelegate *delegate;
     LogBookTableViewController *logBook;
     ForecastViewController *forecastView;
+    
 }
 
 @end
@@ -49,6 +51,8 @@
     
     self.navigationItem.hidesBackButton = YES;
     
+  
+    
 }
 
 - (void)viewDidLoad
@@ -63,6 +67,8 @@
 -(void)fowardToLogBook:(id)sender
 {
     [delegate.navi pushViewController:logBook animated:NO];
+    
+
 }
 
 -(void)fowardToForecast:(id)sender

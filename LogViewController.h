@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface LogViewController : UIViewController<UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
+@interface LogViewController : UIViewController<UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,CLLocationManagerDelegate>
 
 @property (readonly , strong ,nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic,strong) UIScrollView *scrollView;
@@ -56,5 +57,8 @@
 
 @property(nonatomic,strong) UIButton *siteButton;
 
+@property (nonatomic,strong) CLLocationManager *locationManager;
+
+@property (nonatomic,strong) CLCircularRegion *redWoods;
 
 @end

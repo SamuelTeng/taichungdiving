@@ -10,19 +10,73 @@
 #import "DiveLog.h"
 #import "AppDelegate.h"
 #import "LogBookTableViewController.h"
-#import "SitePick.h"
+
 
 @interface LogViewController (){
     
     AppDelegate *delegate;
     LogBookTableViewController *logBookTableView;
-    SitePick *sitePick;
+
 }
 
 @end
 
 @implementation LogViewController
-@synthesize managedObjectContext,scrollView,secondRow,selectedRow,siteField,siteLabel,staPreField,staPrelabel,dateField,dateLabel,divetimeField,divetimeLabel,wavesField,wavesLabel,currentField,currentLabel,mAndf,maxDepField,maxDepLabel,temperField,temperLabel,thirdRow,visiField,visiLabel,otherField,otherLabel,gasArr,gasField,gasLabel,dateFromData,wavesFromData,currentFromData,timeFromData,wavesArr,currentArr,siteButton;
+@synthesize managedObjectContext,scrollView,secondRow,selectedRow,siteField,siteLabel,staPreField,staPrelabel,dateField,dateLabel,divetimeField,divetimeLabel,wavesField,wavesLabel,currentField,currentLabel,mAndf,maxDepField,maxDepLabel,temperField,temperLabel,thirdRow,visiField,visiLabel,otherField,otherLabel,gasArr,gasField,gasLabel,dateFromData,wavesFromData,currentFromData,timeFromData,wavesArr,currentArr,siteButton,locationManager,redWoods;
+
+
+-(void)loadView
+{
+    [super loadView];
+    scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, 1500);
+    scrollView.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"scroll_background.png"]];
+    [self.view addSubview:scrollView];
+    
+    
+    gasArr = [NSArray arrayWithObjects:@"一般空氣",@"高氧",@"循環水肺",@"岸上供氣", nil];
+    _firstRow = [NSArray arrayWithObjects:@" ",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9", nil];
+    secondRow = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9", nil];
+    thirdRow = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9", nil];
+    _forthRow = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9", nil];
+    mAndf = [NSArray arrayWithObjects:@"m",@"ft", nil];
+    _cAndf = [NSArray arrayWithObjects:@"°C",@"°F", nil];
+    
+    wavesArr = [NSArray arrayWithObjects:@"平",@"小",@"中",@"大", nil];
+    currentArr = [NSArray arrayWithObjects:@"有",@"無", nil];
+    
+    
+    UIBarButtonItem *save = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveToData:)];
+    self.navigationItem.rightBarButtonItem = save;
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+    
+    
+    
+    
+    
+    
+    delegate = [[UIApplication sharedApplication] delegate];
+    managedObjectContext = delegate.managedObjectContext;
+    
+    logBookTableView = [[LogBookTableViewController alloc] init];
+    
+    
+    
+    [self textAndLabel];
+    
+}
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+    locationManager = [[CLLocationManager alloc] init];
+    [locationManager setDelegate:self];
+    [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+    [locationManager startMonitoringSignificantLocationChanges];
+    [locationManager startUpdatingLocation];
+}
 
 -(void)saveToData:(id)sender
 {
@@ -835,56 +889,28 @@
 
 -(void)locateSite
 {
-    [sitePick monitorRegions];
+    CLLocationCoordinate2D redwoodCenter;
+    redwoodCenter.latitude =25.066427;
+    //21.9721199;
+    redwoodCenter.longitude =121.633734;
+    //120.712141;
+    
+    redWoods = [[CLCircularRegion alloc] initWithCenter:redwoodCenter radius:800 identifier:@"red_woods"];
+    [locationManager startMonitoringForRegion:redWoods];
+    
+    
+    
+    NSLog(@"現在位置:%@", [locationManager location]);
 }
 
--(void)loadView
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
 {
-    [super loadView];
-    scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, 1500);
-    scrollView.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"scroll_background.png"]];
-    [self.view addSubview:scrollView];
-    
-    
-    gasArr = [NSArray arrayWithObjects:@"一般空氣",@"高氧",@"循環水肺",@"岸上供氣", nil];
-    _firstRow = [NSArray arrayWithObjects:@" ",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9", nil];
-    secondRow = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9", nil];
-    thirdRow = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9", nil];
-    _forthRow = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9", nil];
-    mAndf = [NSArray arrayWithObjects:@"m",@"ft", nil];
-    _cAndf = [NSArray arrayWithObjects:@"°C",@"°F", nil];
-    
-    wavesArr = [NSArray arrayWithObjects:@"平",@"小",@"中",@"大", nil];
-    currentArr = [NSArray arrayWithObjects:@"有",@"無", nil];
-    
-    
-    UIBarButtonItem *save = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveToData:)];
-    self.navigationItem.rightBarButtonItem = save;
-    self.navigationItem.rightBarButtonItem.enabled = NO;
-    
-
-
-    
-
-    
-    delegate = [[UIApplication sharedApplication] delegate];
-    managedObjectContext = delegate.managedObjectContext;
-    
-    logBookTableView = [[LogBookTableViewController alloc] init];
-    
-    sitePick = [SitePick new];
-    
-    [self textAndLabel];
+    [[[UIAlertView alloc] initWithTitle:@"Test" message:@"測試進入區域監測功能" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil]show];
     
 }
 
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
+
 
 
 -(void)viewDidDisappear:(BOOL)animated
