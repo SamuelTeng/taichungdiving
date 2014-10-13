@@ -18,12 +18,14 @@
     AppDelegate *delegate;
     LogBookTableViewController *logBook;
     ForecastViewController *forecastView;
-    SitePick *pick;
+   
 }
 
 @end
 
 @implementation MainViewController
+
+@synthesize pick;
 
 -(void)loadView
 {
@@ -71,7 +73,7 @@
 -(void)fowardToLogBook:(id)sender
 {
     [delegate.navi pushViewController:logBook animated:NO];
-    
+    [pick monitorRegions];
 
 }
 

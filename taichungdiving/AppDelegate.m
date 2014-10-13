@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SitePick.h"
 
 
 
@@ -30,6 +31,8 @@
     self.mainViewController = [[MainViewController alloc] init];
     self.navi = [[UINavigationController alloc] initWithRootViewController:self.mainViewController];
     self.window.rootViewController = self.navi;
+    
+    
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

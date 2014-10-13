@@ -91,6 +91,7 @@
     backToHome.title = @"日誌";
     self.navigationItem.backBarButtonItem = backToHome;
     
+   
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -101,8 +102,8 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    int count = resultController.fetchedObjects.count;
-    NSString *countOfLogs = [NSString stringWithFormat:@"目前支數:%i",count];
+    NSUInteger count = resultController.fetchedObjects.count;
+    NSString *countOfLogs = [NSString stringWithFormat:@"目前支數:%lu",(unsigned long)count];
     self.navigationItem.title = countOfLogs;
 }
 
@@ -203,8 +204,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    pageViewController.startPage = indexPath.row;
-    pageViewController._section = indexPath.section;
+    pageViewController.startPage = *((int *)indexPath.row);
+    pageViewController._section = *((int *)indexPath.section);
     [delegate_logbook.navi pushViewController:pageViewController animated:YES];
     //NSLog(@"table: row= %i section = %i", indexPath.row, indexPath.section);
 }

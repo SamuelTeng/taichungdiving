@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SitePick.h"
 
 @interface MainViewController : UIViewController
+
+@property (nonatomic,strong) SitePick *pick;
 
 @end
