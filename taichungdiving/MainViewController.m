@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "LogBookTableViewController.h"
 #import "ForecastViewController.h"
+#import "SitePick.h"
 
 
 @interface MainViewController (){
@@ -17,7 +18,7 @@
     AppDelegate *delegate;
     LogBookTableViewController *logBook;
     ForecastViewController *forecastView;
-    
+    SitePick *pick;
 }
 
 @end
@@ -62,6 +63,9 @@
     UIBarButtonItem *backToHome = [[UIBarButtonItem alloc] init];
     backToHome.title = @"首頁";
     self.navigationItem.backBarButtonItem = backToHome;
+    
+    pick = [SitePick new];
+    
 }
 
 -(void)fowardToLogBook:(id)sender

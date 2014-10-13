@@ -12,13 +12,17 @@
 
 @synthesize locationManager,redWoods;
 
--(void)begingLocationFunction
+-(id)init
 {
-    locationManager = [[CLLocationManager alloc] init];
-    [locationManager setDelegate:self];
-    [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
-    [locationManager startMonitoringSignificantLocationChanges];
-    [locationManager startUpdatingLocation];
+    if (self = [super init]) {
+        locationManager = [[CLLocationManager alloc] init];
+        [locationManager setDelegate:self];
+        [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+        [locationManager startMonitoringSignificantLocationChanges];
+        [locationManager startUpdatingLocation];
+    }
+    
+    return self;
 }
 
 -(void)monitorRegions
@@ -50,7 +54,23 @@
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
 {
     [[[UIAlertView alloc] initWithTitle:@"Test" message:@"測試進入區域監測功能" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil]show];
+    if ([region.identifier isEqualToString:@"red_woods"]) {
+        //temperField.text = @"紅柴坑";
+    }
     
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region
+{
+    
+    NSLog(@"不再區域內");
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region
+{
+    NSLog(@"Now monitoring : %@",region.identifier);
 }
 
 
