@@ -71,11 +71,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    locationManager = [[CLLocationManager alloc] init];
-    [locationManager setDelegate:self];
-    [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
-    [locationManager startMonitoringSignificantLocationChanges];
-    [locationManager startUpdatingLocation];
+    
 }
 
 -(void)saveToData:(id)sender
@@ -889,6 +885,7 @@
 
 -(void)locateSite
 {
+    /*
     CLLocationCoordinate2D redwoodCenter;
     redwoodCenter.latitude =25.066427;
     //21.9721199;
@@ -901,17 +898,32 @@
     
     
     NSLog(@"現在位置:%@", [locationManager location]);
+     */
 }
 
+/*
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
 {
     [[[UIAlertView alloc] initWithTitle:@"Test" message:@"測試進入區域監測功能" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil]show];
+    if ([region.identifier isEqualToString:@"red_woods"]) {
+        temperField.text = @"紅柴坑";
+    }
     
 }
 
 
+- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region
+{
+    
+        NSLog(@"不再區域內");
+    
+}
 
-
+- (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region
+{
+    NSLog(@"Now monitoring : %@",region.identifier);
+}
+*/
 
 -(void)viewDidDisappear:(BOOL)animated
 {
