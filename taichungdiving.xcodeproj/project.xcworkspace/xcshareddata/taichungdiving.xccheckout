@@ -10,29 +10,29 @@
 	<string>taichungdiving</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>E7320B55-EC41-4C9D-90A5-3290E444D2BE</key>
+		<key>203ADFD21AF9793991F1DC1D11BFD90E1F29C3C9</key>
 		<string>https://github.com/SamuelTeng/taichungdiving.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>taichungdiving.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>E7320B55-EC41-4C9D-90A5-3290E444D2BE</key>
+		<key>203ADFD21AF9793991F1DC1D11BFD90E1F29C3C9</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/SamuelTeng/taichungdiving.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>E7320B55-EC41-4C9D-90A5-3290E444D2BE</string>
+	<string>203ADFD21AF9793991F1DC1D11BFD90E1F29C3C9</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E7320B55-EC41-4C9D-90A5-3290E444D2BE</string>
+			<string>203ADFD21AF9793991F1DC1D11BFD90E1F29C3C9</string>
 			<key>IDESourceControlWCCName</key>
 			<string>taichungdiving</string>
 		</dict>
