@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import "LogViewController.h"
 
 @interface SitePick : NSObject<CLLocationManagerDelegate,UIAlertViewDelegate>
 
@@ -15,10 +16,11 @@
 
 @property (nonatomic,strong) CLCircularRegion *redWoods;
 
+@property (nonatomic,strong) LogViewController *logViewController;
 
 -(id)init;
 -(void)monitorRegions;
-
+-(void)ceaseMonitorRegions;
 //@property (nonatomic,strong) CLLocation *siteLocation;
 
 @end

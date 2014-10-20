@@ -82,6 +82,12 @@
     [delegate.navi pushViewController:forecastView animated:NO];
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [pick ceaseMonitorRegions];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
