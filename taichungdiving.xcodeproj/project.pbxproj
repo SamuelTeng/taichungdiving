@@ -34,6 +34,13 @@
 		57A3D5F219AED8AB0025FEEB /* ForecastAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3D5F119AED8AB0025FEEB /* ForecastAnnotation.m */; };
 		57A3D5F419AED8E20025FEEB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3D5F319AED8E20025FEEB /* MapKit.framework */; };
 		57AD566819B6BD29009252C0 /* ForecastDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AD566719B6BD29009252C0 /* ForecastDetailViewController.m */; };
+		57B69E021A007E15006C56EA /* LogCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B69E011A007E15006C56EA /* LogCategoryViewController.m */; };
+		57BA4DD519FF3508001BA6CA /* ic_warning_amber_48dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BA4DD419FF3508001BA6CA /* ic_warning_amber_48dp.png */; };
+		57BA4DD719FF3547001BA6CA /* ic_book_black_48dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BA4DD619FF3547001BA6CA /* ic_book_black_48dp.png */; };
+		57BA4DD919FF35F6001BA6CA /* ic_home_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BA4DD819FF35F6001BA6CA /* ic_home_black_24dp.png */; };
+		57BA4DDB19FF363E001BA6CA /* ic_refresh_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BA4DDA19FF363E001BA6CA /* ic_refresh_black_24dp.png */; };
+		57BA4DDD19FF3677001BA6CA /* ic_save_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BA4DDC19FF3677001BA6CA /* ic_save_black_24dp.png */; };
+		57BA4DDF19FF3AA4001BA6CA /* ic_edit_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BA4DDE19FF3AA4001BA6CA /* ic_edit_black_24dp.png */; };
 		57DCBB3B19A19C2200BFFCED /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DCBB3A19A19C2200BFFCED /* MainViewController.m */; };
 		57DCBB3E19A19C6B00BFFCED /* DiveLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DCBB3D19A19C6B00BFFCED /* DiveLog.m */; };
 /* End PBXBuildFile section */
@@ -90,6 +97,14 @@
 		57A3D5F319AED8E20025FEEB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		57AD566619B6BD29009252C0 /* ForecastDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastDetailViewController.h; sourceTree = "<group>"; };
 		57AD566719B6BD29009252C0 /* ForecastDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastDetailViewController.m; sourceTree = "<group>"; };
+		57B69E001A007E15006C56EA /* LogCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogCategoryViewController.h; sourceTree = "<group>"; };
+		57B69E011A007E15006C56EA /* LogCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogCategoryViewController.m; sourceTree = "<group>"; };
+		57BA4DD419FF3508001BA6CA /* ic_warning_amber_48dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_warning_amber_48dp.png; sourceTree = "<group>"; };
+		57BA4DD619FF3547001BA6CA /* ic_book_black_48dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_book_black_48dp.png; sourceTree = "<group>"; };
+		57BA4DD819FF35F6001BA6CA /* ic_home_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_home_black_24dp.png; sourceTree = "<group>"; };
+		57BA4DDA19FF363E001BA6CA /* ic_refresh_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_refresh_black_24dp.png; sourceTree = "<group>"; };
+		57BA4DDC19FF3677001BA6CA /* ic_save_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_save_black_24dp.png; sourceTree = "<group>"; };
+		57BA4DDE19FF3AA4001BA6CA /* ic_edit_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_edit_black_24dp.png; sourceTree = "<group>"; };
 		57DCBB3919A19C2200BFFCED /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		57DCBB3A19A19C2200BFFCED /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		57DCBB3C19A19C6B00BFFCED /* DiveLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiveLog.h; sourceTree = "<group>"; };
@@ -159,6 +174,7 @@
 		18D85C91199CF9CA00D20CC8 /* taichungdiving */ = {
 			isa = PBXGroup;
 			children = (
+				57BA4DC519FF2DA4001BA6CA /* Icons */,
 				57DCBB4019A1DA7500BFFCED /* ViewController */,
 				57DCBB3F19A19C7300BFFCED /* Database */,
 				18D85C92199CF9CA00D20CC8 /* Supporting Files */,
@@ -207,6 +223,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		57BA4DC519FF2DA4001BA6CA /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				57BA4DDE19FF3AA4001BA6CA /* ic_edit_black_24dp.png */,
+				57BA4DD819FF35F6001BA6CA /* ic_home_black_24dp.png */,
+				57BA4DDC19FF3677001BA6CA /* ic_save_black_24dp.png */,
+				57BA4DDA19FF363E001BA6CA /* ic_refresh_black_24dp.png */,
+				57BA4DD619FF3547001BA6CA /* ic_book_black_48dp.png */,
+				57BA4DD419FF3508001BA6CA /* ic_warning_amber_48dp.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
 		57DCBB3F19A19C7300BFFCED /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +263,8 @@
 				5793014519CBF94D00DEF241 /* PageViewController.m */,
 				5793014D19CBFBD100DEF241 /* LogShowViewController.h */,
 				5793014E19CBFBD100DEF241 /* LogShowViewController.m */,
+				57B69E001A007E15006C56EA /* LogCategoryViewController.h */,
+				57B69E011A007E15006C56EA /* LogCategoryViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -313,8 +344,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57BA4DDD19FF3677001BA6CA /* ic_save_black_24dp.png in Resources */,
 				18D85C96199CF9CA00D20CC8 /* InfoPlist.strings in Resources */,
+				57BA4DD919FF35F6001BA6CA /* ic_home_black_24dp.png in Resources */,
+				57BA4DD719FF3547001BA6CA /* ic_book_black_48dp.png in Resources */,
+				57BA4DDB19FF363E001BA6CA /* ic_refresh_black_24dp.png in Resources */,
+				57BA4DD519FF3508001BA6CA /* ic_warning_amber_48dp.png in Resources */,
 				18D85CA1199CF9CA00D20CC8 /* Images.xcassets in Resources */,
+				57BA4DDF19FF3AA4001BA6CA /* ic_edit_black_24dp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +382,7 @@
 				577D179419A2F5FB00370BC3 /* LogBookTableViewController.m in Sources */,
 				57DCBB3E19A19C6B00BFFCED /* DiveLog.m in Sources */,
 				57AD566819B6BD29009252C0 /* ForecastDetailViewController.m in Sources */,
+				57B69E021A007E15006C56EA /* LogCategoryViewController.m in Sources */,
 				57DCBB3B19A19C2200BFFCED /* MainViewController.m in Sources */,
 				5793014C19CBFA4000DEF241 /* LogDatabase.m in Sources */,
 				5793014319CBCAA500DEF241 /* LogViewController.m in Sources */,

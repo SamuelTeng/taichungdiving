@@ -14,7 +14,7 @@
 		<string>https://github.com/SamuelTeng/taichungdiving.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>taichungdiving.xcodeproj/project.xcworkspace</string>
+	<string>taichungdiving.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>203ADFD21AF9793991F1DC1D11BFD90E1F29C3C9</key>
