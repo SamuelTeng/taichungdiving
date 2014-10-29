@@ -22,5 +22,11 @@
 @dynamic temperture;
 @dynamic visibility;
 @dynamic waves;
+@dynamic mixture;
+@dynamic oxygen;
+@dynamic nitrogen;
+@dynamic helium;
+@dynamic lowppo2;
+@dynamic highppo2;
 
 @end

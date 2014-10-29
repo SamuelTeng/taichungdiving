@@ -25,7 +25,7 @@
 
 @implementation MainViewController
 
-@synthesize pick;
+//@synthesize pick;
 
 -(void)loadView
 {
@@ -35,9 +35,10 @@
     logBook = [[LogBookTableViewController alloc] init];
     forecastView = [[ForecastViewController alloc] init];
     
-    UIButton *logBookButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIButton *logBookButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [logBookButton setBackgroundImage:[UIImage imageNamed:@"ic_class_black_48dp.png"] forState:UIControlStateNormal];
     [logBookButton setTitle:@"潛水日誌" forState:UIControlStateNormal];
-    [logBookButton setFrame:CGRectMake(self.view.center.x-84, self.view.center.y-200,180, 60)];
+    [logBookButton setFrame:CGRectMake(self.view.center.x-84, self.view.center.y-200,48, 48)];
     [logBookButton addTarget:self action:@selector(fowardToLogBook:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:logBookButton];
     
@@ -66,14 +67,14 @@
     backToHome.title = @"首頁";
     self.navigationItem.backBarButtonItem = backToHome;
     
-    pick = [SitePick new];
+    //pick = [SitePick new];
     
 }
 
 -(void)fowardToLogBook:(id)sender
 {
     [delegate.navi pushViewController:logBook animated:NO];
-    [pick monitorRegions];
+    //[pick monitorRegions];
 
 }
 
@@ -85,7 +86,7 @@
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [pick ceaseMonitorRegions];
+    //[pick ceaseMonitorRegions];
 }
 
 - (void)didReceiveMemoryWarning

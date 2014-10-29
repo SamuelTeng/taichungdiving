@@ -12,12 +12,14 @@
 #import "DiveLog.h"
 #import "LogViewController.h"
 #import "PageViewController.h"
+#import "LogCategoryViewController.h"
 
 @interface LogBookTableViewController (){
     
     AppDelegate *delegate_logbook;
     MainViewController *mainView;
     DiveLog *diveLog;
+    LogCategoryViewController *logCategory;
     LogViewController *logViewController;
     PageViewController *pageViewController;
 }
@@ -53,7 +55,7 @@
             break;
             
         case 1:
-            [delegate_logbook.navi pushViewController:logViewController animated:NO];
+            [delegate_logbook.navi pushViewController:logCategory animated:NO];
             break;
             
         default:
@@ -67,13 +69,14 @@
     [super loadView];
     delegate_logbook = [[UIApplication sharedApplication] delegate];
     mainView = [[MainViewController alloc] init];
+    logCategory = [[LogCategoryViewController alloc] init];
     logViewController = [[LogViewController alloc] init];
     pageViewController = [[PageViewController alloc] init];
     
-    UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(toLogView:)];
+    UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed: @"ic_edit_black_24dp.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(toLogView:)];
     self.navigationItem.rightBarButtonItem = add;
     
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"首頁" style:UIBarButtonItemStyleBordered target:self action:@selector(backToHome:)];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed: @"ic_home_black_24dp.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(backToHome:)];
     self.navigationItem.leftBarButtonItem = backButton;
 }
 
@@ -109,7 +112,7 @@
 
 -(void)toLogView:(id)sender
 {
-    [delegate_logbook.navi pushViewController:logViewController animated:YES];
+    [delegate_logbook.navi pushViewController:logCategory animated:YES];
 }
 
 -(void)backToHome:(id)sender
@@ -204,8 +207,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    pageViewController.startPage = *((int *)indexPath.row);
-    pageViewController._section = *((int *)indexPath.section);
+    pageViewController.startPage = indexPath.row;//*((int *)indexPath.row);
+    pageViewController._section = indexPath.section;//*((int *)indexPath.section);
     [delegate_logbook.navi pushViewController:pageViewController animated:YES];
     //NSLog(@"table: row= %i section = %i", indexPath.row, indexPath.section);
 }

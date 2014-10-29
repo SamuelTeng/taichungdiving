@@ -68,7 +68,7 @@ static NSString *kType = @"Type";
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"更新" style:UIBarButtonItemStyleBordered target:self action:@selector(reload_data)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_refresh_black_24dp.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(reload_data)];
     
     [self reload_data];
     

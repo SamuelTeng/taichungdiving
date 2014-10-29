@@ -23,5 +23,11 @@
 @property (nonatomic, retain) NSString * temperture;
 @property (nonatomic, retain) NSString * visibility;
 @property (nonatomic, retain) NSString * waves;
+@property (nonatomic, retain) NSString * mixture;
+@property (nonatomic, retain) NSString * oxygen;
+@property (nonatomic, retain) NSString * nitrogen;
+@property (nonatomic, retain) NSString * helium;
+@property (nonatomic, retain) NSString * lowppo2;
+@property (nonatomic, retain) NSString * highppo2;
 
 @end

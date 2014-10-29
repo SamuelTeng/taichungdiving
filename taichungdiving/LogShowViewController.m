@@ -62,7 +62,8 @@
         log = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 1100)];
         [log setText:_log];
         log.textColor = [UIColor blackColor];
-        [log setFont:[UIFont systemFontOfSize:20.0]];
+        [log setFont:[UIFont fontWithName:@"Baskerville" size:20.0]];
+        //[log setFont:[UIFont systemFontOfSize:20.0]];
         log.editable = NO;
         [logShowView addSubview:log];
         

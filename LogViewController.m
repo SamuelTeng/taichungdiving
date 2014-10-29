@@ -10,19 +10,21 @@
 #import "DiveLog.h"
 #import "AppDelegate.h"
 #import "LogBookTableViewController.h"
+#import "LogCategoryViewController.h"
 
 
 @interface LogViewController (){
     
     AppDelegate *delegate;
     LogBookTableViewController *logBookTableView;
+    LogCategoryViewController *logCategory;
 
 }
 
 @end
 
 @implementation LogViewController
-@synthesize managedObjectContext,scrollView,secondRow,selectedRow,siteField,siteLabel,staPreField,staPrelabel,dateField,dateLabel,divetimeField,divetimeLabel,wavesField,wavesLabel,currentField,currentLabel,mAndf,maxDepField,maxDepLabel,temperField,temperLabel,thirdRow,visiField,visiLabel,otherField,otherLabel,gasArr,gasField,gasLabel,dateFromData,wavesFromData,currentFromData,timeFromData,wavesArr,currentArr,siteButton,locationManager,redWoods;
+@synthesize managedObjectContext,scrollView,secondRow,selectedRow,siteField,siteLabel,staPreField,staPrelabel,dateField,dateLabel,divetimeField,divetimeLabel,wavesField,wavesLabel,currentField,currentLabel,mAndf,maxDepField,maxDepLabel,temperField,temperLabel,thirdRow,visiField,visiLabel,otherField,otherLabel,gasArr,gasField,gasLabel,dateFromData,wavesFromData,currentFromData,timeFromData,wavesArr,currentArr,logType,mixtureArr,mixtureField,mixtureLabel,oxygenField,oxygenLabel,nitrogenField,nitrogenLabel,heliumField,heliumLabel,lowppo2Field,lowppo2Label,highppo2Field,highppo2Label;
 
 
 -(void)loadView
@@ -34,7 +36,7 @@
     [self.view addSubview:scrollView];
     
     
-    gasArr = [NSArray arrayWithObjects:@"一般空氣",@"高氧",@"循環水肺",@"岸上供氣", nil];
+    gasArr = [NSArray arrayWithObjects:@"一般空氣",@"高氧",@"循環水肺", nil];
     _firstRow = [NSArray arrayWithObjects:@" ",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9", nil];
     secondRow = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9", nil];
     thirdRow = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9", nil];
@@ -45,8 +47,10 @@
     wavesArr = [NSArray arrayWithObjects:@"平",@"小",@"中",@"大", nil];
     currentArr = [NSArray arrayWithObjects:@"有",@"無", nil];
     
+    mixtureArr = [NSArray arrayWithObjects:@"一般空氣",@"EAN32",@"EAN36",@"Trimix21/35",@"Trimix18/45",@"Trimix15/55", nil];
     
-    UIBarButtonItem *save = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveToData:)];
+    
+    UIBarButtonItem *save = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed: @"ic_save_black_24dp.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(saveToData:)];
     self.navigationItem.rightBarButtonItem = save;
     self.navigationItem.rightBarButtonItem.enabled = NO;
     
@@ -59,10 +63,11 @@
     managedObjectContext = delegate.managedObjectContext;
     
     logBookTableView = [[LogBookTableViewController alloc] init];
+    logCategory = [[LogCategoryViewController alloc] init];
     
     
     
-    [self textAndLabel];
+    
     
 }
 
@@ -72,6 +77,35 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+   
+    
+    
+    switch (logType) {
+        case 0:
+            
+            [self textAndLabel];
+            break;
+            
+        case 1:
+            
+            [self nitroxTextAndLabel];
+            break;
+            
+        case 2:
+            
+            [self closedCircuitTextAndLabel];
+            break;
+            
+        default:
+            break;
+    }
+
 }
 
 -(void)saveToData:(id)sender
@@ -202,6 +236,18 @@
         return 1;
     }else if (aPickerView.tag == 208){
         return 1;
+    }else if (aPickerView.tag == 209){
+        return 1;
+    }else if (aPickerView.tag == 210){
+        return 3;
+    }else if (aPickerView.tag == 211){
+        return 3;
+    }else if (aPickerView.tag == 212){
+        return 3;
+    }else if (aPickerView.tag == 213){
+        return 3;
+    }else if (aPickerView.tag == 214){
+        return 3;
     }
     
     return 0;
@@ -267,6 +313,48 @@
         return [wavesArr count];
     }else if (_pickerView.tag == 208){
         return [currentArr count];
+    }else if (_pickerView.tag == 209){
+        return [mixtureArr count];
+    }else if (_pickerView.tag == 210){
+        if (component == 0) {
+            return [_firstRow count];
+        }else if (component == 1){
+            return [secondRow count];
+        }else if (component == 2){
+            return [thirdRow count];
+        }
+    }else if (_pickerView.tag == 211){
+        if (component == 0) {
+            return [_firstRow count];
+        }else if (component == 1){
+            return [secondRow count];
+        }else if (component == 2){
+            return [thirdRow count];
+        }
+    }else if (_pickerView.tag == 212){
+        if (component == 0) {
+            return [_firstRow count];
+        }else if (component == 1){
+            return [secondRow count];
+        }else if (component == 2){
+            return [thirdRow count];
+        }
+    }else if (_pickerView.tag == 213){
+        if (component == 0) {
+            return [_firstRow count];
+        }else if (component == 1){
+            return [secondRow count];
+        }else if (component == 2){
+            return [thirdRow count];
+        }
+    }else if (_pickerView.tag == 214){
+        if (component == 0) {
+            return [_firstRow count];
+        }else if (component == 1){
+            return [secondRow count];
+        }else if (component == 2){
+            return [thirdRow count];
+        }
     }
     
     return 0;
@@ -452,6 +540,168 @@
             return parameter;
         }
         
+    }else if (bPickerView.tag == 209){
+        UILabel *mixture_Label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [bPickerView rowSizeForComponent:component].width, [bPickerView rowSizeForComponent:component].height)];
+        mixture_Label.text = [mixtureArr objectAtIndex:row];
+        mixture_Label.adjustsFontSizeToFitWidth = YES;
+        mixture_Label.textAlignment = NSTextAlignmentCenter;
+        mixture_Label.font = [UIFont systemFontOfSize:20.0];
+        return mixture_Label;
+    }else if (bPickerView.tag == 210){
+        
+        if (component == 0) {
+            UILabel *first_row = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [bPickerView rowSizeForComponent:component].width, [bPickerView rowSizeForComponent:component].height)];
+            first_row.text = [_firstRow objectAtIndex:row];
+            first_row.adjustsFontSizeToFitWidth = YES;
+            first_row.textAlignment = NSTextAlignmentCenter;
+            first_row.font = [UIFont systemFontOfSize:20.0];
+            return first_row;
+            
+        }else if (component == 1){
+            UILabel *second_row = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [bPickerView rowSizeForComponent:component].width, [bPickerView rowSizeForComponent:component].height)];
+            second_row.text = [secondRow objectAtIndex:row];
+            second_row.adjustsFontSizeToFitWidth = YES;
+            second_row.textAlignment = NSTextAlignmentCenter;
+            second_row.font = [UIFont systemFontOfSize:20.0];
+            return second_row;
+        }else if (component == 2){
+            UILabel *third_row = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [bPickerView rowSizeForComponent:component].width, [bPickerView rowSizeForComponent:component].height)];
+            third_row.text = [thirdRow objectAtIndex:row];
+            third_row.adjustsFontSizeToFitWidth = YES;
+            third_row.textAlignment = NSTextAlignmentCenter;
+            third_row.font = [UIFont systemFontOfSize:20.0];
+            return third_row;
+        }
+
+    }else if (bPickerView.tag == 211){
+        if (component == 0) {
+            UILabel *first_row = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [bPickerView rowSizeForComponent:component].width, [bPickerView rowSizeForComponent:component].height)];
+            first_row.text = [_firstRow objectAtIndex:row];
+            first_row.adjustsFontSizeToFitWidth = YES;
+            first_row.textAlignment = NSTextAlignmentCenter;
+            first_row.font = [UIFont systemFontOfSize:20.0];
+            return first_row;
+            
+        }else if (component == 1){
+            UILabel *second_row = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [bPickerView rowSizeForComponent:component].width, [bPickerView rowSizeForComponent:component].height)];
+            second_row.text = [secondRow objectAtIndex:row];
+            second_row.adjustsFontSizeToFitWidth = YES;
+            second_row.textAlignment = NSTextAlignmentCenter;
+            second_row.font = [UIFont systemFontOfSize:20.0];
+            return second_row;
+        }else if (component == 2){
+            UILabel *third_row = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [bPickerView rowSizeForComponent:component].width, [bPickerView rowSizeForComponent:component].height)];
+            third_row.text = [thirdRow objectAtIndex:row];
+            third_row.adjustsFontSizeToFitWidth = YES;
+            third_row.textAlignment = NSTextAlignmentCenter;
+            third_row.font = [UIFont systemFontOfSize:20.0];
+            return third_row;
+        }
+
+    }else if (bPickerView.tag == 211){
+        
+        if (component == 0) {
+            UILabel *first_row = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [bPickerView rowSizeForComponent:component].width, [bPickerView rowSizeForComponent:component].height)];
+            first_row.text = [_firstRow objectAtIndex:row];
+            first_row.adjustsFontSizeToFitWidth = YES;
+            first_row.textAlignment = NSTextAlignmentCenter;
+            first_row.font = [UIFont systemFontOfSize:20.0];
+            return first_row;
+            
+        }else if (component == 1){
+            UILabel *second_row = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [bPickerView rowSizeForComponent:component].width, [bPickerView rowSizeForComponent:component].height)];
+            second_row.text = [secondRow objectAtIndex:row];
+            second_row.adjustsFontSizeToFitWidth = YES;
+            second_row.textAlignment = NSTextAlignmentCenter;
+            second_row.font = [UIFont systemFontOfSize:20.0];
+            return second_row;
+        }else if (component == 2){
+            UILabel *third_row = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [bPickerView rowSizeForComponent:component].width, [bPickerView rowSizeForComponent:component].height)];
+            third_row.text = [thirdRow objectAtIndex:row];
+            third_row.adjustsFontSizeToFitWidth = YES;
+            third_row.textAlignment = NSTextAlignmentCenter;
+            third_row.font = [UIFont systemFontOfSize:20.0];
+            return third_row;
+        }
+
+    }else if (bPickerView.tag == 212){
+        
+        if (component == 0) {
+            UILabel *first_row = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [bPickerView rowSizeForComponent:component].width, [bPickerView rowSizeForComponent:component].height)];
+            first_row.text = [_firstRow objectAtIndex:row];
+            first_row.adjustsFontSizeToFitWidth = YES;
+            first_row.textAlignment = NSTextAlignmentCenter;
+            first_row.font = [UIFont systemFontOfSize:20.0];
+            return first_row;
+            
+        }else if (component == 1){
+            UILabel *second_row = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [bPickerView rowSizeForComponent:component].width, [bPickerView rowSizeForComponent:component].height)];
+            second_row.text = [secondRow objectAtIndex:row];
+            second_row.adjustsFontSizeToFitWidth = YES;
+            second_row.textAlignment = NSTextAlignmentCenter;
+            second_row.font = [UIFont systemFontOfSize:20.0];
+            return second_row;
+        }else if (component == 2){
+            UILabel *third_row = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [bPickerView rowSizeForComponent:component].width, [bPickerView rowSizeForComponent:component].height)];
+            third_row.text = [thirdRow objectAtIndex:row];
+            third_row.adjustsFontSizeToFitWidth = YES;
+            third_row.textAlignment = NSTextAlignmentCenter;
+            third_row.font = [UIFont systemFontOfSize:20.0];
+            return third_row;
+        }
+
+    }else if (bPickerView.tag == 213){
+        
+        if (component == 0) {
+            UILabel *first_row = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [bPickerView rowSizeForComponent:component].width, [bPickerView rowSizeForComponent:component].height)];
+            first_row.text = [_firstRow objectAtIndex:row];
+            first_row.adjustsFontSizeToFitWidth = YES;
+            first_row.textAlignment = NSTextAlignmentCenter;
+            first_row.font = [UIFont systemFontOfSize:20.0];
+            return first_row;
+            
+        }else if (component == 1){
+            UILabel *second_row = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [bPickerView rowSizeForComponent:component].width, [bPickerView rowSizeForComponent:component].height)];
+            second_row.text = [secondRow objectAtIndex:row];
+            second_row.adjustsFontSizeToFitWidth = YES;
+            second_row.textAlignment = NSTextAlignmentCenter;
+            second_row.font = [UIFont systemFontOfSize:20.0];
+            return second_row;
+        }else if (component == 2){
+            UILabel *third_row = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [bPickerView rowSizeForComponent:component].width, [bPickerView rowSizeForComponent:component].height)];
+            third_row.text = [thirdRow objectAtIndex:row];
+            third_row.adjustsFontSizeToFitWidth = YES;
+            third_row.textAlignment = NSTextAlignmentCenter;
+            third_row.font = [UIFont systemFontOfSize:20.0];
+            return third_row;
+        }
+
+    }else if (bPickerView.tag == 214){
+        
+        if (component == 0) {
+            UILabel *first_row = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [bPickerView rowSizeForComponent:component].width, [bPickerView rowSizeForComponent:component].height)];
+            first_row.text = [_firstRow objectAtIndex:row];
+            first_row.adjustsFontSizeToFitWidth = YES;
+            first_row.textAlignment = NSTextAlignmentCenter;
+            first_row.font = [UIFont systemFontOfSize:20.0];
+            return first_row;
+            
+        }else if (component == 1){
+            UILabel *second_row = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [bPickerView rowSizeForComponent:component].width, [bPickerView rowSizeForComponent:component].height)];
+            second_row.text = [secondRow objectAtIndex:row];
+            second_row.adjustsFontSizeToFitWidth = YES;
+            second_row.textAlignment = NSTextAlignmentCenter;
+            second_row.font = [UIFont systemFontOfSize:20.0];
+            return second_row;
+        }else if (component == 2){
+            UILabel *third_row = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [bPickerView rowSizeForComponent:component].width, [bPickerView rowSizeForComponent:component].height)];
+            third_row.text = [thirdRow objectAtIndex:row];
+            third_row.adjustsFontSizeToFitWidth = YES;
+            third_row.textAlignment = NSTextAlignmentCenter;
+            third_row.font = [UIFont systemFontOfSize:20.0];
+            return third_row;
+        }
+
     }
     return NULL;
 }
@@ -501,6 +751,41 @@
         NSInteger row = [aPickerView selectedRowInComponent:0];
         selectedRow = [currentArr objectAtIndex:row];
         currentField.text = selectedRow;
+    }else if (aPickerView.tag == 209){
+        
+        NSInteger row = [aPickerView selectedRowInComponent:0];
+        selectedRow = [mixtureArr objectAtIndex:row];
+        mixtureField.text = selectedRow;
+    }else if (aPickerView.tag == 210){
+        
+        NSInteger row1 = [aPickerView selectedRowInComponent:0];
+        NSInteger row2 = [aPickerView selectedRowInComponent:1];
+        NSInteger row3 = [aPickerView selectedRowInComponent:2];
+        oxygenField.text = [NSString stringWithFormat:@"%@ %@ %@ %%",[_firstRow objectAtIndex:row1],[secondRow objectAtIndex:row2],[thirdRow objectAtIndex:row3]];
+    }else if (aPickerView.tag == 211){
+        
+        NSInteger row1 = [aPickerView selectedRowInComponent:0];
+        NSInteger row2 = [aPickerView selectedRowInComponent:1];
+        NSInteger row3 = [aPickerView selectedRowInComponent:2];
+        nitrogenField.text = [NSString stringWithFormat:@"%@ %@ %@ %%",[_firstRow objectAtIndex:row1],[secondRow objectAtIndex:row2],[thirdRow objectAtIndex:row3]];
+    }else if (aPickerView.tag == 212){
+        
+        NSInteger row1 = [aPickerView selectedRowInComponent:0];
+        NSInteger row2 = [aPickerView selectedRowInComponent:1];
+        NSInteger row3 = [aPickerView selectedRowInComponent:2];
+        heliumField.text = [NSString stringWithFormat:@"%@ %@ %@ %%",[_firstRow objectAtIndex:row1],[secondRow objectAtIndex:row2],[thirdRow objectAtIndex:row3]];
+    }else if (aPickerView.tag == 213){
+        
+        NSInteger row1 = [aPickerView selectedRowInComponent:0];
+        NSInteger row2 = [aPickerView selectedRowInComponent:1];
+        NSInteger row3 = [aPickerView selectedRowInComponent:2];
+        lowppo2Field.text = [NSString stringWithFormat:@"%@. %@ %@",[_firstRow objectAtIndex:row1],[secondRow objectAtIndex:row2],[thirdRow objectAtIndex:row3]];
+    }else if (aPickerView.tag == 214){
+        
+        NSInteger row1 = [aPickerView selectedRowInComponent:0];
+        NSInteger row2 = [aPickerView selectedRowInComponent:1];
+        NSInteger row3 = [aPickerView selectedRowInComponent:2];
+        highppo2Field.text = [NSString stringWithFormat:@"%@. %@ %@",[_firstRow objectAtIndex:row1],[secondRow objectAtIndex:row2],[thirdRow objectAtIndex:row3]];
     }
     
     
@@ -696,20 +981,244 @@
         
         aTextField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
         aTextField.returnKeyType = UIReturnKeyDone;
+        
+    }else if (aTextField.tag == 112){
+        
+        UIPickerView *mixturePicker = [[UIPickerView alloc] init];
+        mixturePicker.delegate = self;
+        mixturePicker.dataSource = self;
+        mixturePicker.showsSelectionIndicator = YES;
+        [mixturePicker setFrame:CGRectMake(0, 480, 320, 180)];
+        
+        [mixturePicker setTag:209];
+        
+        aTextField.inputView = mixturePicker;
+        NSInteger row = [mixturePicker selectedRowInComponent:0];
+        aTextField.text = [mixtureArr objectAtIndex:row];
+        
+        UIToolbar *cancelBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+        UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(donePicking:)];
+        cancelBar.items = [NSArray arrayWithObject:right];
+        aTextField.inputAccessoryView = cancelBar;
+        
+        
+        
+    }else if (aTextField.tag == 113){
+        
+        UIPickerView *oxygen = [[UIPickerView alloc] init];
+        oxygen.delegate = self;
+        oxygen.dataSource = self;
+        oxygen.showsSelectionIndicator = YES;
+        [oxygen setFrame:CGRectMake(0, 480, 320, 180)];
+        [oxygen setTag:210];
+        
+        aTextField.inputView = oxygen;
+        NSInteger row1 = [oxygen selectedRowInComponent:0];
+        NSInteger row2 = [oxygen selectedRowInComponent:1];
+        NSInteger row3 = [oxygen selectedRowInComponent:2];
+        aTextField.text = [NSString stringWithFormat:@"%@ %@ %@ %%",[_firstRow objectAtIndex:row1],[secondRow objectAtIndex:row2],[thirdRow objectAtIndex:row3]];
+        
+        UIToolbar *cancelBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+        UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(donePicking:)];
+        cancelBar.items = [NSArray arrayWithObject:right];
+        aTextField.inputAccessoryView = cancelBar;
+
+    }else if (aTextField.tag == 114){
+        
+        UIPickerView *nitrogen = [[UIPickerView alloc] init];
+        nitrogen.delegate = self;
+        nitrogen.dataSource = self;
+        nitrogen.showsSelectionIndicator = YES;
+        [nitrogen setFrame:CGRectMake(0, 480, 320, 180)];
+        [nitrogen setTag:211];
+        
+        aTextField.inputView = nitrogen;
+        NSInteger row1 = [nitrogen selectedRowInComponent:0];
+        NSInteger row2 = [nitrogen selectedRowInComponent:1];
+        NSInteger row3 = [nitrogen selectedRowInComponent:2];
+        aTextField.text = [NSString stringWithFormat:@"%@ %@ %@ %%",[_firstRow objectAtIndex:row1],[secondRow objectAtIndex:row2],[thirdRow objectAtIndex:row3]];
+        
+        UIToolbar *cancelBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+        UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(donePicking:)];
+        cancelBar.items = [NSArray arrayWithObject:right];
+        aTextField.inputAccessoryView = cancelBar;
+        
+    }else if (aTextField.tag == 115){
+        
+        UIPickerView *helium = [[UIPickerView alloc] init];
+        helium.delegate = self;
+        helium.dataSource = self;
+        helium.showsSelectionIndicator = YES;
+        [helium setFrame:CGRectMake(0, 480, 320, 180)];
+        [helium setTag:212];
+        
+        aTextField.inputView = helium;
+        NSInteger row1 = [helium selectedRowInComponent:0];
+        NSInteger row2 = [helium selectedRowInComponent:1];
+        NSInteger row3 = [helium selectedRowInComponent:2];
+        aTextField.text = [NSString stringWithFormat:@"%@ %@ %@ %%",[_firstRow objectAtIndex:row1],[secondRow objectAtIndex:row2],[thirdRow objectAtIndex:row3]];
+        
+        UIToolbar *cancelBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+        UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(donePicking:)];
+        cancelBar.items = [NSArray arrayWithObject:right];
+        aTextField.inputAccessoryView = cancelBar;
+        
+    }else if (aTextField.tag == 116){
+        
+        UIPickerView *lowppO2 = [[UIPickerView alloc] init];
+        lowppO2.delegate = self;
+        lowppO2.dataSource = self;
+        lowppO2.showsSelectionIndicator = YES;
+        [lowppO2 setFrame:CGRectMake(0, 480, 320, 180)];
+        [lowppO2 setTag:213];
+        
+        aTextField.inputView = lowppO2;
+        NSInteger row1 = [lowppO2 selectedRowInComponent:0];
+        NSInteger row2 = [lowppO2 selectedRowInComponent:1];
+        NSInteger row3 = [lowppO2 selectedRowInComponent:2];
+        
+        aTextField.text = [NSString stringWithFormat:@"%@.%@%@",[_firstRow objectAtIndex:row1],[secondRow objectAtIndex:row2],[thirdRow objectAtIndex:row3]];
+        
+        UIToolbar *cancelBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+        UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(donePicking:)];
+        cancelBar.items = [NSArray arrayWithObject:right];
+        aTextField.inputAccessoryView = cancelBar;
+    }else if (aTextField.tag == 116){
+        
+        UIPickerView *highppO2 = [[UIPickerView alloc] init];
+        highppO2.delegate = self;
+        highppO2.dataSource = self;
+        highppO2.showsSelectionIndicator = YES;
+        [highppO2 setFrame:CGRectMake(0, 480, 320, 180)];
+        [highppO2 setTag:214];
+        
+        aTextField.inputView = highppO2;
+        NSInteger row1 = [highppO2 selectedRowInComponent:0];
+        NSInteger row2 = [highppO2 selectedRowInComponent:1];
+        NSInteger row3 = [highppO2 selectedRowInComponent:2];
+        
+        aTextField.text = [NSString stringWithFormat:@"%@.%@%@",[_firstRow objectAtIndex:row1],[secondRow objectAtIndex:row2],[thirdRow objectAtIndex:row3]];
+        
+        UIToolbar *cancelBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+        UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(donePicking:)];
+        cancelBar.items = [NSArray arrayWithObject:right];
+        aTextField.inputAccessoryView = cancelBar;
     }
+
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    if ((dateField.text.length > 0) && (wavesField.text.length > 0) && (currentField.text.length > 0)
-        && (gasField.text.length > 0) && (staPreField.text.length > 0) &&
-        (_endPreField.text.length > 0) && (maxDepField.text.length > 0) && (divetimeField.text.length >0) && (temperField.text.length > 0) && (visiField.text.length > 0)) {
-        self.navigationItem.rightBarButtonItem.enabled = YES;
-    }
-    else{
-        
-        self.navigationItem.rightBarButtonItem.enabled = NO;
-        
+    switch (logType) {
+        case 0:
+            if ((dateField.text.length > 0) && (wavesField.text.length > 0) && (currentField.text.length > 0)
+                && (gasField.text.length > 0) && (staPreField.text.length > 0) &&
+                (_endPreField.text.length > 0) && (maxDepField.text.length > 0) && (divetimeField.text.length >0) && (temperField.text.length > 0) && (visiField.text.length > 0)) {
+                self.navigationItem.rightBarButtonItem.enabled = YES;
+            }
+            else{
+                
+                self.navigationItem.rightBarButtonItem.enabled = NO;
+                
+            }
+
+            break;
+            
+        case 1:
+            
+            if (textField.tag == 112) {
+                if ([textField.text isEqualToString:@"一般空氣"]) {
+                    NSLog(@"O2:21%% , NO2:79%%");
+                    oxygenField.text = @"21%";
+                    nitrogenField.text = @"79%";
+                }else if ([textField.text isEqualToString:@"EAN32"]){
+                    
+                    oxygenField.text = @"32%";
+                    nitrogenField.text = @"68%";
+                }else if ([textField.text isEqualToString:@"EAN36"]){
+                    
+                    oxygenField.text = @"36%";
+                    nitrogenField.text = @"64%";
+                }else if ([textField.text isEqualToString:@"Trimix21/35"]){
+                    oxygenField.text = @"21%";
+                    nitrogenField.text = @"44%";
+                }else if ([textField.text isEqualToString:@"Trimix18/45"]){
+                    oxygenField.text = @"18%";
+                    nitrogenField.text = @"37%";
+                }else if ([textField.text isEqualToString:@"Trimix15/55"]){
+                    oxygenField.text = @"15%";
+                    nitrogenField.text = @"30%";
+                }
+            }
+            if ((dateField.text.length > 0) && (wavesField.text.length > 0) && (currentField.text.length > 0)
+                && (gasField.text.length > 0) && (staPreField.text.length > 0) &&
+                (_endPreField.text.length > 0) && (maxDepField.text.length > 0) && (divetimeField.text.length >0) && (temperField.text.length > 0) && (visiField.text.length > 0) && (mixtureField.text.length >0) && (oxygenField.text.length >0) && (nitrogenField.text.length > 0)) {
+                self.navigationItem.rightBarButtonItem.enabled = YES;
+            }
+            else{
+                
+                self.navigationItem.rightBarButtonItem.enabled = NO;
+                
+            }
+            break;
+            
+        case 2:
+            
+            if (textField.tag == 112) {
+                if ([textField.text isEqualToString:@"一般空氣"]) {
+                    NSLog(@"O2:21%% , NO2:79%%");
+                    oxygenField.text = @"21%";
+                    nitrogenField.text = @"79%";
+                    heliumField.text = @"0%";
+                    lowppo2Field.text = @"0.70";
+                    highppo2Field.text = @"1.30";
+                }else if ([textField.text isEqualToString:@"EAN32"]){
+                    oxygenField.text = @"21%";
+                    nitrogenField.text = @"79%";
+                    heliumField.text = @"0%";
+                    lowppo2Field.text = @"0.70";
+                    highppo2Field.text = @"1.30";
+                }else if ([textField.text isEqualToString:@"EAN36"]){
+                    oxygenField.text = @"21%";
+                    nitrogenField.text = @"79%";
+                    heliumField.text = @"0%";
+                    lowppo2Field.text = @"0.70";
+                    highppo2Field.text = @"1.30";
+                }else if ([textField.text isEqualToString:@"Trimix21/35"]){
+                    oxygenField.text = @"21%";
+                    nitrogenField.text = @"44%";
+                    heliumField.text = @"35%";
+                    lowppo2Field.text = @"0.70";
+                    highppo2Field.text = @"1.30";
+                }else if ([textField.text isEqualToString:@"Trimix18/45"]){
+                    oxygenField.text = @"18%";
+                    nitrogenField.text = @"37%";
+                    heliumField.text = @"45%";
+                    lowppo2Field.text = @"0.70";
+                    highppo2Field.text = @"1.30";
+                }else if ([textField.text isEqualToString:@"Trimix15/55"]){
+                    oxygenField.text = @"15%";
+                    nitrogenField.text = @"30%";
+                    heliumField.text = @"55%";
+                    lowppo2Field.text = @"0.70";
+                    highppo2Field.text = @"1.30";
+                }
+            }
+
+            if ((dateField.text.length > 0) && (wavesField.text.length > 0) && (currentField.text.length > 0)
+                && (gasField.text.length > 0) && (staPreField.text.length > 0) &&
+                (_endPreField.text.length > 0) && (maxDepField.text.length > 0) && (divetimeField.text.length >0) && (temperField.text.length > 0) && (visiField.text.length > 0) && (mixtureField.text.length >0) && (oxygenField.text.length >0) && (nitrogenField.text.length > 0) && (heliumField.text.length > 0) && (lowppo2Field.text.length > 0) && (highppo2Field.text.length > 0)) {
+                self.navigationItem.rightBarButtonItem.enabled = YES;
+            }
+            else{
+                
+                self.navigationItem.rightBarButtonItem.enabled = NO;
+                
+            }
+            break;
+            
+        default:
+            break;
     }
     
 }
@@ -744,13 +1253,13 @@
     siteField.borderStyle = UITextBorderStyleRoundedRect;
     siteField.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:siteField];
-    
+    /*
     siteButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [siteButton setTitle:@"Auto" forState:UIControlStateNormal];
     [siteButton setFrame:CGRectMake(210, 124, 80, 80)];
     [siteButton addTarget:self action:@selector(locateSite) forControlEvents:UIControlEventTouchUpInside];
     [scrollView addSubview:siteButton];
-    
+    */
     wavesLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 220, 100, 21)];
     wavesLabel.backgroundColor = [UIColor clearColor];
     [wavesLabel setText:@"浪況"];
@@ -792,7 +1301,7 @@
     
     staPrelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 428, 200, 21)];
     staPrelabel.backgroundColor = [UIColor clearColor];
-    [staPrelabel setText:@"Start Pressure"];
+    [staPrelabel setText:@"起始殘壓"];
     [scrollView addSubview:staPrelabel];
     
     staPreField = [[UITextField alloc] initWithFrame:CGRectMake(130, 425, 97, 30)];
@@ -807,7 +1316,7 @@
     
     _endPreLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 494, 200, 21)];
     _endPreLabel.backgroundColor = [UIColor clearColor];
-    [_endPreLabel setText:@"End Pressure"];
+    [_endPreLabel setText:@"結束殘壓"];
     [scrollView addSubview:_endPreLabel];
     
     _endPreField = [[UITextField alloc] initWithFrame:CGRectMake(130, 491, 97, 30)];
@@ -819,6 +1328,7 @@
     _endPreField.adjustsFontSizeToFitWidth = YES;
     _endPreField.textAlignment = NSTextAlignmentCenter;
     [scrollView addSubview:_endPreField];
+
     
     maxDepLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 560, 100, 21)];
     maxDepLabel.backgroundColor = [UIColor clearColor];
@@ -883,22 +1393,463 @@
 }
 
 
--(void)locateSite
+-(void)nitroxTextAndLabel
 {
+    dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 88, 80, 21)];
+    dateLabel.backgroundColor = [UIColor clearColor];
+    [dateLabel setText:@"日期"];
+    [scrollView addSubview:dateLabel];
+    
+    dateField = [[UITextField alloc] initWithFrame:CGRectMake(130, 85, 97, 30)];
+    dateField.backgroundColor = [UIColor clearColor];
+    [dateField setTag:101];
+    dateField.delegate = self;
+    dateField.placeholder = @"YYYY-mm-dd";
+    dateField.borderStyle = UITextBorderStyleRoundedRect;
+    dateField.adjustsFontSizeToFitWidth = YES;
+    [scrollView addSubview:dateField];
+    
+    siteLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 154, 80, 21)];
+    siteLabel.backgroundColor = [UIColor clearColor];
+    [siteLabel setText:@"潛點"];
+    [scrollView addSubview:siteLabel];
+    
+    siteField = [[UITextField alloc] initWithFrame:CGRectMake(130, 151, 97, 30)];
+    siteField.backgroundColor = [UIColor clearColor];
+    [siteField setTag:102];
+    siteField.delegate = self;
+    siteField.placeholder = @"Site Name";
+    siteField.borderStyle = UITextBorderStyleRoundedRect;
+    siteField.adjustsFontSizeToFitWidth = YES;
+    [scrollView addSubview:siteField];
     /*
-    CLLocationCoordinate2D redwoodCenter;
-    redwoodCenter.latitude =25.066427;
-    //21.9721199;
-    redwoodCenter.longitude =121.633734;
-    //120.712141;
-    
-    redWoods = [[CLCircularRegion alloc] initWithCenter:redwoodCenter radius:800 identifier:@"red_woods"];
-    [locationManager startMonitoringForRegion:redWoods];
-    
-    
-    
-    NSLog(@"現在位置:%@", [locationManager location]);
+     siteButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+     [siteButton setTitle:@"Auto" forState:UIControlStateNormal];
+     [siteButton setFrame:CGRectMake(210, 124, 80, 80)];
+     [siteButton addTarget:self action:@selector(locateSite) forControlEvents:UIControlEventTouchUpInside];
+     [scrollView addSubview:siteButton];
      */
+    wavesLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 220, 100, 21)];
+    wavesLabel.backgroundColor = [UIColor clearColor];
+    [wavesLabel setText:@"浪況"];
+    [scrollView addSubview:wavesLabel];
+    
+    wavesField = [[UITextField alloc] initWithFrame:CGRectMake(130, 217, 97, 30)];
+    wavesField.backgroundColor = [UIColor clearColor];
+    [wavesField setTag:103];
+    wavesField.delegate = self;
+    //wavesField.placeholder = @"25.061033";
+    wavesField.borderStyle = UITextBorderStyleRoundedRect;
+    [scrollView addSubview:wavesField];
+    
+    currentLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 286, 100, 21)];
+    currentLabel.backgroundColor = [UIColor clearColor];
+    [currentLabel setText:@"水流"];
+    [scrollView addSubview:currentLabel];
+    
+    currentField = [[UITextField alloc] initWithFrame:CGRectMake(130, 283, 97, 30)];
+    currentField.backgroundColor = [UIColor clearColor];
+    [currentField setTag:104];
+    currentField.delegate = self;
+    //currentField.placeholder = @"121.646056";
+    currentField.borderStyle = UITextBorderStyleRoundedRect;
+    [scrollView addSubview:currentField];
+    
+    gasLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 352, 100, 21)];
+    gasLabel.backgroundColor = [UIColor clearColor];
+    [gasLabel setText:@"氣源"];
+    [scrollView addSubview:gasLabel];
+    
+    gasField = [[UITextField alloc] initWithFrame:CGRectMake(130, 349, 97, 30)];
+    [gasField setTag:105];
+    gasField.delegate = self;
+    //gasField.placeholder = @"氣源";
+    gasField.borderStyle = UITextBorderStyleRoundedRect;
+    gasField.adjustsFontSizeToFitWidth = YES;
+    [scrollView addSubview:gasField];
+    
+    staPrelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 428, 200, 21)];
+    staPrelabel.backgroundColor = [UIColor clearColor];
+    [staPrelabel setText:@"起始殘壓"];
+    [scrollView addSubview:staPrelabel];
+    
+    staPreField = [[UITextField alloc] initWithFrame:CGRectMake(130, 425, 97, 30)];
+    staPreField.backgroundColor = [UIColor clearColor];
+    [staPreField setTag:106];
+    staPreField.delegate = self;
+    staPreField.placeholder = @"200 bar";
+    staPreField.borderStyle = UITextBorderStyleRoundedRect;
+    staPreField.adjustsFontSizeToFitWidth = YES;
+    staPreField.textAlignment = NSTextAlignmentCenter;
+    [scrollView addSubview:staPreField];
+    
+    _endPreLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 494, 200, 21)];
+    _endPreLabel.backgroundColor = [UIColor clearColor];
+    [_endPreLabel setText:@"結束殘壓"];
+    [scrollView addSubview:_endPreLabel];
+    
+    _endPreField = [[UITextField alloc] initWithFrame:CGRectMake(130, 491, 97, 30)];
+    _endPreField.backgroundColor = [UIColor clearColor];
+    [_endPreField setTag:107];
+    _endPreField.delegate = self;
+    _endPreField.placeholder = @"60 bar";
+    _endPreField.borderStyle = UITextBorderStyleRoundedRect;
+    _endPreField.adjustsFontSizeToFitWidth = YES;
+    _endPreField.textAlignment = NSTextAlignmentCenter;
+    [scrollView addSubview:_endPreField];
+    
+    mixtureLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 560, 100, 21)];
+    mixtureLabel.backgroundColor = [UIColor clearColor];
+    [mixtureLabel setText:@"混合濃度"];
+    [scrollView addSubview:mixtureLabel];
+    
+    mixtureField = [[UITextField alloc] initWithFrame:CGRectMake(130, 557, 97, 30)];
+    mixtureField.backgroundColor = [UIColor clearColor];
+    [mixtureField setTag:112];
+    mixtureField.delegate = self;
+    mixtureField.borderStyle = UITextBorderStyleRoundedRect;
+    mixtureField.adjustsFontSizeToFitWidth = YES;
+    mixtureField.textAlignment = NSTextAlignmentCenter;
+    [scrollView addSubview:mixtureField];
+    
+    oxygenLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 626, 100, 21)];
+    oxygenLabel.backgroundColor = [UIColor clearColor];
+    [oxygenLabel setText:@"氧氣"];
+    [scrollView addSubview:oxygenLabel];
+    
+    oxygenField = [[UITextField alloc] initWithFrame:CGRectMake(130, 623, 97, 30)];
+    oxygenField.backgroundColor = [UIColor clearColor];
+    [oxygenField setTag:113];
+    oxygenField.delegate = self;
+    oxygenField.placeholder = @"";
+    oxygenField.borderStyle = UITextBorderStyleRoundedRect;
+    oxygenField.adjustsFontSizeToFitWidth = YES;
+    oxygenField.textAlignment = NSTextAlignmentCenter;
+    [scrollView addSubview:oxygenField];
+    
+    nitrogenLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 692, 100, 21)];
+    nitrogenLabel.backgroundColor = [UIColor clearColor];
+    [nitrogenLabel setText:@"氮氣"];
+    [scrollView addSubview:nitrogenLabel];
+    
+    nitrogenField = [[UITextField alloc] initWithFrame:CGRectMake(130, 689, 97, 30)];
+    nitrogenField.backgroundColor = [UIColor clearColor];
+    [nitrogenField setTag:114];
+    nitrogenField.delegate = self;
+    nitrogenField.placeholder = @"";
+    nitrogenField.borderStyle = UITextBorderStyleRoundedRect;
+    nitrogenField.adjustsFontSizeToFitWidth = YES;
+    [scrollView addSubview:nitrogenField];
+    
+    maxDepLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 758, 100, 21)];
+    maxDepLabel.backgroundColor = [UIColor clearColor];
+    [maxDepLabel setText:@"最大深度"];
+    [scrollView addSubview:maxDepLabel];
+    
+    maxDepField = [[UITextField alloc] initWithFrame:CGRectMake(130, 755, 97, 30)];
+    maxDepField.backgroundColor = [UIColor clearColor];
+    [maxDepField setTag:108];
+    maxDepField.delegate = self;
+    maxDepField.placeholder = @"40 M";
+    maxDepField.borderStyle = UITextBorderStyleRoundedRect;
+    maxDepField.adjustsFontSizeToFitWidth = YES;
+    maxDepField.textAlignment = NSTextAlignmentCenter;
+    [scrollView addSubview:maxDepField];
+    
+    divetimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 824, 100, 21)];
+    divetimeLabel.backgroundColor = [UIColor clearColor];
+    [divetimeLabel setText:@"潛水時間"];
+    [scrollView addSubview:divetimeLabel];
+    
+    divetimeField = [[UITextField alloc] initWithFrame:CGRectMake(130, 821, 97, 30)];
+    divetimeField.backgroundColor = [UIColor clearColor];
+    [divetimeField setTag:111];
+    divetimeField.delegate = self;
+    divetimeField.placeholder = @"in minutes";
+    divetimeField.borderStyle = UITextBorderStyleRoundedRect;
+    divetimeField.adjustsFontSizeToFitWidth = YES;
+    divetimeField.textAlignment = NSTextAlignmentCenter;
+    [scrollView addSubview:divetimeField];
+    
+    temperLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 890, 100, 21)];
+    temperLabel.backgroundColor = [UIColor clearColor];
+    [temperLabel setText:@"水溫"];
+    [scrollView addSubview:temperLabel];
+    
+    temperField = [[UITextField alloc] initWithFrame:CGRectMake(130, 887, 97, 30)];
+    temperField.backgroundColor = [UIColor clearColor];
+    [temperField setTag:109];
+    temperField.delegate = self;
+    temperField.placeholder = @"";
+    temperField.borderStyle = UITextBorderStyleRoundedRect;
+    temperField.adjustsFontSizeToFitWidth = YES;
+    [scrollView addSubview:temperField];
+    
+    visiLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 956, 100, 21)];
+    visiLabel.backgroundColor = [UIColor clearColor];
+    [visiLabel setText:@"能見度"];
+    [scrollView addSubview:visiLabel];
+    
+    visiField = [[UITextField alloc] initWithFrame:CGRectMake(130, 953, 97, 30)];
+    visiField.backgroundColor = [UIColor clearColor];
+    [visiField setTag:110];
+    visiField.delegate = self;
+    visiField.placeholder = @"15M";
+    visiField.borderStyle = UITextBorderStyleRoundedRect;
+    visiField.adjustsFontSizeToFitWidth = YES;
+    [scrollView addSubview:visiField];
+
+}
+
+-(void)closedCircuitTextAndLabel
+{
+    dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 88, 80, 21)];
+    dateLabel.backgroundColor = [UIColor clearColor];
+    [dateLabel setText:@"日期"];
+    [scrollView addSubview:dateLabel];
+    
+    dateField = [[UITextField alloc] initWithFrame:CGRectMake(130, 85, 97, 30)];
+    dateField.backgroundColor = [UIColor clearColor];
+    [dateField setTag:101];
+    dateField.delegate = self;
+    dateField.placeholder = @"YYYY-mm-dd";
+    dateField.borderStyle = UITextBorderStyleRoundedRect;
+    dateField.adjustsFontSizeToFitWidth = YES;
+    [scrollView addSubview:dateField];
+    
+    siteLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 154, 80, 21)];
+    siteLabel.backgroundColor = [UIColor clearColor];
+    [siteLabel setText:@"潛點"];
+    [scrollView addSubview:siteLabel];
+    
+    siteField = [[UITextField alloc] initWithFrame:CGRectMake(130, 151, 97, 30)];
+    siteField.backgroundColor = [UIColor clearColor];
+    [siteField setTag:102];
+    siteField.delegate = self;
+    siteField.placeholder = @"Site Name";
+    siteField.borderStyle = UITextBorderStyleRoundedRect;
+    siteField.adjustsFontSizeToFitWidth = YES;
+    [scrollView addSubview:siteField];
+    /*
+     siteButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+     [siteButton setTitle:@"Auto" forState:UIControlStateNormal];
+     [siteButton setFrame:CGRectMake(210, 124, 80, 80)];
+     [siteButton addTarget:self action:@selector(locateSite) forControlEvents:UIControlEventTouchUpInside];
+     [scrollView addSubview:siteButton];
+     */
+    wavesLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 220, 100, 21)];
+    wavesLabel.backgroundColor = [UIColor clearColor];
+    [wavesLabel setText:@"浪況"];
+    [scrollView addSubview:wavesLabel];
+    
+    wavesField = [[UITextField alloc] initWithFrame:CGRectMake(130, 217, 97, 30)];
+    wavesField.backgroundColor = [UIColor clearColor];
+    [wavesField setTag:103];
+    wavesField.delegate = self;
+    //wavesField.placeholder = @"25.061033";
+    wavesField.borderStyle = UITextBorderStyleRoundedRect;
+    [scrollView addSubview:wavesField];
+    
+    currentLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 286, 100, 21)];
+    currentLabel.backgroundColor = [UIColor clearColor];
+    [currentLabel setText:@"水流"];
+    [scrollView addSubview:currentLabel];
+    
+    currentField = [[UITextField alloc] initWithFrame:CGRectMake(130, 283, 97, 30)];
+    currentField.backgroundColor = [UIColor clearColor];
+    [currentField setTag:104];
+    currentField.delegate = self;
+    //currentField.placeholder = @"121.646056";
+    currentField.borderStyle = UITextBorderStyleRoundedRect;
+    [scrollView addSubview:currentField];
+    
+    gasLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 352, 100, 21)];
+    gasLabel.backgroundColor = [UIColor clearColor];
+    [gasLabel setText:@"氣源"];
+    [scrollView addSubview:gasLabel];
+    
+    gasField = [[UITextField alloc] initWithFrame:CGRectMake(130, 349, 97, 30)];
+    [gasField setTag:105];
+    gasField.delegate = self;
+    //gasField.placeholder = @"氣源";
+    gasField.borderStyle = UITextBorderStyleRoundedRect;
+    gasField.adjustsFontSizeToFitWidth = YES;
+    [scrollView addSubview:gasField];
+    
+    staPrelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 428, 200, 21)];
+    staPrelabel.backgroundColor = [UIColor clearColor];
+    [staPrelabel setText:@"起始殘壓"];
+    [scrollView addSubview:staPrelabel];
+    
+    staPreField = [[UITextField alloc] initWithFrame:CGRectMake(130, 425, 97, 30)];
+    staPreField.backgroundColor = [UIColor clearColor];
+    [staPreField setTag:106];
+    staPreField.delegate = self;
+    staPreField.placeholder = @"200 bar";
+    staPreField.borderStyle = UITextBorderStyleRoundedRect;
+    staPreField.adjustsFontSizeToFitWidth = YES;
+    staPreField.textAlignment = NSTextAlignmentCenter;
+    [scrollView addSubview:staPreField];
+    
+    _endPreLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 494, 200, 21)];
+    _endPreLabel.backgroundColor = [UIColor clearColor];
+    [_endPreLabel setText:@"結束殘壓"];
+    [scrollView addSubview:_endPreLabel];
+    
+    _endPreField = [[UITextField alloc] initWithFrame:CGRectMake(130, 491, 97, 30)];
+    _endPreField.backgroundColor = [UIColor clearColor];
+    [_endPreField setTag:107];
+    _endPreField.delegate = self;
+    _endPreField.placeholder = @"60 bar";
+    _endPreField.borderStyle = UITextBorderStyleRoundedRect;
+    _endPreField.adjustsFontSizeToFitWidth = YES;
+    _endPreField.textAlignment = NSTextAlignmentCenter;
+    [scrollView addSubview:_endPreField];
+    
+    mixtureLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 560, 100, 21)];
+    mixtureLabel.backgroundColor = [UIColor clearColor];
+    [mixtureLabel setText:@"混合濃度"];
+    [scrollView addSubview:mixtureLabel];
+    
+    mixtureField = [[UITextField alloc] initWithFrame:CGRectMake(130, 557, 97, 30)];
+    mixtureField.backgroundColor = [UIColor clearColor];
+    [mixtureField setTag:112];
+    mixtureField.delegate = self;
+    mixtureField.borderStyle = UITextBorderStyleRoundedRect;
+    mixtureField.adjustsFontSizeToFitWidth = YES;
+    mixtureField.textAlignment = NSTextAlignmentCenter;
+    [scrollView addSubview:mixtureField];
+    
+    oxygenLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 626, 100, 21)];
+    oxygenLabel.backgroundColor = [UIColor clearColor];
+    [oxygenLabel setText:@"氧氣"];
+    [scrollView addSubview:oxygenLabel];
+    
+    oxygenField = [[UITextField alloc] initWithFrame:CGRectMake(130, 623, 97, 30)];
+    oxygenField.backgroundColor = [UIColor clearColor];
+    [oxygenField setTag:113];
+    oxygenField.delegate = self;
+    oxygenField.placeholder = @"in minutes";
+    oxygenField.borderStyle = UITextBorderStyleRoundedRect;
+    oxygenField.adjustsFontSizeToFitWidth = YES;
+    oxygenField.textAlignment = NSTextAlignmentCenter;
+    [scrollView addSubview:oxygenField];
+    
+    nitrogenLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 692, 100, 21)];
+    nitrogenLabel.backgroundColor = [UIColor clearColor];
+    [nitrogenLabel setText:@"氮氣"];
+    [scrollView addSubview:nitrogenLabel];
+    
+    nitrogenField = [[UITextField alloc] initWithFrame:CGRectMake(130, 689, 97, 30)];
+    nitrogenField.backgroundColor = [UIColor clearColor];
+    [nitrogenField setTag:114];
+    nitrogenField.delegate = self;
+    nitrogenField.placeholder = @"/%/";
+    nitrogenField.borderStyle = UITextBorderStyleRoundedRect;
+    nitrogenField.adjustsFontSizeToFitWidth = YES;
+    [scrollView addSubview:nitrogenField];
+    
+    heliumLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 758, 100, 21)];
+    heliumLabel.backgroundColor = [UIColor clearColor];
+    [heliumLabel setText:@"氦氣"];
+    [scrollView addSubview:heliumLabel];
+    
+    heliumField = [[UITextField alloc] initWithFrame:CGRectMake(130, 755, 97, 30)];
+    heliumField.backgroundColor = [UIColor clearColor];
+    [heliumField setTag:115];
+    heliumField.delegate = self;
+    heliumField.borderStyle = UITextBorderStyleRoundedRect;
+    heliumField.adjustsFontSizeToFitWidth = YES;
+    heliumField.textAlignment = NSTextAlignmentCenter;
+    [scrollView addSubview:heliumField];
+
+    
+    lowppo2Label = [[UILabel alloc] initWithFrame:CGRectMake(30, 824, 100, 21)];
+    lowppo2Label.backgroundColor = [UIColor clearColor];
+    [lowppo2Label setText:@"低ppO2"];
+    [scrollView addSubview:lowppo2Label];
+    
+    lowppo2Field = [[UITextField alloc] initWithFrame:CGRectMake(130, 821, 97, 30)];
+    lowppo2Field.backgroundColor = [UIColor clearColor];
+    [lowppo2Field setTag:116];
+    lowppo2Field.delegate = self;
+    lowppo2Field.borderStyle = UITextBorderStyleRoundedRect;
+    lowppo2Field.adjustsFontSizeToFitWidth = YES;
+    lowppo2Field.textAlignment = NSTextAlignmentCenter;
+    [scrollView addSubview:lowppo2Field];
+    
+    highppo2Label = [[UILabel alloc] initWithFrame:CGRectMake(70, 890, 100, 21)];
+    highppo2Label.backgroundColor = [UIColor clearColor];
+    [highppo2Label setText:@"高ppO2"];
+    [scrollView addSubview:highppo2Label];
+    
+    highppo2Field = [[UITextField alloc] initWithFrame:CGRectMake(130, 887, 97, 30)];
+    highppo2Field.backgroundColor = [UIColor clearColor];
+    [highppo2Field setTag:117];
+    highppo2Field.delegate = self;
+    highppo2Field.placeholder = @"";
+    highppo2Field.borderStyle = UITextBorderStyleRoundedRect;
+    highppo2Field.adjustsFontSizeToFitWidth = YES;
+    [scrollView addSubview:highppo2Field];
+    
+    maxDepLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 956, 100, 21)];
+    maxDepLabel.backgroundColor = [UIColor clearColor];
+    [maxDepLabel setText:@"最大深度"];
+    [scrollView addSubview:maxDepLabel];
+    
+    maxDepField = [[UITextField alloc] initWithFrame:CGRectMake(130, 953, 97, 30)];
+    maxDepField.backgroundColor = [UIColor clearColor];
+    [maxDepField setTag:108];
+    maxDepField.delegate = self;
+    maxDepField.placeholder = @"40 M";
+    maxDepField.borderStyle = UITextBorderStyleRoundedRect;
+    maxDepField.adjustsFontSizeToFitWidth = YES;
+    maxDepField.textAlignment = NSTextAlignmentCenter;
+    [scrollView addSubview:maxDepField];
+    
+    divetimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 1022, 100, 21)];
+    divetimeLabel.backgroundColor = [UIColor clearColor];
+    [divetimeLabel setText:@"潛水時間"];
+    [scrollView addSubview:divetimeLabel];
+    
+    divetimeField = [[UITextField alloc] initWithFrame:CGRectMake(130, 1019, 97, 30)];
+    divetimeField.backgroundColor = [UIColor clearColor];
+    [divetimeField setTag:111];
+    divetimeField.delegate = self;
+    divetimeField.placeholder = @"in minutes";
+    divetimeField.borderStyle = UITextBorderStyleRoundedRect;
+    divetimeField.adjustsFontSizeToFitWidth = YES;
+    divetimeField.textAlignment = NSTextAlignmentCenter;
+    [scrollView addSubview:divetimeField];
+    
+    temperLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 1088, 100, 21)];
+    temperLabel.backgroundColor = [UIColor clearColor];
+    [temperLabel setText:@"水溫"];
+    [scrollView addSubview:temperLabel];
+    
+    temperField = [[UITextField alloc] initWithFrame:CGRectMake(130, 1085, 97, 30)];
+    temperField.backgroundColor = [UIColor clearColor];
+    [temperField setTag:109];
+    temperField.delegate = self;
+    temperField.placeholder = @"";
+    temperField.borderStyle = UITextBorderStyleRoundedRect;
+    temperField.adjustsFontSizeToFitWidth = YES;
+    [scrollView addSubview:temperField];
+    
+    visiLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 1154, 100, 21)];
+    visiLabel.backgroundColor = [UIColor clearColor];
+    [visiLabel setText:@"能見度"];
+    [scrollView addSubview:visiLabel];
+    
+    visiField = [[UITextField alloc] initWithFrame:CGRectMake(130, 1151, 97, 30)];
+    visiField.backgroundColor = [UIColor clearColor];
+    [visiField setTag:110];
+    visiField.delegate = self;
+    visiField.placeholder = @"15M";
+    visiField.borderStyle = UITextBorderStyleRoundedRect;
+    visiField.adjustsFontSizeToFitWidth = YES;
+    [scrollView addSubview:visiField];
+
 }
 
 /*
@@ -927,17 +1878,8 @@
 
 -(void)viewDidDisappear:(BOOL)animated
 {
-    dateField.text = nil;
-    siteField.text = nil;
-    wavesField.text = nil;
-    currentField.text = nil;
-    maxDepField.text = nil;
-    gasField.text = nil;
-    divetimeField.text = nil;
-    visiField.text = nil;
-    temperField.text = nil;
-    staPreField.text = nil;
-    _endPreField.text = nil;
+
+    [scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
 }
 
