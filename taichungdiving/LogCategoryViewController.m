@@ -96,6 +96,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    logView = nil;
+    air_Button = nil;
+    nitrox_Button = nil;
+    closedCircuit_Button = nil;
 }
 
 /*

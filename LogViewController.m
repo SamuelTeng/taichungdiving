@@ -201,9 +201,90 @@
             
         case 1:
         {
+            NSString *dateStr = dateField.text;
+            NSLog(@"%@",dateStr);
+            
+            
+            NSString *site = siteField.text;
+            
+            
+            
+            NSString *waves = wavesField.text;
+            
+            
+            NSString *current= currentField.text;
+            
+            
+            
+            NSString *maxDepth = maxDepField.text;
+            
+            
+            NSString *gasType = gasField.text;
+            
+            
+            NSString *diveTime = divetimeField.text;
+            NSNumberFormatter *diveTimeFormatter = [[NSNumberFormatter alloc] init];
+            [diveTimeFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+            NSNumber *_diveTime = [diveTimeFormatter numberFromString:diveTime];
+            
+            
+            NSString *visibility = visiField.text;
+            
+            
+            NSString *temperature = temperField.text;
+            
+            
+            NSString *startPressure = staPreField.text;
+            //    NSNumberFormatter *startPressureFormatter = [[NSNumberFormatter alloc] init];
+            //    [startPressureFormatter setNumberStyle:NSNumberFormatterNoStyle];
+            //    NSNumber *_startPressure = [startPressureFormatter numberFromString:startPressure];
+            
+            
+            NSString *endPressure = _endPreField.text;
+            //    NSNumberFormatter *endPressureFormatter = [[NSNumberFormatter alloc] init];
+            //    [endPressureFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+            //    NSNumber *_endPressure = [endPressureFormatter numberFromString:endPressure];
+            dateField.text = nil;
+            siteField.text = nil;
+            wavesField.text = nil;
+            currentField.text = nil;
+            maxDepField.text = nil;
+            gasField.text = nil;
+            divetimeField.text = nil;
+            visiField.text = nil;
+            temperField.text = nil;
+            staPreField.text = nil;
+            _endPreField.text = nil;
+            
+            DiveLog *database = (DiveLog *)[NSEntityDescription insertNewObjectForEntityForName:@"DiveLog" inManagedObjectContext:managedObjectContext];
+            
+            database.date = dateStr;
+            database.site = site;
+            database.waves = waves;
+            database.current = current;
+            database.max_depth = maxDepth;
+            database.gas_type = gasType;
+            database.dive_time = _diveTime;
+            database.visibility = visibility;
+            database.temperture = temperature;
+            database.start_pressure = startPressure;
+            database.end_pressure = endPressure;
+            
+            
+            
+            NSError *error;
+            if (![managedObjectContext save:&error]) {
+                NSLog(@"error:%@", [error localizedFailureReason]);
+            }
+            
+            
+            
+            
+            [delegate.navi pushViewController:logBookTableView animated:YES];
             
             
         }
+
             break;
             
         case 2:
