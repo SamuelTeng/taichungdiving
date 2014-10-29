@@ -23,7 +23,7 @@
 @implementation LogDatabase
 
 @synthesize resultController,_managedObject;
-@synthesize logDate,logEndPressure,logStartPressure,logTemperature,logVisibility,logGas,logDepth,logTime,logSite,logCurrent,logWaves;
+@synthesize logDate,logEndPressure,logStartPressure,logTemperature,logVisibility,logGas,logDepth,logTime,logSite,logCurrent,logWaves,logHelium,logHighppO2,logLowppO2,logMixture,logNitrogen,logOxygen;
 @synthesize pages;
 
 -(void)fetchData
@@ -143,5 +143,45 @@
     return logCurrent;
 }
 
+-(NSString *)mixture:(NSIndexPath *)indexpath
+{
+    NSManagedObject *managedObject = [resultController objectAtIndexPath:indexpath];
+    logMixture = [managedObject valueForKey:@"mixture"];
+    return logMixture;
+}
 
+-(NSString *)oxygen:(NSIndexPath *)indexpath
+{
+    NSManagedObject *managedObject = [resultController objectAtIndexPath:indexpath];
+    logOxygen = [managedObject valueForKey:@"oxygen"];
+    return logOxygen;
+}
+
+-(NSString *)nitrogen:(NSIndexPath *)indexpath
+{
+    NSManagedObject *managedObject = [resultController objectAtIndexPath:indexpath];
+    logNitrogen = [managedObject valueForKey:@"nitrogen"];
+    return logNitrogen;
+}
+
+-(NSString *)helium:(NSIndexPath *)indexpath
+{
+    NSManagedObject *managedObject = [resultController objectAtIndexPath:indexpath];
+    logHelium = [managedObject valueForKey:@"helium"];
+    return logHelium;
+}
+
+-(NSString *)lowppO2:(NSIndexPath *)indexpath
+{
+    NSManagedObject *managedObject = [resultController objectAtIndexPath:indexpath];
+    logLowppO2 = [managedObject valueForKey:@"lowppo2"];
+    return logLowppO2;
+}
+
+-(NSString *)highppO2:(NSIndexPath *)indexpath
+{
+    NSManagedObject *managedObject = [resultController objectAtIndexPath:indexpath];
+    logHighppO2 = [managedObject valueForKey:@"highppo2"];
+    return logHighppO2;
+}
 @end

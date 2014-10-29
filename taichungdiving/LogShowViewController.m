@@ -21,7 +21,7 @@
 @end
 
 @implementation LogShowViewController
-@synthesize  date,site,time,airType,preSta,preEnd,maxDep,temp,visib,logShowView,waves,current;
+@synthesize  date,site,time,airType,preSta,preEnd,maxDep,temp,visib,logShowView,waves,current,mixture,oxygen,nitrogen,helium,lowppo2,highppo2;
 @synthesize contenPath,log;
 
 -(void)toLogRecord:(id)sender
@@ -56,10 +56,22 @@
     
     current = [logDatabase current:contenPath];
     
+    mixture = [logDatabase mixture:contenPath];
     
-        NSString *_log = [NSString stringWithFormat:@" 日期: %@ \n\n 潛點: %@ \n\n 潛水時間: %@ minutes \n\n 氣源: %@ \n\n Start pressure: %@ bar\n\n End pressure: %@ bar\n\n 最大深度: %@ \n\n 水溫: %@ \n\n 能見度: %@", date,site,time,airType,preSta,preEnd,maxDep,temp,visib];
+    oxygen = [logDatabase oxygen:contenPath];
+    
+    nitrogen = [logDatabase nitrogen:contenPath];
+    
+    helium = [logDatabase helium:contenPath];
+    
+    lowppo2 = [logDatabase lowppO2:contenPath];
+    
+    highppo2 = [logDatabase highppO2:contenPath];
+    
+    
+        NSString *_log = [NSString stringWithFormat:@" 日期: %@ \n\n 潛點: %@ \n\n 潛水時間: %@ minutes \n\n 氣源: %@ \n\n 起始殘壓: %@ bar\n\n 結束殘壓: %@ bar\n\n 混合濃度: %@\n\n 氧氣:%@\n\n 氮氣:%@\n\n 氦氣:%@\n\n 低ppO2:%@\n\n 高ppO2:%@\n\n 最大深度: %@ \n\n 水溫: %@ \n\n 能見度: %@", date,site,time,airType,preSta,preEnd,mixture,oxygen,nitrogen,helium,lowppo2,highppo2,maxDep,temp,visib];
         
-        log = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 1100)];
+        log = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 1500)];
         [log setText:_log];
         log.textColor = [UIColor blackColor];
         [log setFont:[UIFont fontWithName:@"Baskerville" size:20.0]];

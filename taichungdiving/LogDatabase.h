@@ -25,6 +25,12 @@
 @property(nonatomic,strong) NSString *logEndPressure;
 @property(nonatomic,strong) NSString *logWaves;
 @property(nonatomic,strong) NSString *logCurrent;
+@property(nonatomic,strong) NSString *logMixture;
+@property(nonatomic,strong) NSString *logOxygen;
+@property(nonatomic,strong) NSString *logNitrogen;
+@property(nonatomic,strong) NSString *logHelium;
+@property(nonatomic,strong) NSString *logLowppO2;
+@property(nonatomic,strong) NSString *logHighppO2;
 
 
 @property (nonatomic)int pages;
@@ -43,6 +49,13 @@
 -(NSString *)endPressure:(NSIndexPath *)indexpath;
 -(NSString *)waves:(NSIndexPath *)indexpath;
 -(NSString *)current:(NSIndexPath *)indexpath;
+-(NSString *)mixture:(NSIndexPath *)indexpath;
+-(NSString *)oxygen:(NSIndexPath *)indexpath;
+-(NSString *)nitrogen:(NSIndexPath *)indexpath;
+-(NSString *)helium:(NSIndexPath *)indexpath;
+-(NSString *)lowppO2:(NSIndexPath *)indexpath;
+-(NSString *)highppO2:(NSIndexPath *)indexpath;
+
 
 
 @end

@@ -244,6 +244,13 @@
             //    NSNumberFormatter *endPressureFormatter = [[NSNumberFormatter alloc] init];
             //    [endPressureFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
             //    NSNumber *_endPressure = [endPressureFormatter numberFromString:endPressure];
+            NSString *_mixture = mixtureField.text;
+            
+            NSString *_oxygen = oxygenField.text;
+            
+            NSString *_nitrogen = nitrogenField.text;
+            
+            
             dateField.text = nil;
             siteField.text = nil;
             wavesField.text = nil;
@@ -255,6 +262,9 @@
             temperField.text = nil;
             staPreField.text = nil;
             _endPreField.text = nil;
+            mixtureField.text = nil;
+            oxygenField.text = nil;
+            nitrogenField.text = nil;
             
             DiveLog *database = (DiveLog *)[NSEntityDescription insertNewObjectForEntityForName:@"DiveLog" inManagedObjectContext:managedObjectContext];
             
@@ -269,7 +279,9 @@
             database.temperture = temperature;
             database.start_pressure = startPressure;
             database.end_pressure = endPressure;
-            
+            database.mixture = _mixture;
+            database.oxygen = _oxygen;
+            database.nitrogen = _nitrogen;
             
             
             NSError *error;
@@ -289,6 +301,110 @@
             
         case 2:
         {
+            NSString *dateStr = dateField.text;
+            NSLog(@"%@",dateStr);
+            
+            
+            NSString *site = siteField.text;
+            
+            
+            
+            NSString *waves = wavesField.text;
+            
+            
+            NSString *current= currentField.text;
+            
+            
+            
+            NSString *maxDepth = maxDepField.text;
+            
+            
+            NSString *gasType = gasField.text;
+            
+            
+            NSString *diveTime = divetimeField.text;
+            NSNumberFormatter *diveTimeFormatter = [[NSNumberFormatter alloc] init];
+            [diveTimeFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+            NSNumber *_diveTime = [diveTimeFormatter numberFromString:diveTime];
+            
+            
+            NSString *visibility = visiField.text;
+            
+            
+            NSString *temperature = temperField.text;
+            
+            
+            NSString *startPressure = staPreField.text;
+            //    NSNumberFormatter *startPressureFormatter = [[NSNumberFormatter alloc] init];
+            //    [startPressureFormatter setNumberStyle:NSNumberFormatterNoStyle];
+            //    NSNumber *_startPressure = [startPressureFormatter numberFromString:startPressure];
+            
+            
+            NSString *endPressure = _endPreField.text;
+            //    NSNumberFormatter *endPressureFormatter = [[NSNumberFormatter alloc] init];
+            //    [endPressureFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+            //    NSNumber *_endPressure = [endPressureFormatter numberFromString:endPressure];
+            NSString *_mixture = mixtureField.text;
+            
+            NSString *_oxygen = oxygenField.text;
+            
+            NSString *_nitrogen = nitrogenField.text;
+            
+            NSString *_helium = heliumField.text;
+            
+            NSString *_lowPPO2 = lowppo2Field.text;
+            
+            NSString *_highPPO2 = highppo2Field.text;
+            
+            
+            dateField.text = nil;
+            siteField.text = nil;
+            wavesField.text = nil;
+            currentField.text = nil;
+            maxDepField.text = nil;
+            gasField.text = nil;
+            divetimeField.text = nil;
+            visiField.text = nil;
+            temperField.text = nil;
+            staPreField.text = nil;
+            _endPreField.text = nil;
+            mixtureField.text = nil;
+            oxygenField.text = nil;
+            nitrogenField.text = nil;
+            heliumField.text = nil;
+            lowppo2Field.text = nil;
+            highppo2Field.text = nil;
+            
+            DiveLog *database = (DiveLog *)[NSEntityDescription insertNewObjectForEntityForName:@"DiveLog" inManagedObjectContext:managedObjectContext];
+            
+            database.date = dateStr;
+            database.site = site;
+            database.waves = waves;
+            database.current = current;
+            database.max_depth = maxDepth;
+            database.gas_type = gasType;
+            database.dive_time = _diveTime;
+            database.visibility = visibility;
+            database.temperture = temperature;
+            database.start_pressure = startPressure;
+            database.end_pressure = endPressure;
+            database.mixture = _mixture;
+            database.oxygen = _oxygen;
+            database.nitrogen = _nitrogen;
+            database.helium = _helium;
+            database.lowppo2 = _lowPPO2;
+            database.highppo2 = _highPPO2;
+            
+            NSError *error;
+            if (![managedObjectContext save:&error]) {
+                NSLog(@"error:%@", [error localizedFailureReason]);
+            }
+            
+            
+            
+            
+            [delegate.navi pushViewController:logBookTableView animated:YES];
+            
             
         }
             break;
@@ -1397,6 +1513,7 @@
     
     gasField = [[UITextField alloc] initWithFrame:CGRectMake(130, 349, 97, 30)];
     [gasField setTag:105];
+    [gasField setText:@"一般空氣"];
     gasField.delegate = self;
     //gasField.placeholder = @"氣源";
     gasField.borderStyle = UITextBorderStyleRoundedRect;
@@ -1566,6 +1683,7 @@
     
     gasField = [[UITextField alloc] initWithFrame:CGRectMake(130, 349, 97, 30)];
     [gasField setTag:105];
+    [gasField setText:@"高氧"];
     gasField.delegate = self;
     //gasField.placeholder = @"氣源";
     gasField.borderStyle = UITextBorderStyleRoundedRect;
@@ -1774,6 +1892,7 @@
     
     gasField = [[UITextField alloc] initWithFrame:CGRectMake(130, 349, 97, 30)];
     [gasField setTag:105];
+    [gasField setText:@"循環水肺"] ;
     gasField.delegate = self;
     //gasField.placeholder = @"氣源";
     gasField.borderStyle = UITextBorderStyleRoundedRect;

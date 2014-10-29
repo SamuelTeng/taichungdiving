@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1818ADCC19A4DC2700EE1327 /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1818ADCB19A4DC2700EE1327 /* ForecastViewController.m */; };
+		183498D61A011227009FD228 /* ic_class_black_48dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 183498D51A011227009FD228 /* ic_class_black_48dp.png */; };
 		18D85C8A199CF9CA00D20CC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C89199CF9CA00D20CC8 /* Foundation.framework */; };
 		18D85C8C199CF9CA00D20CC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C8B199CF9CA00D20CC8 /* CoreGraphics.framework */; };
 		18D85C8E199CF9CA00D20CC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C8D199CF9CA00D20CC8 /* UIKit.framework */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		1818ADCA19A4DC2700EE1327 /* ForecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastViewController.h; sourceTree = "<group>"; };
 		1818ADCB19A4DC2700EE1327 /* ForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastViewController.m; sourceTree = "<group>"; };
+		183498D51A011227009FD228 /* ic_class_black_48dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_class_black_48dp.png; sourceTree = "<group>"; };
 		18D85C86199CF9CA00D20CC8 /* taichungdiving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taichungdiving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D85C89199CF9CA00D20CC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18D85C8B199CF9CA00D20CC8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -226,6 +228,7 @@
 		57BA4DC519FF2DA4001BA6CA /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				183498D51A011227009FD228 /* ic_class_black_48dp.png */,
 				57BA4DDE19FF3AA4001BA6CA /* ic_edit_black_24dp.png */,
 				57BA4DD819FF35F6001BA6CA /* ic_home_black_24dp.png */,
 				57BA4DDC19FF3677001BA6CA /* ic_save_black_24dp.png */,
@@ -349,6 +352,7 @@
 				57BA4DD919FF35F6001BA6CA /* ic_home_black_24dp.png in Resources */,
 				57BA4DD719FF3547001BA6CA /* ic_book_black_48dp.png in Resources */,
 				57BA4DDB19FF363E001BA6CA /* ic_refresh_black_24dp.png in Resources */,
+				183498D61A011227009FD228 /* ic_class_black_48dp.png in Resources */,
 				57BA4DD519FF3508001BA6CA /* ic_warning_amber_48dp.png in Resources */,
 				18D85CA1199CF9CA00D20CC8 /* Images.xcassets in Resources */,
 				57BA4DDF19FF3AA4001BA6CA /* ic_edit_black_24dp.png in Resources */,

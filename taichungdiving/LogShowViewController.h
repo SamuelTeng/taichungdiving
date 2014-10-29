@@ -21,6 +21,13 @@
 @property (nonatomic,strong) NSString *visib;
 @property (nonatomic,strong) NSString *waves;
 @property (nonatomic,strong) NSString *current;
+@property (nonatomic,strong) NSString *mixture;
+@property (nonatomic,strong) NSString *oxygen;
+@property (nonatomic,strong) NSString *nitrogen;
+@property (nonatomic,strong) NSString *helium;
+@property (nonatomic,strong) NSString *lowppo2;
+@property (nonatomic,strong) NSString *highppo2;
+
 @property (nonatomic,strong) UIScrollView *logShowView;
 
 @property (nonatomic,strong) NSIndexPath *contenPath;
