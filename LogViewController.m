@@ -421,7 +421,7 @@
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc ] init];
     //    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
     NSString *formatData = [dateFormatter stringFromDate:date];
     return formatData;
     
@@ -1021,7 +1021,7 @@
 {
     if (aTextField.tag == 101) {
         UIDatePicker *datePicker = [[UIDatePicker alloc] init];
-        datePicker.datePickerMode = UIDatePickerModeDate;
+        datePicker.datePickerMode = UIDatePickerModeDateAndTime;//UIDatePickerModeDate;
         datePicker.minimumDate = [NSDate dateWithTimeIntervalSince1970:-31536000];
         //[NSDate dateWithTimeIntervalSinceNow:-31536000];
         [datePicker setDate:[NSDate date]];
@@ -1451,11 +1451,11 @@
     [dateLabel setText:@"日期"];
     [scrollView addSubview:dateLabel];
     
-    dateField = [[UITextField alloc] initWithFrame:CGRectMake(130, 85, 97, 30)];
+    dateField = [[UITextField alloc] initWithFrame:CGRectMake(130, 85, 150, 30)];
     dateField.backgroundColor = [UIColor clearColor];
     [dateField setTag:101];
     dateField.delegate = self;
-    dateField.placeholder = @"YYYY-mm-dd";
+    dateField.placeholder = @"YYYY-mm-dd HH:mm";
     dateField.borderStyle = UITextBorderStyleRoundedRect;
     dateField.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:dateField];
@@ -1621,7 +1621,7 @@
     [dateLabel setText:@"日期"];
     [scrollView addSubview:dateLabel];
     
-    dateField = [[UITextField alloc] initWithFrame:CGRectMake(130, 85, 97, 30)];
+    dateField = [[UITextField alloc] initWithFrame:CGRectMake(130, 85, 150, 30)];
     dateField.backgroundColor = [UIColor clearColor];
     [dateField setTag:101];
     dateField.delegate = self;
@@ -1830,7 +1830,7 @@
     [dateLabel setText:@"日期"];
     [scrollView addSubview:dateLabel];
     
-    dateField = [[UITextField alloc] initWithFrame:CGRectMake(130, 85, 97, 30)];
+    dateField = [[UITextField alloc] initWithFrame:CGRectMake(130, 85, 150, 30)];
     dateField.backgroundColor = [UIColor clearColor];
     [dateField setTag:101];
     dateField.delegate = self;

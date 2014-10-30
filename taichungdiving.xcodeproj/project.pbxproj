@@ -32,6 +32,7 @@
 		5793014919CBF99900DEF241 /* ModelControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793014819CBF99900DEF241 /* ModelControler.m */; };
 		5793014C19CBFA4000DEF241 /* LogDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793014B19CBFA4000DEF241 /* LogDatabase.m */; };
 		5793014F19CBFBD100DEF241 /* LogShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793014E19CBFBD100DEF241 /* LogShowViewController.m */; };
+		57A2D35C1A01F04E00595BBF /* ic_book_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 57A2D35B1A01F04E00595BBF /* ic_book_black_24dp.png */; };
 		57A3D5F219AED8AB0025FEEB /* ForecastAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3D5F119AED8AB0025FEEB /* ForecastAnnotation.m */; };
 		57A3D5F419AED8E20025FEEB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3D5F319AED8E20025FEEB /* MapKit.framework */; };
 		57AD566819B6BD29009252C0 /* ForecastDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AD566719B6BD29009252C0 /* ForecastDetailViewController.m */; };
@@ -94,6 +95,7 @@
 		5793014B19CBFA4000DEF241 /* LogDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogDatabase.m; sourceTree = "<group>"; };
 		5793014D19CBFBD100DEF241 /* LogShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogShowViewController.h; sourceTree = "<group>"; };
 		5793014E19CBFBD100DEF241 /* LogShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogShowViewController.m; sourceTree = "<group>"; };
+		57A2D35B1A01F04E00595BBF /* ic_book_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_book_black_24dp.png; sourceTree = "<group>"; };
 		57A3D5F019AED8AB0025FEEB /* ForecastAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastAnnotation.h; sourceTree = "<group>"; };
 		57A3D5F119AED8AB0025FEEB /* ForecastAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastAnnotation.m; sourceTree = "<group>"; };
 		57A3D5F319AED8E20025FEEB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				183498D51A011227009FD228 /* ic_class_black_48dp.png */,
+				57A2D35B1A01F04E00595BBF /* ic_book_black_24dp.png */,
 				57BA4DDE19FF3AA4001BA6CA /* ic_edit_black_24dp.png */,
 				57BA4DD819FF35F6001BA6CA /* ic_home_black_24dp.png */,
 				57BA4DDC19FF3677001BA6CA /* ic_save_black_24dp.png */,
@@ -355,6 +358,7 @@
 				183498D61A011227009FD228 /* ic_class_black_48dp.png in Resources */,
 				57BA4DD519FF3508001BA6CA /* ic_warning_amber_48dp.png in Resources */,
 				18D85CA1199CF9CA00D20CC8 /* Images.xcassets in Resources */,
+				57A2D35C1A01F04E00595BBF /* ic_book_black_24dp.png in Resources */,
 				57BA4DDF19FF3AA4001BA6CA /* ic_edit_black_24dp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

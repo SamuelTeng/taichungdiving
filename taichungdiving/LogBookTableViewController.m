@@ -78,6 +78,7 @@
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed: @"ic_home_black_24dp.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(backToHome:)];
     self.navigationItem.leftBarButtonItem = backButton;
+    self.navigationItem.hidesBackButton = YES;
 }
 
 - (void)viewDidLoad
@@ -89,6 +90,7 @@
         UIAlertView *noLog = [[UIAlertView alloc] initWithTitle:@"無日誌記錄" message:@"沒有日誌記錄，請按下\"新增\"新增一筆日誌或\"取消\"回到主頁面" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"新增", nil];
         [noLog show];
     }
+    
     
     UIBarButtonItem *backToHome = [[UIBarButtonItem alloc] init];
     backToHome.title = @"日誌";

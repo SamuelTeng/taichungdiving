@@ -36,6 +36,8 @@
     self.dataSource = modelController;
     
     logDatabase = [LogDatabase new];
+    
+
 
 }
 
@@ -47,7 +49,8 @@
     
     /*set "animated" to "NO" to prevent "UIWindow" issue from happening*/
     [self setViewControllers:[NSArray arrayWithObjects:logShowViewController, nil] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {

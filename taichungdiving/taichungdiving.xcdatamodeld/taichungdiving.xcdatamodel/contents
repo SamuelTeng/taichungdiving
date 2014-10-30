@@ -20,6 +20,6 @@
         <attribute name="waves" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="DiveLog" positionX="-63" positionY="-18" width="128" height="298"/>
+        <element name="DiveLog" positionX="-63" positionY="-18" width="128" height="300"/>
     </elements>
 </model>

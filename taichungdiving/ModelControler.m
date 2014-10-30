@@ -35,6 +35,7 @@
         return nil;
     }else{
         
+        //int page = currentPage;
         int page = currentPage;
         int pageSection = contentPage.contenPath.section-1;
         
@@ -63,6 +64,7 @@
         return nil;
     }else{
         
+        //int page = currentPage;
         int page = currentPage;
         int pageSection = contentPage.contenPath.section+1;
         contentPage = [[LogShowViewController alloc] init];
