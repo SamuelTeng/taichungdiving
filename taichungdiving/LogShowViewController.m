@@ -131,7 +131,7 @@
 
     logShowView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     logShowView.contentSize = CGSizeMake(self.view.bounds.size.width,
-                                         1100//self.view.bounds.size.height+10
+                                         2000//self.view.bounds.size.height+10
                                          );
     [self.view addSubview:logShowView];
     

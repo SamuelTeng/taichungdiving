@@ -34,13 +34,13 @@
     
     air_Button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [air_Button setTitle:@"一般空氣" forState:UIControlStateNormal];
-    [air_Button setFrame:CGRectMake(self.view.center.x-84, self.view.center.y-200,180, 60)];
+    [air_Button setFrame:CGRectMake(self.view.center.x-84, self.view.center.y-170,180, 60)];
     [air_Button addTarget:self action:@selector(air) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:air_Button];
     
     nitrox_Button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [nitrox_Button setTitle:@"高氧" forState:UIControlStateNormal];
-    [nitrox_Button setFrame:CGRectMake(self.view.center.x-84, self.view.center.y-120, 180, 60)];
+    [nitrox_Button setFrame:CGRectMake(self.view.center.x-84, self.view.center.y-110, 180, 60)];
     [nitrox_Button addTarget:self action:@selector(nitrox) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:nitrox_Button];
     

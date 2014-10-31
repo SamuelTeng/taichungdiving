@@ -38,13 +38,13 @@
     UIButton *logBookButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [logBookButton setBackgroundImage:[UIImage imageNamed:@"ic_class_black_48dp.png"] forState:UIControlStateNormal];
     [logBookButton setTitle:@"潛水日誌" forState:UIControlStateNormal];
-    [logBookButton setFrame:CGRectMake(self.view.center.x-84, self.view.center.y-200,48, 48)];
+    [logBookButton setFrame:CGRectMake(self.view.center.x-20, self.view.center.y-150,48, 48)];
     [logBookButton addTarget:self action:@selector(fowardToLogBook:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:logBookButton];
     
     UIButton *weatherButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [weatherButton setTitle:@"海面天氣" forState:UIControlStateNormal];
-    [weatherButton setFrame:CGRectMake(self.view.center.x-84, self.view.center.y-120, 180, 60)];
+    [weatherButton setFrame:CGRectMake(self.view.center.x-84, self.view.center.y-90, 180, 60)];
     [weatherButton addTarget:self action:@selector(fowardToForecast:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:weatherButton];
     

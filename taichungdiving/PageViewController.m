@@ -37,18 +37,22 @@
     
     logDatabase = [LogDatabase new];
     
-
-
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     logShowViewController = [[LogShowViewController alloc] init];
+    
     logShowViewController.contenPath = [NSIndexPath indexPathForRow:self.startPage inSection:self._section];
+    
+    
+
     
     /*set "animated" to "NO" to prevent "UIWindow" issue from happening*/
     [self setViewControllers:[NSArray arrayWithObjects:logShowViewController, nil] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
 }
 
 
