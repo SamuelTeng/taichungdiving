@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1818ADCC19A4DC2700EE1327 /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1818ADCB19A4DC2700EE1327 /* ForecastViewController.m */; };
 		183498D61A011227009FD228 /* ic_class_black_48dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 183498D51A011227009FD228 /* ic_class_black_48dp.png */; };
+		183FEB371A07C14000447579 /* fadiving@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183FEB351A07C14000447579 /* fadiving@2x.png */; };
+		183FEB381A07C14000447579 /* fadiving@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183FEB361A07C14000447579 /* fadiving@3x.png */; };
 		18D85C8A199CF9CA00D20CC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C89199CF9CA00D20CC8 /* Foundation.framework */; };
 		18D85C8C199CF9CA00D20CC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C8B199CF9CA00D20CC8 /* CoreGraphics.framework */; };
 		18D85C8E199CF9CA00D20CC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C8D199CF9CA00D20CC8 /* UIKit.framework */; };
@@ -64,6 +66,8 @@
 		1818ADCA19A4DC2700EE1327 /* ForecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastViewController.h; sourceTree = "<group>"; };
 		1818ADCB19A4DC2700EE1327 /* ForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastViewController.m; sourceTree = "<group>"; };
 		183498D51A011227009FD228 /* ic_class_black_48dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_class_black_48dp.png; sourceTree = "<group>"; };
+		183FEB351A07C14000447579 /* fadiving@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fadiving@2x.png"; sourceTree = "<group>"; };
+		183FEB361A07C14000447579 /* fadiving@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fadiving@3x.png"; sourceTree = "<group>"; };
 		18D85C86199CF9CA00D20CC8 /* taichungdiving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taichungdiving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D85C89199CF9CA00D20CC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18D85C8B199CF9CA00D20CC8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -113,7 +117,7 @@
 		57BA4DDE19FF3AA4001BA6CA /* ic_edit_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_edit_black_24dp.png; sourceTree = "<group>"; };
 		57BEF03D1A0753C7009804C1 /* Taichung_Diving@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Taichung_Diving@3x.png"; sourceTree = "<group>"; };
 		57BEF03F1A07552E009804C1 /* Taichung_Diving@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Taichung_Diving@2x.png"; path = "../Taichung_Diving@2x.png"; sourceTree = "<group>"; };
-		57BEF0411A07569C009804C1 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		57BEF0411A07569C009804C1 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Images-2.xcassets"; path = "taichungdiving/Images-2.xcassets"; sourceTree = "<group>"; };
 		57BEF0431A075897009804C1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		57DCBB3919A19C2200BFFCED /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		57DCBB3A19A19C2200BFFCED /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				18D85C91199CF9CA00D20CC8 /* taichungdiving */,
+				57BEF0411A07569C009804C1 /* Images-2.xcassets */,
 				18D85CAE199CF9CA00D20CC8 /* taichungdivingTests */,
 				18D85C88199CF9CA00D20CC8 /* Frameworks */,
 				18D85C87199CF9CA00D20CC8 /* Products */,
@@ -186,7 +191,6 @@
 				57BA4DC519FF2DA4001BA6CA /* Icons */,
 				57DCBB4019A1DA7500BFFCED /* ViewController */,
 				57DCBB3F19A19C7300BFFCED /* Database */,
-				57BEF0411A07569C009804C1 /* Images-2.xcassets */,
 				18D85C92199CF9CA00D20CC8 /* Supporting Files */,
 			);
 			path = taichungdiving;
@@ -237,6 +241,8 @@
 		57BA4DC519FF2DA4001BA6CA /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				183FEB351A07C14000447579 /* fadiving@2x.png */,
+				183FEB361A07C14000447579 /* fadiving@3x.png */,
 				57BEF03F1A07552E009804C1 /* Taichung_Diving@2x.png */,
 				57BEF03D1A0753C7009804C1 /* Taichung_Diving@3x.png */,
 				183498D51A011227009FD228 /* ic_class_black_48dp.png */,
@@ -360,10 +366,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BA4DDD19FF3677001BA6CA /* ic_save_black_24dp.png in Resources */,
+				183FEB371A07C14000447579 /* fadiving@2x.png in Resources */,
 				57BEF0401A07552E009804C1 /* Taichung_Diving@2x.png in Resources */,
 				18D85C96199CF9CA00D20CC8 /* InfoPlist.strings in Resources */,
 				57BEF03E1A0753C7009804C1 /* Taichung_Diving@3x.png in Resources */,
 				57BA4DD919FF35F6001BA6CA /* ic_home_black_24dp.png in Resources */,
+				183FEB381A07C14000447579 /* fadiving@3x.png in Resources */,
 				57BA4DD719FF3547001BA6CA /* ic_book_black_48dp.png in Resources */,
 				57BEF0421A07569C009804C1 /* Images-2.xcassets in Resources */,
 				57BA4DDB19FF363E001BA6CA /* ic_refresh_black_24dp.png in Resources */,
