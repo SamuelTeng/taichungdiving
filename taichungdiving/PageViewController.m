@@ -37,9 +37,19 @@
     
     logDatabase = [LogDatabase new];
     
+    //self.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, 1100);
+    //[self.view setFrame:CGRectMake(0, 0, self.view.bounds.size.width, 1100)];
+    logShowViewController = [[LogShowViewController alloc] init];
+    
+    logShowViewController.contenPath = [NSIndexPath indexPathForRow:self.startPage inSection:self._section];
+    
+    
+    /*set "animated" to "NO" to prevent "UIWindow" issue from happening*/
+    [self setViewControllers:[NSArray arrayWithObjects:logShowViewController, nil] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    NSLog(@"%@",NSStringFromCGRect(self.view.frame));
     
 }
-
+/*
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -50,11 +60,33 @@
     
 
     
-    /*set "animated" to "NO" to prevent "UIWindow" issue from happening*/
+    set "animated" to "NO" to prevent "UIWindow" issue from happening
+
     [self setViewControllers:[NSArray arrayWithObjects:logShowViewController, nil] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-    
+
+}
+*/
+- (void)pageViewController:(UIPageViewController *)bPageViewController
+willTransitionToViewControllers:(NSArray *)pendingViewControllers
+{
+    NSLog(@"during the transition frame:%@",NSStringFromCGRect(bPageViewController.view.frame));
+    //[self.view setFrame:CGRectMake(10, 10, self.view.bounds.size.width, 1100)];
 }
 
+- (void)pageViewController:(UIPageViewController *)aPageViewController
+        didFinishAnimating:(BOOL)finished
+   previousViewControllers:(NSArray *)previousViewControllers
+       transitionCompleted:(BOOL)completed
+{
+    if (finished) {
+        //aPageViewController.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, 1100);
+        NSLog(@"finish animation");
+        if (completed) {
+            NSLog(@"%@",NSStringFromCGRect(aPageViewController.view.frame));
+            //aPageViewController.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, 1100);
+        }
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {
