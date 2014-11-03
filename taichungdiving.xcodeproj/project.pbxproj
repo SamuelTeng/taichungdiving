@@ -17,7 +17,6 @@
 		18D85C98199CF9CA00D20CC8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D85C97199CF9CA00D20CC8 /* main.m */; };
 		18D85C9C199CF9CA00D20CC8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D85C9B199CF9CA00D20CC8 /* AppDelegate.m */; };
 		18D85C9F199CF9CA00D20CC8 /* taichungdiving.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18D85C9D199CF9CA00D20CC8 /* taichungdiving.xcdatamodeld */; };
-		18D85CA1199CF9CA00D20CC8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D85CA0199CF9CA00D20CC8 /* Images.xcassets */; };
 		18D85CA8199CF9CA00D20CC8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85CA7199CF9CA00D20CC8 /* XCTest.framework */; };
 		18D85CA9199CF9CA00D20CC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C89199CF9CA00D20CC8 /* Foundation.framework */; };
 		18D85CAA199CF9CA00D20CC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C8D199CF9CA00D20CC8 /* UIKit.framework */; };
@@ -43,6 +42,10 @@
 		57BA4DDB19FF363E001BA6CA /* ic_refresh_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BA4DDA19FF363E001BA6CA /* ic_refresh_black_24dp.png */; };
 		57BA4DDD19FF3677001BA6CA /* ic_save_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BA4DDC19FF3677001BA6CA /* ic_save_black_24dp.png */; };
 		57BA4DDF19FF3AA4001BA6CA /* ic_edit_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BA4DDE19FF3AA4001BA6CA /* ic_edit_black_24dp.png */; };
+		57BEF03E1A0753C7009804C1 /* Taichung_Diving@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BEF03D1A0753C7009804C1 /* Taichung_Diving@3x.png */; };
+		57BEF0401A07552E009804C1 /* Taichung_Diving@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BEF03F1A07552E009804C1 /* Taichung_Diving@2x.png */; };
+		57BEF0421A07569C009804C1 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57BEF0411A07569C009804C1 /* Images-2.xcassets */; };
+		57BEF0441A075897009804C1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57BEF0431A075897009804C1 /* Default-568h@2x.png */; };
 		57DCBB3B19A19C2200BFFCED /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DCBB3A19A19C2200BFFCED /* MainViewController.m */; };
 		57DCBB3E19A19C6B00BFFCED /* DiveLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DCBB3D19A19C6B00BFFCED /* DiveLog.m */; };
 /* End PBXBuildFile section */
@@ -73,7 +76,6 @@
 		18D85C9A199CF9CA00D20CC8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18D85C9B199CF9CA00D20CC8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		18D85C9E199CF9CA00D20CC8 /* taichungdiving.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = taichungdiving.xcdatamodel; sourceTree = "<group>"; };
-		18D85CA0199CF9CA00D20CC8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = taichungdiving/Images.xcassets; sourceTree = "<group>"; };
 		18D85CA6199CF9CA00D20CC8 /* taichungdivingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = taichungdivingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D85CA7199CF9CA00D20CC8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		18D85CB0199CF9CA00D20CC8 /* taichungdivingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "taichungdivingTests-Info.plist"; sourceTree = "<group>"; };
@@ -109,6 +111,10 @@
 		57BA4DDA19FF363E001BA6CA /* ic_refresh_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_refresh_black_24dp.png; sourceTree = "<group>"; };
 		57BA4DDC19FF3677001BA6CA /* ic_save_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_save_black_24dp.png; sourceTree = "<group>"; };
 		57BA4DDE19FF3AA4001BA6CA /* ic_edit_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_edit_black_24dp.png; sourceTree = "<group>"; };
+		57BEF03D1A0753C7009804C1 /* Taichung_Diving@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Taichung_Diving@3x.png"; sourceTree = "<group>"; };
+		57BEF03F1A07552E009804C1 /* Taichung_Diving@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Taichung_Diving@2x.png"; path = "../Taichung_Diving@2x.png"; sourceTree = "<group>"; };
+		57BEF0411A07569C009804C1 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		57BEF0431A075897009804C1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		57DCBB3919A19C2200BFFCED /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		57DCBB3A19A19C2200BFFCED /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		57DCBB3C19A19C6B00BFFCED /* DiveLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiveLog.h; sourceTree = "<group>"; };
@@ -146,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				18D85C91199CF9CA00D20CC8 /* taichungdiving */,
-				18D85CA0199CF9CA00D20CC8 /* Images.xcassets */,
 				18D85CAE199CF9CA00D20CC8 /* taichungdivingTests */,
 				18D85C88199CF9CA00D20CC8 /* Frameworks */,
 				18D85C87199CF9CA00D20CC8 /* Products */,
@@ -181,6 +186,7 @@
 				57BA4DC519FF2DA4001BA6CA /* Icons */,
 				57DCBB4019A1DA7500BFFCED /* ViewController */,
 				57DCBB3F19A19C7300BFFCED /* Database */,
+				57BEF0411A07569C009804C1 /* Images-2.xcassets */,
 				18D85C92199CF9CA00D20CC8 /* Supporting Files */,
 			);
 			path = taichungdiving;
@@ -189,6 +195,7 @@
 		18D85C92199CF9CA00D20CC8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				57BEF0431A075897009804C1 /* Default-568h@2x.png */,
 				5793014719CBF99900DEF241 /* ModelControler.h */,
 				5793014819CBF99900DEF241 /* ModelControler.m */,
 				5793014A19CBFA4000DEF241 /* LogDatabase.h */,
@@ -230,6 +237,8 @@
 		57BA4DC519FF2DA4001BA6CA /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				57BEF03F1A07552E009804C1 /* Taichung_Diving@2x.png */,
+				57BEF03D1A0753C7009804C1 /* Taichung_Diving@3x.png */,
 				183498D51A011227009FD228 /* ic_class_black_48dp.png */,
 				57A2D35B1A01F04E00595BBF /* ic_book_black_24dp.png */,
 				57BA4DDE19FF3AA4001BA6CA /* ic_edit_black_24dp.png */,
@@ -351,13 +360,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BA4DDD19FF3677001BA6CA /* ic_save_black_24dp.png in Resources */,
+				57BEF0401A07552E009804C1 /* Taichung_Diving@2x.png in Resources */,
 				18D85C96199CF9CA00D20CC8 /* InfoPlist.strings in Resources */,
+				57BEF03E1A0753C7009804C1 /* Taichung_Diving@3x.png in Resources */,
 				57BA4DD919FF35F6001BA6CA /* ic_home_black_24dp.png in Resources */,
 				57BA4DD719FF3547001BA6CA /* ic_book_black_48dp.png in Resources */,
+				57BEF0421A07569C009804C1 /* Images-2.xcassets in Resources */,
 				57BA4DDB19FF363E001BA6CA /* ic_refresh_black_24dp.png in Resources */,
 				183498D61A011227009FD228 /* ic_class_black_48dp.png in Resources */,
+				57BEF0441A075897009804C1 /* Default-568h@2x.png in Resources */,
 				57BA4DD519FF3508001BA6CA /* ic_warning_amber_48dp.png in Resources */,
-				18D85CA1199CF9CA00D20CC8 /* Images.xcassets in Resources */,
 				57A2D35C1A01F04E00595BBF /* ic_book_black_24dp.png in Resources */,
 				57BA4DDF19FF3AA4001BA6CA /* ic_edit_black_24dp.png in Resources */,
 			);
@@ -512,7 +524,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "taichungdiving/taichungdiving-Prefix.pch";
 				INFOPLIST_FILE = "taichungdiving/taichungdiving-Info.plist";
@@ -527,7 +538,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "taichungdiving/taichungdiving-Prefix.pch";
 				INFOPLIST_FILE = "taichungdiving/taichungdiving-Info.plist";

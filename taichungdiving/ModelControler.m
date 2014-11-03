@@ -26,8 +26,8 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
     contentPage = (LogShowViewController *)viewController;
-    int currentPage = contentPage.contenPath.row;
-    int currentSection = contentPage.contenPath.section;
+    NSInteger currentPage = contentPage.contenPath.row;
+    NSInteger currentSection = contentPage.contenPath.section;
     
     
     /*the section from tableview start with 0*/
@@ -36,8 +36,8 @@
     }else{
         
         //int page = currentPage;
-        int page = currentPage;
-        int pageSection = contentPage.contenPath.section-1;
+        NSInteger page = currentPage;
+        NSInteger pageSection = contentPage.contenPath.section-1;
         
         contentPage = [[LogShowViewController alloc] init];
         contentPage.contenPath = [NSIndexPath indexPathForRow:page inSection:pageSection];
@@ -52,11 +52,11 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
     contentPage = (LogShowViewController *)viewController;
-    int currentPage = contentPage.contenPath.row;
-    int currentSection = contentPage.contenPath.section;
+    NSInteger currentPage = contentPage.contenPath.row;
+    NSInteger currentSection = contentPage.contenPath.section;
     
     LogDatabase *logDatabase = [LogDatabase new];
-    int total = [logDatabase numberOfPages];
+    NSInteger total = [logDatabase numberOfPages];
     
    
     
@@ -65,8 +65,8 @@
     }else{
         
         //int page = currentPage;
-        int page = currentPage;
-        int pageSection = contentPage.contenPath.section+1;
+        NSInteger page = currentPage;
+        NSInteger pageSection = contentPage.contenPath.section+1;
         contentPage = [[LogShowViewController alloc] init];
         contentPage.contenPath = [NSIndexPath indexPathForRow:page inSection:pageSection];
         return contentPage;

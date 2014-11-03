@@ -33,7 +33,7 @@
     self.delegate = self;
     
     modelController = [[ModelControler alloc] init];
-    self.dataSource = modelController;
+    //self.dataSource = modelController;
     
     logDatabase = [LogDatabase new];
     
@@ -47,8 +47,6 @@
     
     logShowViewController.contenPath = [NSIndexPath indexPathForRow:self.startPage inSection:self._section];
     
-    
-
     
     /*set "animated" to "NO" to prevent "UIWindow" issue from happening*/
     [self setViewControllers:[NSArray arrayWithObjects:logShowViewController, nil] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
