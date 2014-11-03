@@ -46,7 +46,7 @@
 }
 
 
--(int)numberOfPages
+-(NSInteger)numberOfPages
 {
     [self fetchData];
     pages = resultController.fetchedObjects.count;

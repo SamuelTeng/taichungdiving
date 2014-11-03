@@ -10,8 +10,8 @@
 
 @interface PageViewController : UIPageViewController<UIPageViewControllerDelegate>
 
-@property (nonatomic) int startPage;
-@property (nonatomic) int _section;
+@property (nonatomic) NSInteger startPage;
+@property (nonatomic) NSInteger _section;
 
 
 @end

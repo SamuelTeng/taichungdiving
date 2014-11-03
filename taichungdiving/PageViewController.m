@@ -33,7 +33,7 @@
     self.delegate = self;
     
     modelController = [[ModelControler alloc] init];
-    self.dataSource = modelController;
+    //self.dataSource = modelController;
     
     logDatabase = [LogDatabase new];
     

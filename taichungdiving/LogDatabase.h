@@ -33,10 +33,10 @@
 @property(nonatomic,strong) NSString *logHighppO2;
 
 
-@property (nonatomic)int pages;
+@property (nonatomic)NSInteger pages;
 
 -(void)fetchData;
--(int)numberOfPages;
+-(NSInteger)numberOfPages;
 
 -(NSString *)date:(NSIndexPath *)indexpath;
 -(NSString *)site:(NSIndexPath *)indexpath;
