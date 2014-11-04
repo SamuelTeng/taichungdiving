@@ -7,11 +7,16 @@
 //
 
 #import "TourTableViewController.h"
+#import "TourDetailViewController.h"
+
 #define kSection 2
 #define kDomestic 0
 #define kForeign 1
 
-@interface TourTableViewController ()
+@interface TourTableViewController (){
+    
+    
+}
 
 @end
 
@@ -60,6 +65,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -72,6 +78,7 @@
     // Dispose of any resources that can be recreated.
     domesticTour = nil;
     foreignTour = nil;
+    
 }
 
 -(NSArray *)whichArray:(NSUInteger)integer
@@ -120,15 +127,61 @@
     
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+
+- (UITableViewCell *)tableView:(UITableView *)tableView1 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    // Configure the cell...
     
+    static NSString *cellIdentifier=@"DivingTour";
+    UITableViewCell *cell=[tableView1 dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell==nil) {
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+    }
+    NSArray *current;
+    switch (indexPath.section) {
+        case kDomestic:
+            current=domesticTour;
+            break;
+            
+        case kForeign:
+            current=foreignTour;
+            break;
+        default:
+            break;
+    }
+    NSDictionary *rowData=[current objectAtIndex:indexPath.row];
+    cell.textLabel.text=[rowData objectForKey:@"page"];
+    cell.detailTextLabel.text=[rowData objectForKey:@"url"];
+    cell.detailTextLabel.textColor=[UIColor whiteColor];
     return cell;
+
+    
+    
 }
-*/
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    switch (section) {
+        case kDomestic:
+            return @"國內旅遊";
+            break;
+        case kForeign:
+            return @"海外旅遊";
+            break;
+        default:
+            return nil;
+            break;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray *current=[self whichArray:indexPath.section];
+    NSDictionary *selectedPage=[current objectAtIndex:indexPath.row];
+    
+    TourDetailViewController *tourDetailView = [[TourDetailViewController alloc] init];
+    tourDetailView.pageData=selectedPage;
+    [self.navigationController pushViewController:tourDetailView animated:YES];
+}
 
 /*
 // Override to support conditional editing of the table view.

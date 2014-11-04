@@ -668,6 +668,13 @@ static NSString *kType = @"Type";
     
     
     /*make all annotations visible when view load*/
+    CLLocationCoordinate2D uperReightCoordinate = CLLocationCoordinate2DMake(25.401047, 122.765777);
+    MKMapPoint uperRight = MKMapPointForCoordinate(uperReightCoordinate);
+    
+    CLLocationCoordinate2D lowerLeftCoordinate = CLLocationCoordinate2DMake(21.764278, 119.213206);
+    MKMapPoint lowerLeft = MKMapPointForCoordinate(lowerLeftCoordinate);
+    MKMapRect focus = MKMapRectMake(lowerLeft.x, uperRight.y, uperRight.x-lowerLeft.x, lowerLeft.y-uperRight.y);
+    /*
     MKMapRect focus = MKMapRectNull;
     for ( annotation in annotations) {
         MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
@@ -679,7 +686,7 @@ static NSString *kType = @"Type";
             focus = MKMapRectUnion(focus, pointRect);
         }
     }
-    
+    */
     map.visibleMapRect = focus;
 }
 

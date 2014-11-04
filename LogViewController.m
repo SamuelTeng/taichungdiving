@@ -1471,6 +1471,7 @@
     siteField.delegate = self;
     siteField.placeholder = @"Site Name";
     siteField.borderStyle = UITextBorderStyleRoundedRect;
+    //siteField.textAlignment = NSTextAlignmentCenter;
     siteField.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:siteField];
     /*
@@ -1491,11 +1492,12 @@
     wavesField.delegate = self;
     //wavesField.placeholder = @"25.061033";
     wavesField.borderStyle = UITextBorderStyleRoundedRect;
+    wavesField.textAlignment = NSTextAlignmentCenter;
     [scrollView addSubview:wavesField];
     
     currentLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 286, 100, 21)];
     currentLabel.backgroundColor = [UIColor clearColor];
-    [currentLabel setText:@"水流"];
+    [currentLabel setText:@"海流"];
     [scrollView addSubview:currentLabel];
     
     currentField = [[UITextField alloc] initWithFrame:CGRectMake(130, 283, 97, 30)];
@@ -1504,6 +1506,7 @@
     currentField.delegate = self;
     //currentField.placeholder = @"121.646056";
     currentField.borderStyle = UITextBorderStyleRoundedRect;
+    currentField.textAlignment = NSTextAlignmentCenter;
     [scrollView addSubview:currentField];
     
     gasLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 352, 100, 21)];
@@ -1517,10 +1520,11 @@
     gasField.delegate = self;
     //gasField.placeholder = @"氣源";
     gasField.borderStyle = UITextBorderStyleRoundedRect;
+    gasField.textAlignment = NSTextAlignmentCenter;
     gasField.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:gasField];
     
-    staPrelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 428, 200, 21)];
+    staPrelabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 428, 200, 21)];
     staPrelabel.backgroundColor = [UIColor clearColor];
     [staPrelabel setText:@"起始殘壓"];
     [scrollView addSubview:staPrelabel];
@@ -1535,7 +1539,7 @@
     staPreField.textAlignment = NSTextAlignmentCenter;
     [scrollView addSubview:staPreField];
     
-    _endPreLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 494, 200, 21)];
+    _endPreLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 494, 200, 21)];
     _endPreLabel.backgroundColor = [UIColor clearColor];
     [_endPreLabel setText:@"結束殘壓"];
     [scrollView addSubview:_endPreLabel];
@@ -1592,6 +1596,7 @@
     temperField.delegate = self;
     temperField.placeholder = @"";
     temperField.borderStyle = UITextBorderStyleRoundedRect;
+    temperField.textAlignment = NSTextAlignmentCenter;
     temperField.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:temperField];
     
@@ -1606,6 +1611,7 @@
     visiField.delegate = self;
     visiField.placeholder = @"15M";
     visiField.borderStyle = UITextBorderStyleRoundedRect;
+    visiField.textAlignment = NSTextAlignmentCenter;
     visiField.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:visiField];
     
@@ -1625,7 +1631,7 @@
     dateField.backgroundColor = [UIColor clearColor];
     [dateField setTag:101];
     dateField.delegate = self;
-    dateField.placeholder = @"YYYY-mm-dd";
+    dateField.placeholder = @"YYYY-mm-dd HH:mm";
     dateField.borderStyle = UITextBorderStyleRoundedRect;
     dateField.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:dateField];
@@ -1641,9 +1647,9 @@
     siteField.delegate = self;
     siteField.placeholder = @"Site Name";
     siteField.borderStyle = UITextBorderStyleRoundedRect;
+    //siteField.textAlignment = NSTextAlignmentCenter;
     siteField.adjustsFontSizeToFitWidth = YES;
-    [scrollView addSubview:siteField];
-    /*
+    [scrollView addSubview:siteField];    /*
      siteButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
      [siteButton setTitle:@"Auto" forState:UIControlStateNormal];
      [siteButton setFrame:CGRectMake(210, 124, 80, 80)];
@@ -1661,11 +1667,12 @@
     wavesField.delegate = self;
     //wavesField.placeholder = @"25.061033";
     wavesField.borderStyle = UITextBorderStyleRoundedRect;
+    wavesField.textAlignment = NSTextAlignmentCenter;
     [scrollView addSubview:wavesField];
     
     currentLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 286, 100, 21)];
     currentLabel.backgroundColor = [UIColor clearColor];
-    [currentLabel setText:@"水流"];
+    [currentLabel setText:@"海流"];
     [scrollView addSubview:currentLabel];
     
     currentField = [[UITextField alloc] initWithFrame:CGRectMake(130, 283, 97, 30)];
@@ -1674,6 +1681,7 @@
     currentField.delegate = self;
     //currentField.placeholder = @"121.646056";
     currentField.borderStyle = UITextBorderStyleRoundedRect;
+    currentField.textAlignment = NSTextAlignmentCenter;
     [scrollView addSubview:currentField];
     
     gasLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 352, 100, 21)];
@@ -1687,10 +1695,11 @@
     gasField.delegate = self;
     //gasField.placeholder = @"氣源";
     gasField.borderStyle = UITextBorderStyleRoundedRect;
+    gasField.textAlignment = NSTextAlignmentCenter;
     gasField.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:gasField];
     
-    staPrelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 428, 200, 21)];
+    staPrelabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 428, 200, 21)];
     staPrelabel.backgroundColor = [UIColor clearColor];
     [staPrelabel setText:@"起始殘壓"];
     [scrollView addSubview:staPrelabel];
@@ -1705,7 +1714,7 @@
     staPreField.textAlignment = NSTextAlignmentCenter;
     [scrollView addSubview:staPreField];
     
-    _endPreLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 494, 200, 21)];
+    _endPreLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 494, 200, 21)];
     _endPreLabel.backgroundColor = [UIColor clearColor];
     [_endPreLabel setText:@"結束殘壓"];
     [scrollView addSubview:_endPreLabel];
@@ -1760,6 +1769,7 @@
     nitrogenField.delegate = self;
     nitrogenField.placeholder = @"";
     nitrogenField.borderStyle = UITextBorderStyleRoundedRect;
+    nitrogenField.textAlignment = NSTextAlignmentCenter;
     nitrogenField.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:nitrogenField];
     
@@ -1804,6 +1814,7 @@
     temperField.delegate = self;
     temperField.placeholder = @"";
     temperField.borderStyle = UITextBorderStyleRoundedRect;
+    temperField.textAlignment = NSTextAlignmentCenter;
     temperField.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:temperField];
     
@@ -1818,6 +1829,7 @@
     visiField.delegate = self;
     visiField.placeholder = @"15M";
     visiField.borderStyle = UITextBorderStyleRoundedRect;
+    visiField.textAlignment = NSTextAlignmentCenter;
     visiField.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:visiField];
 
@@ -1850,6 +1862,7 @@
     siteField.delegate = self;
     siteField.placeholder = @"Site Name";
     siteField.borderStyle = UITextBorderStyleRoundedRect;
+    siteField.textAlignment = NSTextAlignmentCenter;
     siteField.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:siteField];
     /*
@@ -1870,6 +1883,7 @@
     wavesField.delegate = self;
     //wavesField.placeholder = @"25.061033";
     wavesField.borderStyle = UITextBorderStyleRoundedRect;
+    wavesField.textAlignment = NSTextAlignmentCenter;
     [scrollView addSubview:wavesField];
     
     currentLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 286, 100, 21)];
@@ -1883,6 +1897,7 @@
     currentField.delegate = self;
     //currentField.placeholder = @"121.646056";
     currentField.borderStyle = UITextBorderStyleRoundedRect;
+    currentField.textAlignment = NSTextAlignmentCenter;
     [scrollView addSubview:currentField];
     
     gasLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 352, 100, 21)];
@@ -1896,10 +1911,11 @@
     gasField.delegate = self;
     //gasField.placeholder = @"氣源";
     gasField.borderStyle = UITextBorderStyleRoundedRect;
+    gasField.textAlignment = NSTextAlignmentCenter;
     gasField.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:gasField];
     
-    staPrelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 428, 200, 21)];
+    staPrelabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 428, 200, 21)];
     staPrelabel.backgroundColor = [UIColor clearColor];
     [staPrelabel setText:@"起始殘壓"];
     [scrollView addSubview:staPrelabel];
@@ -1914,7 +1930,7 @@
     staPreField.textAlignment = NSTextAlignmentCenter;
     [scrollView addSubview:staPreField];
     
-    _endPreLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 494, 200, 21)];
+    _endPreLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 494, 200, 21)];
     _endPreLabel.backgroundColor = [UIColor clearColor];
     [_endPreLabel setText:@"結束殘壓"];
     [scrollView addSubview:_endPreLabel];
@@ -1969,10 +1985,11 @@
     nitrogenField.delegate = self;
     nitrogenField.placeholder = @"/%/";
     nitrogenField.borderStyle = UITextBorderStyleRoundedRect;
+    nitrogenField.textAlignment = NSTextAlignmentCenter;
     nitrogenField.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:nitrogenField];
     
-    heliumLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 758, 100, 21)];
+    heliumLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 758, 100, 21)];
     heliumLabel.backgroundColor = [UIColor clearColor];
     [heliumLabel setText:@"氦氣"];
     [scrollView addSubview:heliumLabel];
@@ -2001,7 +2018,7 @@
     lowppo2Field.textAlignment = NSTextAlignmentCenter;
     [scrollView addSubview:lowppo2Field];
     
-    highppo2Label = [[UILabel alloc] initWithFrame:CGRectMake(70, 890, 100, 21)];
+    highppo2Label = [[UILabel alloc] initWithFrame:CGRectMake(30, 890, 100, 21)];
     highppo2Label.backgroundColor = [UIColor clearColor];
     [highppo2Label setText:@"高ppO2"];
     [scrollView addSubview:highppo2Label];
@@ -2012,6 +2029,7 @@
     highppo2Field.delegate = self;
     highppo2Field.placeholder = @"";
     highppo2Field.borderStyle = UITextBorderStyleRoundedRect;
+    highppo2Field.textAlignment = NSTextAlignmentCenter;
     highppo2Field.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:highppo2Field];
     
@@ -2056,6 +2074,7 @@
     temperField.delegate = self;
     temperField.placeholder = @"";
     temperField.borderStyle = UITextBorderStyleRoundedRect;
+    temperField.textAlignment = NSTextAlignmentCenter;
     temperField.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:temperField];
     
@@ -2070,6 +2089,7 @@
     visiField.delegate = self;
     visiField.placeholder = @"15M";
     visiField.borderStyle = UITextBorderStyleRoundedRect;
+    visiField.textAlignment = NSTextAlignmentCenter;
     visiField.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:visiField];
 

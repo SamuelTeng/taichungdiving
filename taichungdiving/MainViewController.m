@@ -58,6 +58,7 @@
     
     self.navigationItem.hidesBackButton = YES;
     
+    self.navigationItem.title = @"台中潛水";
   
     
 }
