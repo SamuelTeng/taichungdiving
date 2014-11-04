@@ -156,10 +156,10 @@
 			isa = PBXGroup;
 			children = (
 				18D85C91199CF9CA00D20CC8 /* taichungdiving */,
-				57BEF0411A07569C009804C1 /* Images-2.xcassets */,
 				18D85CAE199CF9CA00D20CC8 /* taichungdivingTests */,
 				18D85C88199CF9CA00D20CC8 /* Frameworks */,
 				18D85C87199CF9CA00D20CC8 /* Products */,
+				57BEF0411A07569C009804C1 /* Images-2.xcassets */,
 			);
 			sourceTree = "<group>";
 		};

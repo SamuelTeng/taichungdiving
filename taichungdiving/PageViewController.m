@@ -33,23 +33,18 @@
     self.delegate = self;
     
     modelController = [[ModelControler alloc] init];
-    //self.dataSource = modelController;
+    self.dataSource = modelController;
     
     logDatabase = [LogDatabase new];
     
-    //self.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, 1100);
-    //[self.view setFrame:CGRectMake(0, 0, self.view.bounds.size.width, 1100)];
-    logShowViewController = [[LogShowViewController alloc] init];
+    //self.view.translatesAutoresizingMaskIntoConstraints = NO;
     
-    logShowViewController.contenPath = [NSIndexPath indexPathForRow:self.startPage inSection:self._section];
-    
-    
-    /*set "animated" to "NO" to prevent "UIWindow" issue from happening*/
-    [self setViewControllers:[NSArray arrayWithObjects:logShowViewController, nil] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-    NSLog(@"%@",NSStringFromCGRect(self.view.frame));
+    /*The below fix the problem that contents will appear behind the navigation bar and status bar when UIPageView finish the transition effect*/
+    self.navigationController.navigationBar.translucent = NO;
+
     
 }
-/*
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -60,12 +55,12 @@
     
 
     
-    set "animated" to "NO" to prevent "UIWindow" issue from happening
+    /*set "animated" to "NO" to prevent "UIWindow" issue from happening*/
 
     [self setViewControllers:[NSArray arrayWithObjects:logShowViewController, nil] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 
 }
-*/
+
 - (void)pageViewController:(UIPageViewController *)bPageViewController
 willTransitionToViewControllers:(NSArray *)pendingViewControllers
 {
