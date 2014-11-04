@@ -10,7 +10,8 @@
 #import "AppDelegate.h"
 #import "LogBookTableViewController.h"
 #import "ForecastViewController.h"
-#import "SitePick.h"
+#import "TourTableViewController.h"
+
 
 
 @interface MainViewController (){
@@ -18,7 +19,7 @@
     AppDelegate *delegate;
     LogBookTableViewController *logBook;
     ForecastViewController *forecastView;
-   
+    TourTableViewController *tourTableView;
 }
 
 @end
@@ -34,6 +35,7 @@
     delegate = [[UIApplication sharedApplication] delegate];
     logBook = [[LogBookTableViewController alloc] init];
     forecastView = [[ForecastViewController alloc] init];
+    tourTableView = [[TourTableViewController alloc] init];
     
     UIButton *logBookButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [logBookButton setBackgroundImage:[UIImage imageNamed:@"ic_class_black_48dp.png"] forState:UIControlStateNormal];
@@ -48,10 +50,11 @@
     [weatherButton addTarget:self action:@selector(fowardToForecast:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:weatherButton];
     
-    UIButton *announcementButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [announcementButton setTitle:@"公告" forState:UIControlStateNormal];
-    [announcementButton setFrame:CGRectMake(self.view.center.x-84, self.view.center.y-40, 180, 60)];
-    [self.view addSubview:announcementButton];
+    UIButton *tourButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [tourButton setTitle:@"旅遊行程" forState:UIControlStateNormal];
+    [tourButton setFrame:CGRectMake(self.view.center.x-84, self.view.center.y-40, 180, 60)];
+    [tourButton addTarget:self action:@selector(fowardToTourTable:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:tourButton];
     
     self.navigationItem.hidesBackButton = YES;
     
@@ -81,6 +84,11 @@
 -(void)fowardToForecast:(id)sender
 {
     [delegate.navi pushViewController:forecastView animated:NO];
+}
+
+-(void)fowardToTourTable:(id)sender
+{
+    [delegate.navi pushViewController:tourTableView animated:NO];
 }
 
 -(void)viewDidDisappear:(BOOL)animated

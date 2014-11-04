@@ -37,6 +37,7 @@
     
     logDatabase = [LogDatabase new];
     
+    /*this is related to AutoLayout but doesn't resolve transition effect issue*/
     //self.view.translatesAutoresizingMaskIntoConstraints = NO;
     
     /*The below fix the problem that contents will appear behind the navigation bar and status bar when UIPageView finish the transition effect*/
@@ -60,7 +61,7 @@
     [self setViewControllers:[NSArray arrayWithObjects:logShowViewController, nil] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 
 }
-
+/*
 - (void)pageViewController:(UIPageViewController *)bPageViewController
 willTransitionToViewControllers:(NSArray *)pendingViewControllers
 {
@@ -82,7 +83,7 @@ willTransitionToViewControllers:(NSArray *)pendingViewControllers
         }
     }
 }
-
+*/
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
