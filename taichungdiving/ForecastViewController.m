@@ -40,6 +40,7 @@ static NSString *kType = @"Type";
     NSMutableArray *records;
     Record *record;
     AppDelegate *delegate;
+    UIActivityIndicatorView *spinner;
 }
 
 //@synthesize forecast;
@@ -50,6 +51,8 @@ static NSString *kType = @"Type";
 {
     [super loadView];
     delegate = [[UIApplication sharedApplication] delegate];
+    
+    spinner=[[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     
     map = [[MKMapView alloc] initWithFrame:delegate.window.frame];
     [self.view addSubview: map];
@@ -91,6 +94,7 @@ static NSString *kType = @"Type";
     if ([records count] != 0){
         
         [self addAnnotations];
+        spinner.frame=self.view.bounds;
         
     }
 }
@@ -136,6 +140,7 @@ static NSString *kType = @"Type";
 {
     records = [NSMutableArray array];
     tagNames = [NSArray arrayWithObjects:kAreaForecastData,kTime,kDir,kDescription,kSpeed,kType,kHeight, nil];
+    [spinner startAnimating];
     
 }
 
@@ -190,7 +195,7 @@ static NSString *kType = @"Type";
     if ([records count] != 0){
         
         [self addAnnotations];
-        
+        [spinner stopAnimating];
     }
 
     /*

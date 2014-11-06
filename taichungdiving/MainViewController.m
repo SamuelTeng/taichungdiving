@@ -11,6 +11,7 @@
 #import "LogBookTableViewController.h"
 #import "ForecastViewController.h"
 #import "TourTableViewController.h"
+#import "Reachability.h"
 
 
 
@@ -20,6 +21,7 @@
     LogBookTableViewController *logBook;
     ForecastViewController *forecastView;
     TourTableViewController *tourTableView;
+    Reachability *networkReachability;
 }
 
 @end
@@ -36,6 +38,7 @@
     logBook = [[LogBookTableViewController alloc] init];
     forecastView = [[ForecastViewController alloc] init];
     tourTableView = [[TourTableViewController alloc] init];
+    
     
     UIButton *logBookButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [logBookButton setBackgroundImage:[UIImage imageNamed:@"ic_class_black_48dp.png"] forState:UIControlStateNormal];
@@ -73,6 +76,18 @@
     
     //pick = [SitePick new];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus netWorkStatus = [networkReachability currentReachabilityStatus];
+    
+    if (netWorkStatus == NotReachable) {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"注意" message:@"無法連結網路\n請檢查wifi或行動網路設定" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [av show];
+    }
 }
 
 -(void)fowardToLogBook:(id)sender

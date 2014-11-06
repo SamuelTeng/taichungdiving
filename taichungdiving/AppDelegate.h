@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "MainViewController.h"
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import "Reachability.h"
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+    
+    Reachability *reachability;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong,nonatomic) UINavigationController *navi;

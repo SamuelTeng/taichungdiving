@@ -2122,6 +2122,7 @@
 -(void)viewDidDisappear:(BOOL)animated
 {
 
+    [super viewDidDisappear:animated];
     [scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
 }

@@ -36,6 +36,7 @@
 		57A2D35C1A01F04E00595BBF /* ic_book_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 57A2D35B1A01F04E00595BBF /* ic_book_black_24dp.png */; };
 		57A3D5F219AED8AB0025FEEB /* ForecastAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3D5F119AED8AB0025FEEB /* ForecastAnnotation.m */; };
 		57A3D5F419AED8E20025FEEB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3D5F319AED8E20025FEEB /* MapKit.framework */; };
+		57A7DEBB1A0B451400F11CE6 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7DEBA1A0B451400F11CE6 /* Reachability.m */; };
 		57A8CA0C1A089BF400238CD3 /* TourTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A8CA0B1A089BF400238CD3 /* TourTableViewController.m */; };
 		57AD566819B6BD29009252C0 /* ForecastDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AD566719B6BD29009252C0 /* ForecastDetailViewController.m */; };
 		57B56FFA1A08BEED004921BB /* TourDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B56FF91A08BEED004921BB /* TourDetailViewController.m */; };
@@ -107,6 +108,8 @@
 		57A3D5F019AED8AB0025FEEB /* ForecastAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastAnnotation.h; sourceTree = "<group>"; };
 		57A3D5F119AED8AB0025FEEB /* ForecastAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastAnnotation.m; sourceTree = "<group>"; };
 		57A3D5F319AED8E20025FEEB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		57A7DEB91A0B451400F11CE6 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		57A7DEBA1A0B451400F11CE6 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		57A8CA0A1A089BF400238CD3 /* TourTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourTableViewController.h; sourceTree = "<group>"; };
 		57A8CA0B1A089BF400238CD3 /* TourTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourTableViewController.m; sourceTree = "<group>"; };
 		57AD566619B6BD29009252C0 /* ForecastDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastDetailViewController.h; sourceTree = "<group>"; };
@@ -205,6 +208,8 @@
 		18D85C92199CF9CA00D20CC8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				57A7DEB91A0B451400F11CE6 /* Reachability.h */,
+				57A7DEBA1A0B451400F11CE6 /* Reachability.m */,
 				57BEF0431A075897009804C1 /* Default-568h@2x.png */,
 				5793014719CBF99900DEF241 /* ModelControler.h */,
 				5793014819CBF99900DEF241 /* ModelControler.m */,
@@ -422,6 +427,7 @@
 				577D179419A2F5FB00370BC3 /* LogBookTableViewController.m in Sources */,
 				57DCBB3E19A19C6B00BFFCED /* DiveLog.m in Sources */,
 				57AD566819B6BD29009252C0 /* ForecastDetailViewController.m in Sources */,
+				57A7DEBB1A0B451400F11CE6 /* Reachability.m in Sources */,
 				57B69E021A007E15006C56EA /* LogCategoryViewController.m in Sources */,
 				57DCBB3B19A19C2200BFFCED /* MainViewController.m in Sources */,
 				5793014C19CBFA4000DEF241 /* LogDatabase.m in Sources */,
@@ -607,6 +613,70 @@
 			};
 			name = Release;
 		};
+		57B2F3ED1A09EF4B005F1492 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Sheng Yuan Teng (7V3E82AMW2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Sheng Yuan Teng (7V3E82AMW2)";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = AdHoc;
+		};
+		57B2F3EE1A09EF4B005F1492 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "taichungdiving/taichungdiving-Prefix.pch";
+				INFOPLIST_FILE = "taichungdiving/taichungdiving-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "42355f46-d32d-4689-b41c-09ebf57ccf99";
+				WRAPPER_EXTENSION = app;
+			};
+			name = AdHoc;
+		};
+		57B2F3EF1A09EF4B005F1492 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/taichungdiving.app/taichungdiving";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "taichungdiving/taichungdiving-Prefix.pch";
+				INFOPLIST_FILE = "taichungdivingTests/taichungdivingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = AdHoc;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -615,6 +685,7 @@
 			buildConfigurations = (
 				18D85CB6199CF9CA00D20CC8 /* Debug */,
 				18D85CB7199CF9CA00D20CC8 /* Release */,
+				57B2F3ED1A09EF4B005F1492 /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -624,6 +695,7 @@
 			buildConfigurations = (
 				18D85CB9199CF9CA00D20CC8 /* Debug */,
 				18D85CBA199CF9CA00D20CC8 /* Release */,
+				57B2F3EE1A09EF4B005F1492 /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -633,6 +705,7 @@
 			buildConfigurations = (
 				18D85CBC199CF9CA00D20CC8 /* Debug */,
 				18D85CBD199CF9CA00D20CC8 /* Release */,
+				57B2F3EF1A09EF4B005F1492 /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

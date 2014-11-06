@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "SitePick.h"
+
+//#import "SitePick.h"
 
 
 
@@ -23,6 +24,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
+    reachability = [Reachability reachabilityForInternetConnection];
+    [reachability startNotifier];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Override point for customization after application launch.
@@ -37,6 +42,51 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+/*Called by Reachability whenever status changes.*/
+-(void)reachabilityChanged:(NSNotification *)note
+{
+    
+    Reachability* curReach = [note object];
+    NSParameterAssert([curReach isKindOfClass: [Reachability class]]);
+    [self updateInterfaceWithReachability: curReach];
+}
+
+/*Implementation for Network status notification*/
+- (void)updateInterfaceWithReachability:(Reachability *)curReach
+{
+    NetworkStatus curStatus;
+    
+    BOOL m_bReachableViaWWAN;
+    BOOL m_bReachableViaWifi;
+    BOOL m_bReachable;
+    //  According to curReach, modify current internal flags
+    
+    //  Internet reachability
+    //  Need network status to know real reachability method
+    curStatus = [curReach currentReachabilityStatus];
+    
+    //  Modify current network status flags
+    if (curStatus == ReachableViaWWAN) {
+        m_bReachableViaWWAN = true;
+    } else {
+        m_bReachableViaWWAN = false;
+    }
+    
+    if (curStatus == ReachableViaWiFi) {
+        m_bReachableViaWifi = true;
+    } else {
+        m_bReachableViaWifi = false;
+    }
+    
+    //  Reachable is the OR result of two internal connection flags
+    m_bReachable = (m_bReachableViaWifi || m_bReachableViaWWAN);
+    
+    if (!m_bReachable) {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"注意" message:@"無法連結網路\n請檢查wifi或行動網路設定" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [av show];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
