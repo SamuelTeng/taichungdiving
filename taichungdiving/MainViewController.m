@@ -12,14 +12,15 @@
 #import "ForecastViewController.h"
 #import "TourTableViewController.h"
 #import "Reachability.h"
-
+#import "ForecastNewViewController.h"
 
 
 @interface MainViewController (){
     
     AppDelegate *delegate;
     LogBookTableViewController *logBook;
-    ForecastViewController *forecastView;
+    /*ForecastViewController *forecastView;*/
+    ForecastNewViewController *forecastNewViewController;
     TourTableViewController *tourTableView;
     Reachability *networkReachability;
 }
@@ -36,7 +37,8 @@
     
     delegate = [[UIApplication sharedApplication] delegate];
     logBook = [[LogBookTableViewController alloc] init];
-    forecastView = [[ForecastViewController alloc] init];
+    /*forecastView = [[ForecastViewController alloc] init];*/
+    forecastNewViewController = [[ForecastNewViewController alloc] init];
     tourTableView = [[TourTableViewController alloc] init];
     
     
@@ -99,7 +101,8 @@
 
 -(void)fowardToForecast:(id)sender
 {
-    [delegate.navi pushViewController:forecastView animated:NO];
+    //[delegate.navi pushViewController:forecastView animated:NO];
+    [delegate.navi pushViewController:forecastNewViewController animated:NO];
 }
 
 -(void)fowardToTourTable:(id)sender

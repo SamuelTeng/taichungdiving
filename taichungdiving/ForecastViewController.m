@@ -113,6 +113,9 @@ static NSString *kType = @"Type";
 //NSURLConnectionDataDelegate
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
+    if (!connection) {
+        NSLog(@"no response from server");
+    }
     receiveData=[NSMutableData data];
 }
 
@@ -190,10 +193,10 @@ static NSString *kType = @"Type";
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser
 {
-    [self dataSorting];
+    //[self dataSorting];
     
     if ([records count] != 0){
-        
+        [self dataSorting];
         [self addAnnotations];
         [spinner stopAnimating];
     }
