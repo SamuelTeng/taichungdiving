@@ -11,6 +11,8 @@
 		183498D61A011227009FD228 /* ic_class_black_48dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 183498D51A011227009FD228 /* ic_class_black_48dp.png */; };
 		183FEB371A07C14000447579 /* fadiving@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183FEB351A07C14000447579 /* fadiving@2x.png */; };
 		183FEB381A07C14000447579 /* fadiving@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183FEB361A07C14000447579 /* fadiving@3x.png */; };
+		18CC91231A57C07A000B3AD0 /* ForecastNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC91221A57C07A000B3AD0 /* ForecastNewViewController.m */; };
+		18CC91371A57DAC2000B3AD0 /* icons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18CC91361A57DAC2000B3AD0 /* icons.bundle */; };
 		18D85C8A199CF9CA00D20CC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C89199CF9CA00D20CC8 /* Foundation.framework */; };
 		18D85C8C199CF9CA00D20CC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C8B199CF9CA00D20CC8 /* CoreGraphics.framework */; };
 		18D85C8E199CF9CA00D20CC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D85C8D199CF9CA00D20CC8 /* UIKit.framework */; };
@@ -71,6 +73,9 @@
 		183498D51A011227009FD228 /* ic_class_black_48dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_class_black_48dp.png; sourceTree = "<group>"; };
 		183FEB351A07C14000447579 /* fadiving@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fadiving@2x.png"; sourceTree = "<group>"; };
 		183FEB361A07C14000447579 /* fadiving@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fadiving@3x.png"; sourceTree = "<group>"; };
+		18CC91211A57C07A000B3AD0 /* ForecastNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastNewViewController.h; sourceTree = "<group>"; };
+		18CC91221A57C07A000B3AD0 /* ForecastNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastNewViewController.m; sourceTree = "<group>"; };
+		18CC91361A57DAC2000B3AD0 /* icons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = icons.bundle; sourceTree = "<group>"; };
 		18D85C86199CF9CA00D20CC8 /* taichungdiving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taichungdiving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D85C89199CF9CA00D20CC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18D85C8B199CF9CA00D20CC8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -161,6 +166,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18CC91381A57E77E000B3AD0 /* Dropped */ = {
+			isa = PBXGroup;
+			children = (
+				579090EB19A71E1E00FABBF5 /* Record.h */,
+				579090EC19A71E1E00FABBF5 /* Record.m */,
+				57A3D5F019AED8AB0025FEEB /* ForecastAnnotation.h */,
+				57A3D5F119AED8AB0025FEEB /* ForecastAnnotation.m */,
+				578A1D4119E4C80A00393AD3 /* SitePick.h */,
+				578A1D4219E4C80A00393AD3 /* SitePick.m */,
+				1818ADCA19A4DC2700EE1327 /* ForecastViewController.h */,
+				1818ADCB19A4DC2700EE1327 /* ForecastViewController.m */,
+				57AD566619B6BD29009252C0 /* ForecastDetailViewController.h */,
+				57AD566719B6BD29009252C0 /* ForecastDetailViewController.m */,
+			);
+			name = Dropped;
+			sourceTree = "<group>";
+		};
 		18D85C7D199CF9CA00D20CC8 = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +219,7 @@
 		18D85C91199CF9CA00D20CC8 /* taichungdiving */ = {
 			isa = PBXGroup;
 			children = (
+				18CC91381A57E77E000B3AD0 /* Dropped */,
 				57BA4DC519FF2DA4001BA6CA /* Icons */,
 				57DCBB4019A1DA7500BFFCED /* ViewController */,
 				57DCBB3F19A19C7300BFFCED /* Database */,
@@ -221,12 +244,6 @@
 				18D85C94199CF9CA00D20CC8 /* InfoPlist.strings */,
 				18D85C97199CF9CA00D20CC8 /* main.m */,
 				18D85C99199CF9CA00D20CC8 /* taichungdiving-Prefix.pch */,
-				579090EB19A71E1E00FABBF5 /* Record.h */,
-				579090EC19A71E1E00FABBF5 /* Record.m */,
-				57A3D5F019AED8AB0025FEEB /* ForecastAnnotation.h */,
-				57A3D5F119AED8AB0025FEEB /* ForecastAnnotation.m */,
-				578A1D4119E4C80A00393AD3 /* SitePick.h */,
-				578A1D4219E4C80A00393AD3 /* SitePick.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -252,6 +269,7 @@
 		57BA4DC519FF2DA4001BA6CA /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				18CC91361A57DAC2000B3AD0 /* icons.bundle */,
 				183FEB351A07C14000447579 /* fadiving@2x.png */,
 				183FEB361A07C14000447579 /* fadiving@3x.png */,
 				57BEF03F1A07552E009804C1 /* Taichung_Diving@2x.png */,
@@ -287,10 +305,6 @@
 				57DCBB3A19A19C2200BFFCED /* MainViewController.m */,
 				577D179219A2F5FB00370BC3 /* LogBookTableViewController.h */,
 				577D179319A2F5FB00370BC3 /* LogBookTableViewController.m */,
-				1818ADCA19A4DC2700EE1327 /* ForecastViewController.h */,
-				1818ADCB19A4DC2700EE1327 /* ForecastViewController.m */,
-				57AD566619B6BD29009252C0 /* ForecastDetailViewController.h */,
-				57AD566719B6BD29009252C0 /* ForecastDetailViewController.m */,
 				5793014419CBF94D00DEF241 /* PageViewController.h */,
 				5793014519CBF94D00DEF241 /* PageViewController.m */,
 				5793014D19CBFBD100DEF241 /* LogShowViewController.h */,
@@ -301,6 +315,8 @@
 				57A8CA0B1A089BF400238CD3 /* TourTableViewController.m */,
 				57B56FF81A08BEED004921BB /* TourDetailViewController.h */,
 				57B56FF91A08BEED004921BB /* TourDetailViewController.m */,
+				18CC91211A57C07A000B3AD0 /* ForecastNewViewController.h */,
+				18CC91221A57C07A000B3AD0 /* ForecastNewViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -389,6 +405,7 @@
 				183FEB381A07C14000447579 /* fadiving@3x.png in Resources */,
 				57BA4DD719FF3547001BA6CA /* ic_book_black_48dp.png in Resources */,
 				57BEF0421A07569C009804C1 /* Images-2.xcassets in Resources */,
+				18CC91371A57DAC2000B3AD0 /* icons.bundle in Resources */,
 				57BA4DDB19FF363E001BA6CA /* ic_refresh_black_24dp.png in Resources */,
 				183498D61A011227009FD228 /* ic_class_black_48dp.png in Resources */,
 				57BEF0441A075897009804C1 /* Default-568h@2x.png in Resources */,
@@ -421,6 +438,7 @@
 				57A8CA0C1A089BF400238CD3 /* TourTableViewController.m in Sources */,
 				5793014919CBF99900DEF241 /* ModelControler.m in Sources */,
 				57B56FFA1A08BEED004921BB /* TourDetailViewController.m in Sources */,
+				18CC91231A57C07A000B3AD0 /* ForecastNewViewController.m in Sources */,
 				57A3D5F219AED8AB0025FEEB /* ForecastAnnotation.m in Sources */,
 				18D85C98199CF9CA00D20CC8 /* main.m in Sources */,
 				18D85C9F199CF9CA00D20CC8 /* taichungdiving.xcdatamodeld in Sources */,
