@@ -69,7 +69,7 @@
     highppo2 = [logDatabase highppO2:contenPath];
     
     if ([airType isEqualToString:@"循環水肺"]) {
-        NSString *_log = [NSString stringWithFormat:@" 日期: %@ \n\n 潛點: %@ \n\n 潛水時間: %@ minutes \n\n 氣源: %@ \n\n 起始殘壓: %@ bar\n\n 結束殘壓: %@ bar\n\n 混合濃度: %@\n\n 氧氣:%@\n\n 氮氣:%@\n\n 氦氣:%@\n\n 低ppO2:%@\n\n 高ppO2:%@\n\n 最大深度: %@ \n\n 水溫: %@ \n\n 能見度: %@", date,site,time,airType,preSta,preEnd,mixture,oxygen,nitrogen,helium,lowppo2,highppo2,maxDep,temp,visib];
+        NSString *_log = [NSString stringWithFormat:@" 日期: %@ \n\n 潛點: %@ \n\n 潛水時間: %@ minutes \n\n 氣源: %@ \n\n 起始殘壓: %@ bar\n\n 結束殘壓: %@ bar\n\n 混合濃度: %@\n\n 氧氣:%@\n\n 氮氣:%@\n\n 氦氣:%@\n\n 低ppO2:%@\n\n 高ppO2:%@\n\n 最大深度: %@ \n\n 水溫: %@ \n\n 能見度: %@ \n\n 流: %@ \n\n 浪況: %@", date,site,time,airType,preSta,preEnd,mixture,oxygen,nitrogen,helium,lowppo2,highppo2,maxDep,temp,visib,current,waves];
         
         log = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 1100)];
         [log setText:_log];
@@ -84,7 +84,7 @@
         
     }else if ([airType isEqualToString:@"高氧"]){
         
-        NSString *_log = [NSString stringWithFormat:@" 日期: %@ \n\n 潛點: %@ \n\n 潛水時間: %@ minutes \n\n 氣源: %@ \n\n 起始殘壓: %@ bar\n\n 結束殘壓: %@ bar\n\n 混合濃度: %@\n\n 氧氣:%@\n\n 氮氣:%@\n\n 最大深度: %@ \n\n 水溫: %@ \n\n 能見度: %@", date,site,time,airType,preSta,preEnd,mixture,oxygen,nitrogen,maxDep,temp,visib];
+        NSString *_log = [NSString stringWithFormat:@" 日期: %@ \n\n 潛點: %@ \n\n 潛水時間: %@ minutes \n\n 氣源: %@ \n\n 起始殘壓: %@ bar\n\n 結束殘壓: %@ bar\n\n 混合濃度: %@\n\n 氧氣:%@\n\n 氮氣:%@\n\n 最大深度: %@ \n\n 水溫: %@ \n\n 能見度: %@ \n\n 流: %@ \n\n 浪況: %@", date,site,time,airType,preSta,preEnd,mixture,oxygen,nitrogen,maxDep,temp,visib,current,waves];
         
         log = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 1100)];
         [log setText:_log];
@@ -98,7 +98,7 @@
         self.view.backgroundColor = [UIColor grayColor];
     }else{
         
-        NSString *_log = [NSString stringWithFormat:@" 日期: %@ \n\n 潛點: %@ \n\n 潛水時間: %@ minutes \n\n 氣源: %@ \n\n 起始殘壓: %@ bar\n\n 結束殘壓: %@ bar\n\n 最大深度: %@ \n\n 水溫: %@ \n\n 能見度: %@", date,site,time,airType,preSta,preEnd,maxDep,temp,visib];
+        NSString *_log = [NSString stringWithFormat:@" 日期: %@ \n\n 潛點: %@ \n\n 潛水時間: %@ minutes \n\n 氣源: %@ \n\n 起始殘壓: %@ bar\n\n 結束殘壓: %@ bar\n\n 最大深度: %@ \n\n 水溫: %@ \n\n 能見度: %@ \n\n 流: %@ \n\n 浪況: %@", date,site,time,airType,preSta,preEnd,maxDep,temp,visib,current,waves];
         
         log = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 1100)];
         [log setText:_log];
